@@ -1,0 +1,419 @@
+/* Für alle Elemente */
+*{
+    margin      : 0;
+    padding     : 0;
+    box-sizing  : border-box;
+}
+
+
+body{
+    font-family       : "Roboto", sans-serif;   /* Schriftart */
+    background-color  : white;
+    color             : white;                  /* Schriftfarbe */
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+nav{
+    min-height: 5.625rem;
+    width: 100%;
+
+    /*Background color: opacity*/
+    background-color: rgba(255, 255, 255, 0.75);
+    position: fixed;
+
+    box-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.144);
+}
+
+nav .content{
+    float: right;
+    display: flex;
+    padding-right: 5rem;
+}
+
+nav .content li{
+    display: inline-block;
+    margin-top: 1.875rem;
+    margin-right: 2.5rem;
+    height: 100%;
+}
+
+nav li a{
+    font-family: "Source Code Pro", sans-serif;
+    font-size: 1.3rem;
+    color: #333;
+    text-decoration: none;
+}
+
+nav .Logo{
+    font-family: "Source Code Pro",sans-serif;
+    font-size: 3rem;
+    color: #333;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 1rem;
+    margin-left: 3rem;
+}
+
+/*Search bar*/
+
+.search-box{
+    position: relative;
+    height: 1.3rem;
+    width: 20rem;
+    margin-top: 1rem;
+    margin-right: 2.5rem;
+}
+
+.search-box input{
+    height: 3rem;
+    width: 15rem;
+    border: none;
+    outline: none;
+    border-radius: 3rem;
+    background: lightblue;
+    font-size: 1.3rem;
+    font-family: "Source Code Pro", sans-serif;
+    color: #333333;
+    padding: 0 3.7rem 0 1.2rem;
+}
+
+.search-box .search-button {
+    transform: translateY(-50%);
+    position: absolute;
+    top: 110%;
+    left: 87%;
+    height: 100%;
+    color: #333333;
+    background: cadetblue;
+    height: 150%;
+    width: 10%;
+    border-radius: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+
+/*Dropdown menu for account*/
+
+
+li.dropdown{
+    display: inline-block;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 10rem;
+    height: 10rem;
+    box-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.144);
+    z-idex: 1;
+    border-radius: 1rem;
+}
+
+.dropdown-content a{
+    color: #333333;
+    font-size: large;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-content a:hover{
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+
+
+.burger-menu{
+    position: absolute;
+    top: 1.9rem;
+    right: 1.5rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1.8rem;
+    height: 1.4rem;
+
+}
+.burger-menu .hamburger-icon {
+    height: 0.25rem;
+    width: 100%;
+    background-color: #333333;
+    border-radius: 6.25rem;
+}
+
+
+/* Improve Code !!! Problem: no reaction when clicking the burger menu */
+@media(max-width: 750px)  { /*Condition*/
+    nav .content{
+        display: none;
+        width: 100%;
+        padding-top: 3.75rem;
+    }
+
+    .burger-menu{
+        display: flex;
+    }
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav .content{
+        flex-direction: column;
+        width:100%
+    }
+    nav li{
+        text-align: center;
+    }
+    .content.active{
+        display: flex;
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+h1{
+    text-align  : center;       /* horizontale Ausrichtung eines Blockelements */
+    margin      : 20px 0;       /* 0 links und rechts */
+    font-size   : 50px;         /* Schriftgröße */
+}
+
+
+.Image-Box{
+    width    : 900px;
+    height   : 500px;
+    display  : flex;
+    margin: auto;
+
+    /*background-color: black;*/
+}
+
+
+#FAQ-Bild{
+    width   : 90%;
+    height  : 90%;
+    margin-top:100px;
+    margin-right: auto;
+    margin-bottom:auto;
+    margin-left:auto;
+}
+
+
+.headline{
+    color        : #3498db;
+    font-weight  : 800;
+    font-size    : 22px ;
+    margin       : 70px 0 12px 0;
+
+}
+
+
+.accordion{
+    width      : 90%;           /* 90% der Weite vom Body(Bildschirm) */
+    max-width  : 1000px;
+    margin     : 40px auto;
+}
+
+
+.accordion-item{
+    background-color  : white;
+    border            : black 1px solid;                    /* Rahmen */
+    color             : black;
+    margin            : 2.5px 0;
+    border-radius     : 3px;                               /* runde Ecken*/
+    border-shadow     : 0 2px 5px 0 rgba(0,0,0,0,0.25)      /* 0->waagerecht; 2px-> senkrecht; 5px->blair; 0->verbreitet || 0.25 in rgba ist opacity gibt die Transparenz eines Elements an */
+}
+
+
+.accordion-item-header{
+    padding      : 10px 60px 10px 20px;
+    min-height   : 70px;
+    line-height  : 12.5px;
+
+    font-size    : 18px;
+    display      : flex;
+    align-items  : center;      /* verteilt verfügbare Platz !senkrecht" zwischen und um Elemente -> Flexelemente */
+    position     : relative;    /* Inhalte folgen linear nacheinander */
+    cursor       : pointer;     /* kennzeichnet den Text/Box als klickbar */
+}
+
+
+/* ::before und ::after -> setzt ein Text vor oder nach dem Element ein */
+.accordion-item-header::after{
+    content     : "\2708";       /* wird mit ::before und ::after genutzt, um Inhalte in einen Element zu generieren. */
+    font-size   : 20px;          /* Größe vom Symbol (Flugzeig-Symbol) */
+    position    : absolute;      /* man kann Elemente losgelöst vom Textfluss positionieren, an eine Stelle, die per left, right, top und bottom festgelegt wird. Man kann sagen es liebt dann in der gleichen Box, aber intern dadrüber */
+    right       : 20px;          /* Das Pluszeichen nach rechts mit einem Abstand von 20px */
+
+    transform   : rotate(180deg);               /* Dreh das Flugzeugsymbol um 180° -> nach rechtsschauend */
+    transition  : transform 0.2s ease-in-out;   /* Animation */
+}
+
+
+/* wenn die active classe gelöscht/geschlossen wird dann wechselt das Minuszeichen wieder zurück zum Pluszeichen */
+.accordion-item-header.active::after{
+    transform   : rotate(90deg); /* Dreh das Flugzeugsymbol um 90° -> als runter */
+}
+
+
+.accordion-item-body{
+    /* Das Element "accordion-item-body" wird nicht gezeigt */
+    max-height  : 0;
+    overflow    : hidden;                       /* versteckt den Inhalt */
+    transition  : max-height 0.2s ease-out;     /* Geschwindigkeit von Anzeigen und Verstecken von dem Body*/
+}
+
+
+.accordion-item-body-content{
+    padding       : 10px;
+    line-height   : 20px;            /* Zeilenabstand */
+    border-top    : 1.5px solid;     /* Oberer Rand von der Box */
+
+    /* lineare gerade Verlauf von links transperent -> mitte ist die Hintergrundfarbe -> nach rechts wieder transperent und ohne die 1 würde es nicht funktionieren. Also ist es wie ein ON/OFF Button */
+    border-image  : linear-gradient(to right, transparent, black, transparent) 1;
+}
+
+/*
+ Wenn man auf der Webseite auf den "accordionItemhHeader" also die Fläche drückt, dann wird der Content-Teil angezeigt und wenn man nochmal darauf klickt dann wird das das wieder versteckt
+.accordion-item-header.active + .accordion-item-body{
+    max-height: 1000px;
+}
+*/
+
+
+/* #34495e */
+/* Anfassung/Darstellung für verschiedene Ausgabemedien*/
+@media(max-width: 767px){
+    html{
+        font-size:14px;
+    }
+}
+
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+footer{
+    margin       : 0;
+    padding      : 0;
+    font-family  : "montserrat", sans-serif ;   /* Schriftart */
+}
+
+
+.contact-section{
+    background-color  : #2c3e50;
+    background-size   : cover;
+    padding           : 40px 0;     /* top - right - bottom - left */
+}
+
+
+.contact-section h1{
+    text-align     : center;        /* Zentriert, dass was in h1 ist */
+    color          : white;
+    margin-bottom  : 30px ;
+}
+
+
+.contact-section p{
+    font-size   : 15px;
+    text-align  : center;           /* Zentriert, dass was in h1 ist */
+    color       : white;
+
+}
+
+
+.border{
+    width             :  100px;
+    height            : 10px;
+    background-color  : #34495e;
+    margin            : 40px auto;
+}
+
+
+.contact-form{
+    max-width  : 600px;
+    margin     : auto;
+    padding    : 0 10px;
+    overflow   : hidden;
+}
+
+
+.contact-form-text{
+    font-family  : "Roboto", sans-serif;
+    display      : block;
+    width        : 100%;
+    box-sizing   : border-box;
+    margin       : 16px 0;
+    border       : 0;
+    background   : black;
+    padding      : 20px 40px;
+    outline      : none;
+    color        : white;
+    transition   : 0.5s;
+}
+
+
+/* bei einer Interaktion des Benutzers */
+/*
+:hoven  => wenn der Mauszeiger das Element berührt
+:focus  => wenn man das Element anklickt oder mit der Tabulatortaste bedient
+:active => wenn man das Element anklickt
+*/
+.contact-form-text:focus{
+    box-shadow: 0 0 10px 4px gray;
+}
+
+
+textarea.contact-form-text{
+    resize: none; /* resize legt fest, ob ein Element größenveränderbar ist, und wenn ja, in welche Richtungen */
+    height: 150px;
+}
+
+
+.contact-form-button{
+    float: right;
+    border: 0;
+    background:#34495e;
+    color: white;
+    padding: 12px 50px;
+    border-radius: 20px;
+    cursor: pointer;  /* pointer kennzeichnet einen Text oder eine Grafik als klickbar */
+    transition: 0.5s;
+}
+
+/* bei einer Interaktion des Benutzers */
+/*
+:hoven  => wenn der Mauszeiger das Element berührt
+:focus  => wenn man das Element anklickt oder mit der Tabulatortaste bedient
+:active => wenn man das Element anklickt
+*/
+.contact-form-button:hover{
+    background: #2ecc71;
+}
+
+
+
+
+
+
+
+
+
+
