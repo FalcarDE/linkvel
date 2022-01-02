@@ -1,0 +1,194 @@
+/*created by Helen Laible*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(to top, cadetblue 0%, white 95%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+nav{
+    margin-top: 0%;
+    z-index: 1;
+    height: 85px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0.2rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.144);
+    position: fixed;
+}
+
+.nav_logo{
+    margin: 25px;
+    color: #6b6b6b;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Century Gothic", serif;
+    text-decoration: none;
+}
+
+
+.LeftSideBar
+{
+    box-sizing: border-box;
+    display: inline-block;
+    border: 1px solid red;
+}
+
+.dot
+{
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+nav ul{
+    display: flex;
+    float: right;
+}
+
+nav ul li{
+    height: 80%;
+    float: left;
+    position: relative;
+    list-style-type: none;
+}
+
+nav ul li a:hover{
+    border-bottom: 4px solid #6b6b6b;
+}
+
+nav ul li a{
+    color: #6b6b6b;
+    padding: 30px;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: inherit;
+    display: block;
+}
+
+nav ul li ul{
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 8px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 0.14rem 0.25rem rgba(0, 0, 0, 0.144);
+    z-index: 1;
+    width: 100%;
+}
+
+nav ul li:hover ul{ /*Drop-Down*/
+    display: block;
+    top: 91px;
+    width: 218px;
+}
+
+nav ul li ul li a{ /*Drop-Down Elemente von Mein Konto*/
+    color: #6b6b6b;
+    padding: 16px 20px;
+    align-items: center;
+}
+
+.dropdown{
+    z-index: 1;
+    width: 100%;
+}
+
+.toggle-button{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 23px;
+}
+
+.toggle-button .bar{
+    height: 4px;
+    width: 100%;
+    background-color: #6b6b6b;
+    border-radius: 100px;
+}
+
+@media(max-width:992px) {
+    .list-container {
+        display: none;
+        width: 100%;
+    }
+
+
+    .toggle-button {
+        display: flex;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 1;
+    }
+
+    .nav_logo {
+        display: block;
+    }
+
+    .list-container ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .list-container li {
+        text-align: center;
+        width: 100%;
+        z-index: 1;
+
+    }
+
+    .list-container.active {
+        display: flex;
+        z-index: 1;
+
+    }
+
+    .dropdown {
+        width: 100%;
+        z-index: 1;
+
+    }
+
+
+    .LeftSideBar
+    {
+        position: absolute;
+        box-sizing: border-box;
+        margin: auto auto;
+        display: flex;
+        border: 1px solid red;
+        max-width: 100%;
+        z-index: 1;
+
+    }
+
+    .dot {
+        z-index: 1;
+        height: 25px;
+        width: 25px;
+        margin-top: 18%;
+        background-color: #bbb;
+        border-radius: 50%;
+    }
+
+}

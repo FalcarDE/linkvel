@@ -1,0 +1,294 @@
+*{
+
+    margin      : 0;
+    padding     : 0;
+    box-sizing  : border-box;
+}
+
+
+body{
+    font-family       : "Roboto", sans-serif;   /* Schriftart */
+    background-color  : lightblue;
+}
+
+
+.container{
+    width           : 75rem;
+    height          : 37.5rem;
+    position        : relative;
+    border-radius   : 0.438rem;
+    background      : white;
+    padding         : 0.313rem;
+}
+
+/* --------------------------------------------- LEFT-PART ---------------------------------------------------------- */
+
+.left-part{
+    height              : 100%;
+    width               : 26%;
+    float               : left;
+}
+
+.profile-image{
+    margin-top          : 25%;
+    margin-bottom       : 5%;
+    margin-left         : 13%;
+    border-radius       : 40em;
+}
+
+.profile-image-input{
+    width               : 14.4rem;
+    height              : 17.5rem;
+    border-radius       : 12.5rem / 15rem;
+}
+
+#profile-name{
+    font-size           : 1.3rem;
+    text-align          : center;
+    margin-bottom       : 2%;
+}
+
+#permission{
+    font-weight         : 400;
+    font-size           : 1rem;
+    color               : gray;
+    text-align          : center;
+}
+
+
+#last-login-time{
+    font-weight         : 100;
+    font-size           : 1rem;
+    color               : gray;
+    text-align          : center;
+    margin-top          : 1rem;
+}
+
+
+
+
+/* ---------------------------------------------- MID-PART ---------------------------------------------------------- */
+
+.mid-part {
+    height              : 100%;
+    width               : 47%;
+    border-left         : 0.0625rem solid lightgray;
+    border-right        : 0.0625rem solid lightgray;
+    float               : left;
+}
+
+.mid-box{
+    width               : 90%;
+    height              : 90%;
+    margin-top          : 10%;
+    margin-left         : 5%;
+
+}
+
+.profil-tag-box{
+    width               : 100%;
+    height              : 3rem;
+    font-weight         : 200;
+    margin-bottom       : 7%;
+}
+
+#profil-tag{
+    font-size           : 2rem;
+}
+
+.right-side{
+    width               : 45%;
+    margin-right        : 3%;
+    float               : right;
+}
+
+.left-side{
+    width               : 45%;
+    margin-left         : 3%;
+    float               : left;
+}
+
+.label{
+    font-family         :Georgia;
+    font-weight         : 100;
+    font-size           : 0.75rem;
+    margin              : 0;
+    padding             : 0;
+}
+
+
+.input-field{
+    width               : 100%;
+    padding             : 0.625rem 0 0.625rem 0.3rem;
+    margin              : 0.125rem 0 0.94rem;
+    border-radius       : 0.31rem;
+    border-left         : 0.0625rem solid darkgrey;
+    border-top          : 0.0625rem solid darkgrey;
+    border-right        : 0.0625rem solid darkgrey;
+    border-bottom       : 0.0625rem solid darkgrey;
+    outline             : none;
+    background          : transparent;
+}
+
+.input-field-info{
+    font-family         : Arial;
+    font-weight         : 100;
+    color               : #718093;
+}
+
+
+/* --------------------------------------------- RIGHT-PART --------------------------------------------------------- */
+
+
+.right-part{
+    height              : 100%;
+    width               : 27%;
+    float               : left;
+}
+
+.post-link-box{
+    height              : 12.5rem;
+    width               : 18.13rem;
+
+
+    margin-top          : 25%;
+    margin-left         : 5%;
+}
+
+#headline-link-box{
+    font-weight         : 100;
+    font-size           : 1.13rem;
+    margin-bottom       : 5%;
+}
+
+.post-link li{
+    margin-bottom           : 2%;
+}
+
+.post-link a{
+    text-decoration     : none;
+    color               :#2e86de;
+    margin-bottom       : 10%;
+}
+
+h1{
+    text-align  : center;       /* horizontale Ausrichtung eines Blockelements */
+    margin      : 20px 0;       /* 0 links und rechts */
+    font-size   : 50px;         /* Schriftgröße */
+}
+
+
+.Image-Box{
+    width    : 900px;
+    height   : 500px;
+    display  : flex;
+    margin: auto;
+
+    /*background-color: black;*/
+}
+
+
+#FAQ-Bild{
+    width   : 90%;
+    height  : 90%;
+    margin-top:100px;
+    margin-right: auto;
+    margin-bottom:auto;
+    margin-left:auto;
+}
+
+
+.headline{
+    color        : #3498db;
+    font-weight  : 800;
+    font-size    : 22px ;
+    margin       : 70px 0 12px 0;
+
+}
+
+
+.accordion{
+    width      : 90%;           /* 90% der Weite vom Body(Bildschirm) */
+    max-width  : 1000px;
+    margin     : 40px auto;
+}
+
+
+.accordion-item{
+    background-color  : white;
+    border            : black 1px solid;                    /* Rahmen */
+    color             : black;
+    margin            : 2.5px 0;
+    border-radius     : 3px;                               /* runde Ecken*/
+    border-shadow     : 0 2px 5px 0 rgba(0,0,0,0,0.25)      /* 0->waagerecht; 2px-> senkrecht; 5px->blair; 0->verbreitet || 0.25 in rgba ist opacity gibt die Transparenz eines Elements an */
+}
+
+
+.accordion-item-header{
+    padding      : 10px 60px 10px 20px;
+    min-height   : 70px;
+    line-height  : 12.5px;
+
+    font-size    : 18px;
+    display      : flex;
+    align-items  : center;      /* verteilt verfügbare Platz !senkrecht" zwischen und um Elemente -> Flexelemente */
+    position     : relative;    /* Inhalte folgen linear nacheinander */
+    cursor       : pointer;     /* kennzeichnet den Text/Box als klickbar */
+}
+
+
+/* ::before und ::after -> setzt ein Text vor oder nach dem Element ein */
+.accordion-item-header::after{
+    content     : "\2708";       /* wird mit ::before und ::after genutzt, um Inhalte in einen Element zu generieren. */
+    font-size   : 20px;          /* Größe vom Symbol (Flugzeig-Symbol) */
+    position    : absolute;      /* man kann Elemente losgelöst vom Textfluss positionieren, an eine Stelle, die per left, right, top und bottom festgelegt wird. Man kann sagen es liebt dann in der gleichen Box, aber intern dadrüber */
+    right       : 20px;          /* Das Pluszeichen nach rechts mit einem Abstand von 20px */
+
+    transform   : rotate(180deg);               /* Dreh das Flugzeugsymbol um 180° -> nach rechtsschauend */
+    transition  : transform 0.2s ease-in-out;   /* Animation */
+}
+
+
+/* wenn die active classe gelöscht/geschlossen wird dann wechselt das Minuszeichen wieder zurück zum Pluszeichen */
+.accordion-item-header.active::after{
+    transform   : rotate(90deg); /* Dreh das Flugzeugsymbol um 90° -> als runter */
+}
+
+
+.accordion-item-body{
+    /* Das Element "accordion-item-body" wird nicht gezeigt */
+    max-height  : 0;
+    overflow    : hidden;                       /* versteckt den Inhalt */
+    transition  : max-height 0.2s ease-out;     /* Geschwindigkeit von Anzeigen und Verstecken von dem Body*/
+}
+
+
+.accordion-item-body-content{
+    padding       : 10px;
+    line-height   : 20px;            /* Zeilenabstand */
+    border-top    : 1.5px solid;     /* Oberer Rand von der Box */
+
+    /* lineare gerade Verlauf von links transperent -> mitte ist die Hintergrundfarbe -> nach rechts wieder transperent und ohne die 1 würde es nicht funktionieren. Also ist es wie ein ON/OFF Button */
+    border-image  : linear-gradient(to right, transparent, black, transparent) 1;
+}
+
+/*
+ Wenn man auf der Webseite auf den "accordionItemhHeader" also die Fläche drückt, dann wird der Content-Teil angezeigt und wenn man nochmal darauf klickt dann wird das das wieder versteckt
+.accordion-item-header.active + .accordion-item-body{
+    max-height: 1000px;
+}
+*/
+
+
+/* #34495e */
+/* Anfassung/Darstellung für verschiedene Ausgabemedien*/
+@media(max-width: 767px){
+    html{
+        font-size:14px;
+    }
+}
+
+
+
+
+/* --------------------------------------------------------------
