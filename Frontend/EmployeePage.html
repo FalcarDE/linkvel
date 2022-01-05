@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mitarbeiter-Bereich</title>
+    <link rel="stylesheet" href="EmployeePage_Style.css">
+</head>
+<body>
+
+
+
+<nav class="navigation_bar">
+    <a href="#" class="nav_logo">LiVe</a>
+    <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </a>
+    <div class="list-container">
+        <ul>
+            <li><a href="../Frontend/Login_Registration_Formular.html">REGISTRIERUNG</a></li>
+            <li><a href="#">SUCHEN</a></li>
+            <li><a href="../Backend/LandingPage.php">STARTSEITE</a></li>
+            <li><a href="#">MEIN KONTO</a>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="#">PROFIL ANSEHEN</a></li>
+                        <li><a href="#">PROFIL BEARBEITEN</a></li>
+                    </ul>
+                </div>
+            <li><a href="#">LOGIN</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
+
+
+<div class="container">
+
+
+    <!-------------------------- TOP Container -------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <div class="top-container">
+        <div class="top-container-head">Mitarbeiter - Bereich</div>
+
+        <div class="top-box">
+
+            <div class="top-box-container">
+
+                <div class="left-side">
+
+                    <div class="left-side-input">
+                        <form id="register" class="input-group">
+                            <label class="label">Vorname        </label>           <input autocomplete="on"        class="input-field"        name="FirstName"       type="text">
+                            <label class="label">Nachname       </label>           <input autocomplete="on"        class="input-field"        name="LastName"        type="text">
+                            <label class="label">Benutzername   </label>           <input autocomplete="on"        class="input-field"        name="UserName"        type="text">
+                            <label class="label">Email          </label>           <input autocomplete="on"        class="input-field"        name="Email"           type="email">
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="right-side">
+                    <div class="right-side-box">
+                        <div class="output-field">
+                            <h4> User ID  </h4>
+                        </div>
+                        <div class="button-box">
+                            <button type="submit" class="submit-button">UserID suchen</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-------------------------- Middle Container -------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <div class="middle-container">
+
+
+        <div class="id-input">
+            <label class="label">Hier die User ID : </label>    <input autocomplete="on"      class="id-input-field"      name="UserID"     required    type="text">
+        </div>
+
+
+
+        <div class="middle-container-button-box">
+            <button type="submit" class="user-search-button">User-Daten suchen</button>
+        </div>
+
+
+        <div class="middle-container-button-box">
+            <button type="submit" class="user-search-button">User-Account edit</button>
+        </div>
+
+        <div class="middle-container-button-box">
+            <button type="submit" class="user-search-button">User-Daten speichern</button>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-------------------------- Middle Container -------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+    <div class="bottom-container">
+        <div class="bottom-container-box">
+
+            <div class="bottom-container-left">
+                <div class="profile-box">
+                    <img class="profile-img" src="../image/mbappe.jpg" alt="Profil-Bild">
+                </div>
+
+
+                <div class="underline">
+                    <h3 id="profile-name">Vorname Nachname</h3>
+                    <div class="profil-roll-box">
+                        <h5 id="permission">User-Rolle</h5>
+                    </div>
+                    <div class="last-login-box">
+                        <h5 id="last-login-time">zuletzt online: gestern</h5>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+    <!-------------------------- Bottom Container -------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+            <div class="bottom-container-right">
+
+
+                    <div class="profil-tag-box">
+                        <h1 id="profil-tag">Persönliches Profil </h1>
+                    </div>
+
+
+                <div class="bottom-container-right-box">
+
+                    <div class="bottom-container-right-box-left">
+                        <form class="container-input">
+                            <label class="label">Geschlecht        </label>            <div class="container-input-field"> <h5 class="container-input-field-info">Männlich</h5></div>
+                            <label class="label">Vorname           </label>            <div class="container-input-field"> <h5 class="container-input-field-info">Kylian</h5></div>
+                            <label class="label">Mittelname        </label>            <div class="container-input-field"> <h5 class="container-input-field-info">      -         </h5></div>
+                            <label class="label">Nachname          </label>            <div class="container-input-field"> <h5 class="container-input-field-info">Mbappe</h5></div>
+                            <label class="label">Gebutsdatum       </label>            <div class="container-input-field"> <h5 class="container-input-field-info">20.12.1998</h5></div>
+                            <label class="label">Telefonnummer     </label>            <div class="container-input-field"> <h5 class="container-input-field-info">0176 34878939</h5></div>
+                        </form>
+                    </div>
+
+                    <div class="bottom-container-right-box-right">
+                        <form class="container-input">
+                            <label class="label">Adresse           </label>           <div class="container-input-field"> <h5 class="container-input-field-info">-</h5></div>
+                            <label class="label">Postleitzahl      </label>           <div class="container-input-field"> <h5 class="container-input-field-info">-</h5></div>
+                            <label class="label">Land              </label>           <div class="container-input-field"> <h5 class="container-input-field-info">-</h5></div>
+                            <label class="label">Benutzername      </label>           <div class="container-input-field"> <h5 class="container-input-field-info">-</h5></div>
+                            <label class="label">Email             </label>           <div class="container-input-field"> <h5 class="container-input-field-info">-</h5></div>
+                            <label class="label">Passwort          </label>           <div class="container-input-field"> <h5 class="container-input-field-info">-</h5></div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,631 @@
+
+/*----------------------------------------------- Foundation ---------------------------------------------------------*/
+
+body{
+    background              : lightblue;
+}
+
+.container{
+    font-family             :Georgia;
+
+    display                 : grid;
+    height                  : 80%;
+    width                   : 80%;
+    grid-template-columns   : 100%;
+    grid-template-rows      : 450px 120px 700px;
+    grid-template-areas     :    "top-container"
+                                 "middle-container"
+                                 "bottom-container";
+
+    /* Abstand zu den jeweiligen areas
+    grid-gap: 0.2rem;
+    */
+
+    margin-top              : 120px;
+    margin-left             : auto;
+    margin-right            : auto;
+    margin-bottom           : 50px;
+}
+
+
+
+/*------------------------------------------------- TOP-Part ---------------------------------------------------------*/
+
+
+.top-container{
+    /* Zuordnung zu den jeweiligen Felder in "grid-template-area" in cantainer */
+    grid-area           : top-container;
+    background          : white;
+    margin-bottom       : 20px;
+    border              : 5px solid lightgrey;
+
+}
+
+
+.top-container-head{
+    font-size           : 36px;
+    font-weight         : 500;
+    padding             : 10px 26px;
+    cursor              : pointer;
+    background          : transparent;
+    border              : 0;
+    outline             : none;
+    position            : relative;
+    text-align          : center;
+    border-bottom       : 1px solid darkgrey;
+}
+
+
+.top-box{
+    width               : 100%;
+    height              : 100%;
+    /*flex-flow: wrap;    -->Bei Platzmangel machen die Boxen ein umbruch*/
+}
+
+
+.top-box-container{
+    width               : 90%;
+    height              : 90%;
+    margin              : auto;
+    display             : flex;
+    justify-content     : center;  /* zentriert die boxen*/
+    align-items         : center;      /* zentriert die boxen*/
+}
+
+
+.left-side{
+    width               : 40%;
+    height              : 100%;
+}
+
+.left-side-input{
+    width               : 90%;
+    margin-top          :60px;
+    margin-left         : auto;
+    display             : flex;
+     flex-direction     : row;
+
+}
+
+
+.right-side{
+    width               : 25%;
+    height              : 100%;
+    margin-left         : 20px;
+}
+
+
+.right-side-box{
+    width               : 90%;
+    height              : 50%;
+    margin-top          :140px;
+}
+
+
+.input-group{
+    top                 : 180px;
+    width               : 320px;
+    transition          : 0.5s;
+}
+
+
+.label{
+    font-size           : 12px;
+    font-family         :Georgia;
+    margin              : 0;
+    padding             : 0;
+}
+
+
+.input-field{
+    width               : 100%;
+    height              : 20px;
+    padding             : 5px 0;
+    margin              : 2px 0 5px;
+    border-radius       : 3px;
+    border              : 1px solid darkgrey;
+    background          : transparent;
+}
+
+
+.output-field{
+    width               : 100%;
+    border              : 1px solid lightgray;
+}
+
+
+.output-field h4{
+    margin              : 10px;
+    text-align          : center;
+}
+
+
+.output-field-info{
+    font-weight         : 100;
+    color               : #718093;
+}
+
+
+.button-box{
+    width               : 100%;
+}
+
+
+.submit-button{
+    width               : 80%;
+    padding             : 10px 30px;
+    cursor              : pointer;
+    display             : block;
+    margin-top          : 30px;
+    margin-left         : auto;
+    margin-right        : auto;
+    background          : lightgray;
+    border              : 0;
+    outline             : none;
+    border-radius       : 5px;
+    border              : 1px solid darkgrey;
+    text-align          : center;
+}
+
+
+.submit-button:hover{
+    background          :  #2ecc71;
+}
+
+
+
+/*------------------------------------------------- MID-Part ---------------------------------------------------------*/
+
+
+.middle-container{
+    /* Zuordnung zu den jeweiligen Felder in "grid-template-area" in cantainer */
+    grid-area           : middle-container;
+    background          : white;
+    border-top          : 3px solid lightgrey;
+    border-left         : 3px solid lightgrey;
+    border-right        : 3px solid lightgrey;
+
+    display             : flex;
+    flex-direction      : row;
+    justify-content     : space-around;
+}
+
+
+.id-input{
+    width               : 200px;
+    height              : 50px;
+    margin-top          : 50px;
+    margin-left         : 10px;
+}
+
+
+.id-input-field{
+    width               : 100%;
+    padding             : 12px 0;
+    margin              : 2px 0 5px;
+    border-radius       : 3px;
+    border              : 1px solid darkgrey;
+    background          : transparent;
+    text-align          : center;
+    box-sizing          : border-box;
+    padding-left        : 10px;
+    padding-right       : 10px;
+}
+
+
+.middle-container-button-box{
+    width               : 200px;
+    height              : 50px;
+    margin-top          : 50px;
+    padding             : 10px;
+    display             : flex;
+    flex-display        : row;
+}
+
+
+.user-search-button{
+    width               : 100%;
+    height              : 100%;
+}
+
+
+.user-search-button:hover{
+    background          : #2ecc71;
+}
+
+
+
+/*---------------------------------------------- BOTTOM-Part ---------------------------------------------------------*/
+
+
+.bottom-container{
+    background          : white;
+
+    /* Zuordnung zu den jeweiligen Felder in "grid-template-area" in cantainer */
+    grid-area           : bottom-container;
+    border-left         : 3px solid lightgrey;
+    border-right        : 3px solid lightgrey;
+    border-bottom       : 3px solid lightgrey;
+
+    display             : flex;
+}
+
+
+.bottom-container-box{
+    width               : 1000px;
+    height              : 600px;
+
+    margin              :auto;
+    margin-top          : 65px;
+    border-radius       : 5px;
+    border              : 1px solid lightgrey;
+
+    display             : flex;
+    position            : relative;
+    flex-direction      : row;
+}
+
+
+.bottom-container-left{
+    width               : 30%;
+    height              : auto;
+    margin-top          :15px;
+    margin-bottom       :15px;
+    margin-left         :35px;
+    border-right        : 1px solid lightgrey;
+}
+
+
+.bottom-container-right{
+    width               : 65%;
+    height              : auto;
+    margin-top          :15px;
+    margin-bottom       :15px;
+}
+
+
+.profile-box{
+    height              : 40%;
+    width               : 60%;
+    margin              : auto;
+    margin-top          : 40px;
+}
+
+
+.profile-img{
+    height              : 100%;
+    width               : 100%;
+    border-radius       : 200px / 240px;
+    box-sizing          : border-box;
+}
+
+
+.underline{
+    width               : 80%;
+    height              : auto;
+    margin              : auto;
+}
+
+
+#profile-name{
+    font-size           : 20.8px;
+    text-align          : center;
+    margin-bottom       : 2%;
+}
+
+
+#permission{
+    font-weight         : 400;
+    font-size           : 16px;
+    color               : gray;
+    text-align          : center;
+}
+
+
+#last-login-time{
+    font-weight         : 100;
+    font-size           : 16px;
+    color               : gray;
+    text-align          : center;
+    margin-top          : 16px;
+}
+
+
+.profil-tag-box{
+margin-bottom           : 30px;
+}
+
+
+.profil-tag-box h1{
+    font-size           : 31px;
+    font-weight         : 100;
+    text-align          : center;
+}
+
+.container-input{
+    width               : 100%;
+}
+
+
+.bottom-container-right-box{
+    width               : 94%;
+    height              : 85%;
+    margin              : auto;
+    display             : flex;
+}
+
+
+.bottom-container-right-box-left{
+    width               : 45%;
+    height              : 100%;
+    margin              :auto;
+    display             : flex;
+    flex-display        : row;
+}
+
+
+.bottom-container-right-box-right{
+    width               : 45%;
+    height              : 100%;
+    margin              :auto;
+}
+
+
+.container-input-field{
+    width               : 100%;
+    padding             : 10px 0;
+    margin              : 2px 0 15px;
+    border-radius       : 3px;
+    border              : 1px solid darkgrey;
+    background          : transparent;
+}
+
+
+.container-input-field h5{
+    margin              : 5px;
+}
+
+
+
+
+
+
+
+/*----------------------------------------------- Navigation ---------------------------------------------------------*/
+
+.navigation_bar
+{
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #309bfa;
+    letter-spacing: 0.2rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.144);
+
+}
+.nav_logo{
+    margin: 25px;
+    color: #6b6b6b;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Century Gothic", serif;
+    font-style: revert;
+    text-decoration: none;
+}
+
+nav ul{
+    display: flex;
+    float: right;
+}
+
+nav ul li{
+    height: 80%;
+    float: left;
+    position: relative;
+    list-style-type: none;
+}
+
+nav ul li a:hover{
+    border-bottom: 4px solid #6b6b6b;
+}
+
+nav ul li a{
+    color: #6b6b6b;
+    padding: 30px;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: inherit;
+    display: block;
+}
+
+nav ul li ul{
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 8px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 0.14rem 0.25rem rgba(0, 0, 0, 0.144);
+    z-index: 1;
+    width: 100%;
+}
+
+nav ul li:hover ul{ /*Drop-Down*/
+    display: block;
+    top: 91px;
+    width: 218px;
+}
+
+nav ul li ul li a{ /*Drop-Down Elemente von Mein Konto*/
+    color: #6b6b6b;
+    padding: 16px 20px;
+    text-align: center;
+}
+
+.dropdown{
+    z-index: 1;
+    width: 100%;
+}
+
+.toggle-button{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 23px;
+}
+
+.toggle-button .bar{
+    height: 4px;
+    width: 100%;
+    background-color: #6b6b6b;
+    border-radius: 100px;
+}
+
+@media(max-width:750px){
+    .list-container{
+        display: none;
+        width: 100%;
+    }
+    .toggle-button{
+        display: flex;
+    }
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav_logo{
+        display: block;
+    }
+    .list-container ul{
+        flex-direction: column;
+        width: 100%;
+    }
+    .list-container li{
+        text-align: center;
+    }
+    .list-container.active{
+        display: flex;
+    }
+    .dropdown{
+        width: 100%;
+    }
+}
+/*
+.search-box{
+    position: absolute;
+    top: 42px;
+    left: 1170px;
+    width: 500px;
+    transform: translate(-50%, -50%);
+}
+
+input{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+input[type="text"]{
+    color: white;
+    background: #309bfa;
+    width: 340px;
+    height: 35px;
+    border: none;
+    outline: none;
+    padding: 0 25px;
+    border-radius: 20px 0 0 20px;
+}
+
+input[type="submit"]{
+    position: relative;
+    border-radius: 0 20px 20px 0;
+    height: 35px;
+    width: 80px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #309bfa;
+}
+
+input[type="submit"]:hover{
+    background: #309bfa;
+}
+*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 750px) {
+    .container{
+        grid-template-columns: 100%;
+        grid-template-rows: 400px 150px 700px;;
+        grid-template-areas:    "top-container"
+                                "middle-container"
+                                "bottom-container";
+    }
+
+}
+
+
+
+
+
+
