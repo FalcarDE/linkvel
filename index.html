@@ -12,43 +12,34 @@
         <body>
 
 
-        <nav class="Navbar">
-            <a class="Logo" href="#">linkvel</a>
-
-            <a href="#" class="burger-menu">
-                <span class="hamburger-icon"></span>
-                <span class="hamburger-icon"></span>
-                <span class="hamburger-icon"></span>
+        <nav class="navigation_bar">
+            <a href="#" class="nav_logo">LiVe</a>
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </a>
-
-            <div class="content">
-                <div class="search-box">
-                    <input type="text" placeholder="linkvel durchsuchen...">
-                    <div class="search-button">
-                        <!-- Google-Fonts -->
-                        <i class="material-icons">&#xe8b6;</i>
-                    </div>
-                    <div class="cancel-button">
-                        <!-- Google-Fonts -->
-                        <i class="material-icons">&#xe14c;</i>
-                    </div>
-                </div>
+            <div class="list-container">
                 <ul>
-                    <!-- <li><a href="#" class="search-button">Suchen</a></li>-->
-                    <li><a href="#">Home</a></li>
-                    <li class="dropdown"><a href="#" class="dropbtn">Account</a>
-                        <div class="dropdown-content">
-                            <a href="#">Login</a>
-                            <a href="#">Registrierung</a>
-                            <a href="#">Account anzeigen</a>
+                    <li><a href="../Frontend/Login_Registration_Formular.html">REGISTRIERUNG</a></li>
+                    <li><a href="#">SUCHEN</a></li>
+                    <li><a href="../Backend/LandingPage.php">STARTSEITE</a></li>
+                    <li><a href="#">MEIN KONTO</a>
+                        <div class="dropdown">
+                            <ul>
+                                <li><a href="#">PROFIL ANSEHEN</a></li>
+                                <li><a href="#">PROFIL BEARBEITEN</a></li>
+                            </ul>
                         </div>
+                    <li><a href="#">LOGIN</a>
                     </li>
-                    <li><a href="#">Post erstellen</a></li>
-                    <li><a href="#">Login</a></li>
-
                 </ul>
             </div>
         </nav>
+
+
+
+
 
 
 
@@ -67,7 +58,7 @@
          <div class="accordion">
 
              <div class = "headline">
-                 TOPIC 1
+                 <h2>Häufig gestellte Fragen</h2>
              </div>
 
 <!-- 1.------------------------------------------------------------------------------------------------------------- -->
@@ -77,15 +68,36 @@
                  <!-- ---------------------------------------- -->
 
                  <div class="accordion-item-header">
-                     Topic 1 - Frage 1
+                     <h3>Wie kann man ein Post erstellen/veröffentlichen?</h3>
                  </div>
 
                  <!-- ---------------------------------------- -->
                  <div class="accordion-item-body">
 
                      <div class="accordion-item-body-content">
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                         incididunt ut labore et dolore magna aliqua. Rhoncus mattis rhoncus urna neque.
+                         <h4>Auf unserer Webseite unterscheiden wir zwischen zwei Rollen. Es gibt einmal den Standard-User und den Super-User. Um ein Post zu erstellen, muss man die Rolle Super-User haben.  </h4>
+                     </div>
+                 <!-- ---------------------------------------- -->
+                 </div>
+             </div>
+
+<!-- 1.------------------------------------------------------------------------------------------------------------- -->
+
+             <div class="accordion-item">
+
+                 <!-- ---------------------------------------- -->
+
+                 <div class="accordion-item-header">
+                     <h3>Wie wird man ein Super-User?</h3>
+                 </div>
+
+                 <!-- ---------------------------------------- -->
+                 <div class="accordion-item-body">
+
+                     <div class="accordion-item-body-content">
+                         <h4>Nach der Registrierung ist jeder neue User ein Standard-User und um ein Super-User zu werden,
+                             muss man das Linkvel-Team kontaktieren, dass man die Rolle als Super-User bekommen möchte.
+                             Nach Erhalt der Mitteilung wird es geprüft und wenn nichts dazwischen kommt wird ihnen dir Super-User Rolle zugeteilt.</h4>
                      </div>
 
                      <!-- ---------------------------------------- -->
@@ -99,71 +111,29 @@
                  <!-- ---------------------------------------- -->
 
                  <div class="accordion-item-header">
-                     Topic 1 - Frage 2
+                     <h3>Wie setzt man sich mit dem Linkvel-Team in Verbindung?</h3>
                  </div>
 
                  <!-- ---------------------------------------- -->
                  <div class="accordion-item-body">
 
                      <div class="accordion-item-body-content">
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                         incididunt ut labore et dolore magna aliqua. Rhoncus mattis rhoncus urna neque.
+                         <h4>Unterhalb der FAQ-Seite gibt es ein Bereich dafür, um uns zu kontaktieren. Füllen Sie dazu
+                             die notwendigen Felder aus. Da diese Webseite erst vor kurzem veröffentlicht wurde, ist das
+                             zurzeit die einzige Methode. In der Zukunft wird es sicherlich auch eine andere Methode geben.</h4>
                      </div>
 
                      <!-- ---------------------------------------- -->
                  </div>
              </div>
 
-<!-- 1.------------------------------------------------------------------------------------------------------------- -->
-
-             <div class="accordion-item">
-
-                 <!-- ---------------------------------------- -->
-
-                 <div class="accordion-item-header">
-                     Topic 1 - Frage 3
-                 </div>
-
-                 <!-- ---------------------------------------- -->
-                 <div class="accordion-item-body">
-
-                     <div class="accordion-item-body-content">
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                         incididunt ut labore et dolore magna aliqua. Rhoncus mattis rhoncus urna neque.
-                     </div>
-
-                     <!-- ---------------------------------------- -->
-                 </div>
-             </div>
-
-<!-- 1.------------------------------------------------------------------------------------------------------------- -->
-
-             <div class="accordion-item">
-
-                 <!-- ---------------------------------------- -->
-
-                 <div class="accordion-item-header">
-                     Topic 1 - Frage 4
-                 </div>
-
-                 <!-- ---------------------------------------- -->
-                 <div class="accordion-item-body">
-
-                     <div class="accordion-item-body-content">
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                         incididunt ut labore et dolore magna aliqua. Rhoncus mattis rhoncus urna neque.
-                     </div>
-
-                     <!-- ---------------------------------------- -->
-                 </div>
-             </div>
 
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
              <div class = "headline">
-                 TOPIC 2
+                 <h2>Allgemeine Fragen</h2>
              </div>
 
 <!-- 2.------------------------------------------------------------------------------------------------------------- -->
@@ -173,15 +143,25 @@
             <!-- ---------------------------------------- -->
 
                 <div class="accordion-item-header">
-                    Topic 2 - Frage 1
+                    <h3>Was ist der Unterschied zwischen Standard-User und Super-User?</h3>
                 </div>
 
             <!-- ---------------------------------------- -->
                 <div class="accordion-item-body">
 
                         <div class="accordion-item-body-content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Rhoncus mattis rhoncus urna neque.
+                            <h4> Als Standard-User hat alle Möglichkeiten und Funktionen, die unsere Webseite zu bieten hat.
+                                <br>
+                                <br>
+                                <p>Beispielsweise:</p>
+                                <li>das persönliche Profil bearbeiten</li>
+                                <li>Account Daten ändern (z.B. Password oder E-Mail)</li>
+                                <li>Post, die veröffentlicht wurden zu besuchen, lesen, liken, teilen und darunter zu kommentieren</li>
+                                <li>...</li>
+                                <br>
+                                => Der große Unterschied ist, dass nur der Super-User ein Post verfassen darf und der Standard-User nicht.
+                            </h4>
+
                         </div>
 
             <!-- ---------------------------------------- -->
@@ -195,15 +175,19 @@
             <!-- ---------------------------------------- -->
 
                 <div class="accordion-item-header">
-                    Topic 2 - Frage 2
+                    <h3>Wann tun, wenn ein Post die Richtlinie verletzt?</h3>
                 </div>
 
             <!-- ---------------------------------------- -->
                 <div class="accordion-item-body">
 
                     <div class="accordion-item-body-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Rhoncus mattis rhoncus urna neque.
+                        <h4>
+                            In diesem Fall sollte man das Linkvel-Team schnellstmöglich informieren. Jedoch kommt es nicht
+                            so häufig vor, dass ein Post die Richtlinien verstößt und falls es zutrifft, dann
+                            wird es meisten von den Mitarbeiten von der Webseite runtergenommen und der User bekommt daraufhin
+                            eine angemessene Bestrafung.
+                        </h4>
                     </div>
 
             <!-- ---------------------------------------- -->
@@ -217,139 +201,27 @@
             <!-- ---------------------------------------- -->
 
                 <div class="accordion-item-header">
-                    Topic 2 - Frage 3
+                    <h3>Wie sucht man nach einem bestimmten User oder Post?</h3>
                 </div>
 
             <!-- ---------------------------------------- -->
                 <div class="accordion-item-body">
 
                     <div class="accordion-item-body-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Rhoncus mattis rhoncus urna neque.
+                        <h4>Ganz oben in der Navigationsbar befindet sich eine Suchleiste. Dort kann man dann nach den bestimmen User oder Post suchen.
+                            Dazu wird einem die Suchfilter behilflich sein.</h4>
                     </div>
 
             <!-- ---------------------------------------- -->
                 </div>
             </div>
 
-<!-- 2.------------------------------------------------------------------------------------------------------------- -->
-
-             <div class="accordion-item">
-
-                 <!-- ---------------------------------------- -->
-
-                 <div class="accordion-item-header">
-                     Topic 2 - Frage 4
-                 </div>
-
-                 <!-- ---------------------------------------- -->
-                 <div class="accordion-item-body">
-
-                     <div class="accordion-item-body-content">
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                         incididunt ut labore et dolore magna aliqua. Rhoncus mattis rhoncus urna neque.
-                     </div>
-
-                     <!-- ---------------------------------------- -->
-                 </div>
-             </div>
 
 
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
-             <div class = "headline">
-                 TOPIC 3
-             </div>
-
-<!-- 3.------------------------------------------------------------------------------------------------------------- -->
-
-             <div class="accordion-item">
-
-                 <!-- ---------------------------------------- -->
-
-                 <div class="accordion-item-header">
-                     Topic 3 - Frage 1
-                 </div>
-
-                 <!-- ---------------------------------------- -->
-                 <div class="accordion-item-body">
-
-                     <div class="accordion-item-body-content">
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                         incididunt ut labore et dolore magna aliqua. Rhoncus mattis rhoncus urna neque.
-                     </div>
-
-                     <!-- ---------------------------------------- -->
-                 </div>
-             </div>
-
-<!-- 3.------------------------------------------------------------------------------------------------------------- -->
-
-             <div class="accordion-item">
-
-                 <!-- ---------------------------------------- -->
-
-                 <div class="accordion-item-header">
-                     Topic 3 - Frage 2
-                 </div>
-
-                 <!-- ---------------------------------------- -->
-                 <div class="accordion-item-body">
-
-                     <div class="accordion-item-body-content">
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                         incididunt ut labore et dolore magna aliqua. Rhoncus mattis rhoncus urna neque.
-                     </div>
-
-                     <!-- ---------------------------------------- -->
-                 </div>
-             </div>
-
-<!-- 3.------------------------------------------------------------------------------------------------------------- -->
-
-             <div class="accordion-item">
-
-                 <!-- ---------------------------------------- -->
-
-                 <div class="accordion-item-header">
-                     Topic 3 - Frage 3
-                 </div>
-
-                 <!-- ---------------------------------------- -->
-                 <div class="accordion-item-body">
-
-                     <div class="accordion-item-body-content">
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                         incididunt ut labore et dolore magna aliqua. Rhoncus mattis rhoncus urna neque.
-                     </div>
-
-                     <!-- ---------------------------------------- -->
-                 </div>
-             </div>
-
-<!-- 3.------------------------------------------------------------------------------------------------------------- -->
-
-             <div class="accordion-item">
-
-                 <!-- ---------------------------------------- -->
-
-                 <div class="accordion-item-header">
-                     Topic 3 - Frage 4
-                 </div>
-
-                 <!-- ---------------------------------------- -->
-                 <div class="accordion-item-body">
-
-                     <div class="accordion-item-body-content">
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                         incididunt ut labore et dolore magna aliqua. Rhoncus mattis rhoncus urna neque.
-                     </div>
-
-                     <!-- ---------------------------------------- -->
-                 </div>
-             </div>
 
          </div>
 

@@ -14,177 +14,179 @@ body{
 
 
 
-/* ------------------------------------------------------------------------------------------------------------------ */
+/*----------------------------------------------- Navigation ---------------------------------------------------------*/
 
-nav{
-    min-height: 5.625rem;
-    width: 100%;
-
-    /*Background color: opacity*/
-    background-color: rgba(255, 255, 255, 0.75);
-    position: fixed;
-
-    box-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.144);
-}
-
-nav .content{
-    float: right;
+.navigation_bar
+{
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */    height: 85px;
     display: flex;
-    padding-right: 5rem;
-}
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #309bfa;
+    letter-spacing: 0.2rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.144);
+    z-index: 0;
 
-nav .content li{
-    display: inline-block;
-    margin-top: 1.875rem;
-    margin-right: 2.5rem;
-    height: 100%;
 }
-
-nav li a{
-    font-family: "Source Code Pro", sans-serif;
-    font-size: 1.3rem;
-    color: #333;
+.nav_logo{
+    margin: 25px;
+    color: #6b6b6b;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Century Gothic", serif;
+    font-style: revert;
     text-decoration: none;
 }
 
-nav .Logo{
-    font-family: "Source Code Pro",sans-serif;
-    font-size: 3rem;
-    color: #333;
-    text-decoration: none;
-    position: absolute;
-    margin-top: 1rem;
-    margin-left: 3rem;
+nav ul{
+    display: flex;
+    float: right;
 }
 
-/*Search bar*/
-
-.search-box{
+nav ul li{
+    height: 80%;
+    float: left;
     position: relative;
-    height: 1.3rem;
-    width: 20rem;
-    margin-top: 1rem;
-    margin-right: 2.5rem;
+    list-style-type: none;
 }
 
-.search-box input{
-    height: 3rem;
-    width: 15rem;
-    border: none;
-    outline: none;
-    border-radius: 3rem;
-    background: lightblue;
-    font-size: 1.3rem;
-    font-family: "Source Code Pro", sans-serif;
-    color: #333333;
-    padding: 0 3.7rem 0 1.2rem;
+nav ul li a:hover{
+    border-bottom: 4px solid #6b6b6b;
 }
 
-.search-box .search-button {
-    transform: translateY(-50%);
-    position: absolute;
-    top: 110%;
-    left: 87%;
-    height: 100%;
-    color: #333333;
-    background: cadetblue;
-    height: 150%;
-    width: 10%;
-    border-radius: 3rem;
-    line-height: 3rem;
-    text-align: center;
-    cursor: pointer;
+nav ul li a{
+    color: #6b6b6b;
+    padding: 30px;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: inherit;
+    display: block;
 }
 
-
-
-
-/*Dropdown menu for account*/
-
-
-li.dropdown{
-    display: inline-block;
-}
-
-.dropdown-content{
+nav ul li ul{
     display: none;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.5);
-    width: 10rem;
-    height: 10rem;
-    box-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.144);
-    z-idex: 1;
-    border-radius: 1rem;
+    padding: 8px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 0.14rem 0.25rem rgba(0, 0, 0, 0.144);
+    z-index: 1;
+    width: 100%;
 }
 
-.dropdown-content a{
-    color: #333333;
-    font-size: large;
-    padding: 0.75rem 1rem;
-    text-decoration: none;
+nav ul li:hover ul{ /*Drop-Down*/
     display: block;
+    top: 91px;
+    width: 218px;
+}
+
+nav ul li ul li a{ /*Drop-Down Elemente von Mein Konto*/
+    color: #6b6b6b;
+    padding: 16px 20px;
     text-align: center;
 }
 
-.dropdown-content a:hover{
-    background-color: white;
-    border-radius: 1rem;
+.dropdown{
+    z-index: 1;
+    width: 100%;
 }
 
-.dropdown:hover .dropdown-content{
-    display: block;
-}
-
-
-
-.burger-menu{
+.toggle-button{
     position: absolute;
-    top: 1.9rem;
-    right: 1.5rem;
+    top: 25px;
+    right: 25px;
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 1.8rem;
-    height: 1.4rem;
-
+    width: 30px;
+    height: 23px;
 }
-.burger-menu .hamburger-icon {
-    height: 0.25rem;
+
+.toggle-button .bar{
+    height: 4px;
     width: 100%;
-    background-color: #333333;
-    border-radius: 6.25rem;
+    background-color: #6b6b6b;
+    border-radius: 100px;
 }
 
-
-/* Improve Code !!! Problem: no reaction when clicking the burger menu */
-@media(max-width: 750px)  { /*Condition*/
-    nav .content{
+@media(max-width:750px){
+    .list-container{
         display: none;
         width: 100%;
-        padding-top: 3.75rem;
     }
-
-    .burger-menu{
+    .toggle-button{
         display: flex;
     }
     nav{
         flex-direction: column;
         align-items: flex-start;
     }
-    nav .content{
-        flex-direction: column;
-        width:100%
+    .nav_logo{
+        display: block;
     }
-    nav li{
+    .list-container ul{
+        flex-direction: column;
+        width: 100%;
+    }
+    .list-container li{
         text-align: center;
     }
-    .content.active{
+    .list-container.active{
         display: flex;
     }
+    .dropdown{
+        width: 100%;
+    }
+}
+/*
+.search-box{
+    position: absolute;
+    top: 42px;
+    left: 1170px;
+    width: 500px;
+    transform: translate(-50%, -50%);
 }
 
+input{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+}
 
-/* ------------------------------------------------------------------------------------------------------------------ */
+input[type="text"]{
+    color: white;
+    background: #309bfa;
+    width: 340px;
+    height: 35px;
+    border: none;
+    outline: none;
+    padding: 0 25px;
+    border-radius: 20px 0 0 20px;
+}
+
+input[type="submit"]{
+    position: relative;
+    border-radius: 0 20px 20px 0;
+    height: 35px;
+    width: 80px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #309bfa;
+}
+
+input[type="submit"]:hover{
+    background: #309bfa;
+}
+*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
 
 
 
@@ -253,6 +255,11 @@ h1{
     cursor       : pointer;     /* kennzeichnet den Text/Box als klickbar */
 }
 
+.accordion-item-header h3{
+    font-weight: 100;
+}
+
+
 
 /* ::before und ::after -> setzt ein Text vor oder nach dem Element ein */
 .accordion-item-header::after{
@@ -288,6 +295,11 @@ h1{
     /* lineare gerade Verlauf von links transperent -> mitte ist die Hintergrundfarbe -> nach rechts wieder transperent und ohne die 1 würde es nicht funktionieren. Also ist es wie ein ON/OFF Button */
     border-image  : linear-gradient(to right, transparent, black, transparent) 1;
 }
+
+.accordion-item-body-content h4{
+    font-weight: 100;
+}
+
 
 /*
  Wenn man auf der Webseite auf den "accordionItemhHeader" also die Fläche drückt, dann wird der Content-Teil angezeigt und wenn man nochmal darauf klickt dann wird das das wieder versteckt
@@ -376,7 +388,7 @@ footer{
 :focus  => wenn man das Element anklickt oder mit der Tabulatortaste bedient
 :active => wenn man das Element anklickt
 */
-.contact-form-text:focus{
+.contact-form-text:hoven{
     box-shadow: 0 0 10px 4px gray;
 }
 
@@ -400,7 +412,7 @@ textarea.contact-form-text{
 
 /* bei einer Interaktion des Benutzers */
 /*
-:hoven  => wenn der Mauszeiger das Element berührt
+:hover  => wenn der Mauszeiger das Element berührt
 :focus  => wenn man das Element anklickt oder mit der Tabulatortaste bedient
 :active => wenn man das Element anklickt
 */
