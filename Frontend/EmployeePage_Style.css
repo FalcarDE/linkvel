@@ -12,7 +12,7 @@ body{
     height                  : 80%;
     width                   : 80%;
     grid-template-columns   : 100%;
-    grid-template-rows      : 450px 120px 700px;
+    grid-template-rows      : 450px 130px 740px;
     grid-template-areas     :    "top-container"
                                  "middle-container"
                                  "bottom-container";
@@ -91,7 +91,7 @@ body{
 .right-side{
     width               : 25%;
     height              : 100%;
-    margin-left         : 20px;
+    margin-left         : 70px;
 }
 
 
@@ -146,6 +146,9 @@ body{
 }
 
 
+
+
+
 .button-box{
     width               : 100%;
 }
@@ -153,23 +156,39 @@ body{
 
 .submit-button{
     width               : 80%;
-    padding             : 10px 30px;
+    padding             : 13px 54px;
     cursor              : pointer;
     display             : block;
     margin-top          : 30px;
     margin-left         : auto;
     margin-right        : auto;
-    background          : lightgray;
     border              : 0;
     outline             : none;
     border-radius       : 5px;
     border              : 1px solid darkgrey;
     text-align          : center;
+
+    box-shadow          : inset 0px 0px 0px 4px #ffffff;
+    background          : linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+    background-color    : #ededed;
+    border-radius       : 38px;
+    border              : 1px solid #dcdcdc;
+    color               : #777777;
+    font-size           : 15px;
+    font-weight         : bold;
+    text-shadow         : 0px 0px 0px #ffffff;
+    text-align          : center;
 }
 
 
-.submit-button:hover{
-    background          :  #2ecc71;
+.submit-button:hover {
+    background          :linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+    background-color    :#dfdfdf;
+}
+
+.submit-button:active {
+    position            :relative;
+    top                 :1px;
 }
 
 
@@ -215,7 +234,7 @@ body{
 
 .middle-container-button-box{
     width               : 200px;
-    height              : 50px;
+    height              : 60px;
     margin-top          : 50px;
     padding             : 10px;
     display             : flex;
@@ -223,15 +242,35 @@ body{
 }
 
 
-.user-search-button{
-    width               : 100%;
-    height              : 100%;
-}
 
+
+.user-search-button{
+    box-shadow          : inset 0px 0px 0px 4px #ffffff;
+    background          : linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+    background-color    : #ededed;
+    border-radius       : 38px;
+    border              : 1px solid #dcdcdc;
+    display             : inline-block;
+    cursor              : pointer;
+    color               : #777777;
+    font-family         : Arial;
+    font-size           : 15px;
+    font-weight         : bold;
+    padding             : 13px 54px;
+    text-decoration     : none;
+    text-shadow         : 0px 0px 0px #ffffff;
+}
 
 .user-search-button:hover{
-    background          : #2ecc71;
+    background          :linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+    background-color    :#dfdfdf;
 }
+
+.user-search-button:active{
+    position            :relative;
+    top                 :1px;
+}
+
 
 
 
@@ -253,9 +292,9 @@ body{
 
 .bottom-container-box{
     width               : 1000px;
-    height              : 600px;
+    height              : auto;
 
-    margin              :auto;
+    margin              : auto;
     margin-top          : 65px;
     border-radius       : 5px;
     border              : 1px solid lightgrey;
@@ -337,7 +376,7 @@ margin-bottom           : 30px;
 
 
 .profil-tag-box h1{
-    font-size           : 31px;
+    font-size           : 38px;
     font-weight         : 100;
     text-align          : center;
 }
@@ -371,10 +410,20 @@ margin-bottom           : 30px;
 }
 
 
+.bottom-container-label{
+    font-size           : 15px;
+    font-family         :Georgia;
+    font-weight: 100;
+    margin              : 0;
+    padding             : 0;
+
+}
+
+
 .container-input-field{
     width               : 100%;
-    padding             : 10px 0;
-    margin              : 2px 0 15px;
+    padding             : 5px 0 5px 10px;
+    margin              : 5px 0 15px;
     border-radius       : 3px;
     border              : 1px solid darkgrey;
     background          : transparent;
