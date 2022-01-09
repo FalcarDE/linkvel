@@ -1,0 +1,431 @@
+/* Für alle Elemente */
+*{
+    margin      : 0;
+    padding     : 0;
+    box-sizing  : border-box;
+}
+
+
+body{
+    font-family       : "Roboto", sans-serif;   /* Schriftart */
+    background-color  : white;
+    color             : white;                  /* Schriftfarbe */
+}
+
+
+
+/*----------------------------------------------- Navigation ---------------------------------------------------------*/
+
+.navigation_bar
+{
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #309bfa;
+    letter-spacing: 0.2rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.144);
+    z-index: 0;
+
+}
+.nav_logo{
+    margin: 25px;
+    color: #6b6b6b;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Century Gothic", serif;
+    font-style: revert;
+    text-decoration: none;
+}
+
+nav ul{
+    display: flex;
+    float: right;
+}
+
+nav ul li{
+    height: 80%;
+    float: left;
+    position: relative;
+    list-style-type: none;
+}
+
+nav ul li a:hover{
+    border-bottom: 4px solid #6b6b6b;
+}
+
+nav ul li a{
+    color: #6b6b6b;
+    padding: 30px;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: inherit;
+    display: block;
+}
+
+nav ul li ul{
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 8px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 0.14rem 0.25rem rgba(0, 0, 0, 0.144);
+    z-index: 1;
+    width: 100%;
+}
+
+nav ul li:hover ul{ /*Drop-Down*/
+    display: block;
+    top: 91px;
+    width: 218px;
+}
+
+nav ul li ul li a{ /*Drop-Down Elemente von Mein Konto*/
+    color: #6b6b6b;
+    padding: 16px 20px;
+    text-align: center;
+}
+
+.dropdown{
+    z-index: 1;
+    width: 100%;
+}
+
+.toggle-button{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 23px;
+}
+
+.toggle-button .bar{
+    height: 4px;
+    width: 100%;
+    background-color: #6b6b6b;
+    border-radius: 100px;
+}
+
+@media(max-width:750px){
+    .list-container{
+        display: none;
+        width: 100%;
+    }
+    .toggle-button{
+        display: flex;
+    }
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav_logo{
+        display: block;
+    }
+    .list-container ul{
+        flex-direction: column;
+        width: 100%;
+    }
+    .list-container li{
+        text-align: center;
+    }
+    .list-container.active{
+        display: flex;
+    }
+    .dropdown{
+        width: 100%;
+    }
+}
+/*
+.search-box{
+    position: absolute;
+    top: 42px;
+    left: 1170px;
+    width: 500px;
+    transform: translate(-50%, -50%);
+}
+
+input{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+input[type="text"]{
+    color: white;
+    background: #309bfa;
+    width: 340px;
+    height: 35px;
+    border: none;
+    outline: none;
+    padding: 0 25px;
+    border-radius: 20px 0 0 20px;
+}
+
+input[type="submit"]{
+    position: relative;
+    border-radius: 0 20px 20px 0;
+    height: 35px;
+    width: 80px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #309bfa;
+}
+
+input[type="submit"]:hover{
+    background: #309bfa;
+}
+*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+h1{
+    text-align  : center;       /* horizontale Ausrichtung eines Blockelements */
+    margin      : 20px 0;       /* 0 links und rechts */
+    font-size   : 50px;         /* Schriftgröße */
+}
+
+
+.Image-Box{
+    width    : 900px;
+    height   : 500px;
+    display  : flex;
+    margin: auto;
+
+    /*background-color: black;*/
+}
+
+
+#FAQ-Bild{
+    width   : 90%;
+    height  : 90%;
+    margin-top:100px;
+    margin-right: auto;
+    margin-bottom:auto;
+    margin-left:auto;
+}
+
+
+.headline{
+    color        : #3498db;
+    font-weight  : 800;
+    font-size    : 22px ;
+    margin       : 70px 0 12px 0;
+
+}
+
+
+.accordion{
+    width      : 90%;           /* 90% der Weite vom Body(Bildschirm) */
+    max-width  : 1000px;
+    margin     : 40px auto;
+}
+
+
+.accordion-item{
+    background-color  : white;
+    border            : black 1px solid;                    /* Rahmen */
+    color             : black;
+    margin            : 2.5px 0;
+    border-radius     : 3px;                               /* runde Ecken*/
+    border-shadow     : 0 2px 5px 0 rgba(0,0,0,0,0.25)      /* 0->waagerecht; 2px-> senkrecht; 5px->blair; 0->verbreitet || 0.25 in rgba ist opacity gibt die Transparenz eines Elements an */
+}
+
+
+.accordion-item-header{
+    padding      : 10px 60px 10px 20px;
+    min-height   : 70px;
+    line-height  : 12.5px;
+
+    font-size    : 18px;
+    display      : flex;
+    align-items  : center;      /* verteilt verfügbare Platz !senkrecht" zwischen und um Elemente -> Flexelemente */
+    position     : relative;    /* Inhalte folgen linear nacheinander */
+    cursor       : pointer;     /* kennzeichnet den Text/Box als klickbar */
+}
+
+.accordion-item-header h3{
+    font-weight: 100;
+}
+
+
+
+/* ::before und ::after -> setzt ein Text vor oder nach dem Element ein */
+.accordion-item-header::after{
+    content     : "\2708";       /* wird mit ::before und ::after genutzt, um Inhalte in einen Element zu generieren. */
+    font-size   : 20px;          /* Größe vom Symbol (Flugzeig-Symbol) */
+    position    : absolute;      /* man kann Elemente losgelöst vom Textfluss positionieren, an eine Stelle, die per left, right, top und bottom festgelegt wird. Man kann sagen es liebt dann in der gleichen Box, aber intern dadrüber */
+    right       : 20px;          /* Das Pluszeichen nach rechts mit einem Abstand von 20px */
+
+    transform   : rotate(180deg);               /* Dreh das Flugzeugsymbol um 180° -> nach rechtsschauend */
+    transition  : transform 0.2s ease-in-out;   /* Animation */
+}
+
+
+/* wenn die active classe gelöscht/geschlossen wird dann wechselt das Minuszeichen wieder zurück zum Pluszeichen */
+.accordion-item-header.active::after{
+    transform   : rotate(90deg); /* Dreh das Flugzeugsymbol um 90° -> als runter */
+}
+
+
+.accordion-item-body{
+    /* Das Element "accordion-item-body" wird nicht gezeigt */
+    max-height  : 0;
+    overflow    : hidden;                       /* versteckt den Inhalt */
+    transition  : max-height 0.2s ease-out;     /* Geschwindigkeit von Anzeigen und Verstecken von dem Body*/
+}
+
+
+.accordion-item-body-content{
+    padding       : 10px;
+    line-height   : 20px;            /* Zeilenabstand */
+    border-top    : 1.5px solid;     /* Oberer Rand von der Box */
+
+    /* lineare gerade Verlauf von links transperent -> mitte ist die Hintergrundfarbe -> nach rechts wieder transperent und ohne die 1 würde es nicht funktionieren. Also ist es wie ein ON/OFF Button */
+    border-image  : linear-gradient(to right, transparent, black, transparent) 1;
+}
+
+.accordion-item-body-content h4{
+    font-weight: 100;
+}
+
+
+/*
+ Wenn man auf der Webseite auf den "accordionItemhHeader" also die Fläche drückt, dann wird der Content-Teil angezeigt und wenn man nochmal darauf klickt dann wird das das wieder versteckt
+.accordion-item-header.active + .accordion-item-body{
+    max-height: 1000px;
+}
+*/
+
+
+/* #34495e */
+/* Anfassung/Darstellung für verschiedene Ausgabemedien*/
+@media(max-width: 767px){
+    html{
+        font-size:14px;
+    }
+}
+
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+footer{
+    margin       : 0;
+    padding      : 0;
+    font-family  : "montserrat", sans-serif ;   /* Schriftart */
+}
+
+
+.contact-section{
+    background-color  : #2c3e50;
+    background-size   : cover;
+    padding           : 40px 0;     /* top - right - bottom - left */
+}
+
+
+.contact-section h1{
+    text-align     : center;        /* Zentriert, dass was in h1 ist */
+    color          : white;
+    margin-bottom  : 30px ;
+}
+
+
+.contact-section p{
+    font-size   : 15px;
+    text-align  : center;           /* Zentriert, dass was in h1 ist */
+    color       : white;
+
+}
+
+
+.border{
+    width             :  100px;
+    height            : 10px;
+    background-color  : #34495e;
+    margin            : 40px auto;
+}
+
+
+.contact-form{
+    max-width  : 600px;
+    margin     : auto;
+    padding    : 0 10px;
+    overflow   : hidden;
+}
+
+
+.contact-form-text{
+    font-family  : "Roboto", sans-serif;
+    display      : block;
+    width        : 100%;
+    box-sizing   : border-box;
+    margin       : 16px 0;
+    border       : 0;
+    background   : black;
+    padding      : 20px 40px;
+    outline      : none;
+    color        : white;
+    transition   : 0.5s;
+}
+
+
+/* bei einer Interaktion des Benutzers */
+/*
+:hoven  => wenn der Mauszeiger das Element berührt
+:focus  => wenn man das Element anklickt oder mit der Tabulatortaste bedient
+:active => wenn man das Element anklickt
+*/
+.contact-form-text:hoven{
+    box-shadow: 0 0 10px 4px gray;
+}
+
+
+textarea.contact-form-text{
+    resize: none; /* resize legt fest, ob ein Element größenveränderbar ist, und wenn ja, in welche Richtungen */
+    height: 150px;
+}
+
+
+.contact-form-button{
+    float: right;
+    border: 0;
+    background:#34495e;
+    color: white;
+    padding: 12px 50px;
+    border-radius: 20px;
+    cursor: pointer;  /* pointer kennzeichnet einen Text oder eine Grafik als klickbar */
+    transition: 0.5s;
+}
+
+/* bei einer Interaktion des Benutzers */
+/*
+:hover  => wenn der Mauszeiger das Element berührt
+:focus  => wenn man das Element anklickt oder mit der Tabulatortaste bedient
+:active => wenn man das Element anklickt
+*/
+.contact-form-button:hover{
+    background: #2ecc71;
+}
+
+
+
+
+
+
+
+
+
+
