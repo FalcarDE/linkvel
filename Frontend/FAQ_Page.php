@@ -5,53 +5,21 @@
     <meta charset="UTF-8">
     <title>FAQ-Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Anpassung für Ansicht auf andere Geräte -->
-    <link rel="stylesheet" href="style.css">
-        <script src = "main.js" defer></script>
+    <link rel="stylesheet" href="../CSS/FAQ_Page_Style.css">
+        <script src = "FAQ_Page.js" defer></script>
     </head>
 
         <body>
 
 
-        <nav class="navigation_bar">
-            <a href="#" class="nav_logo">LiVe</a>
-            <a href="#" class="toggle-button">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
-            <div class="list-container">
-                <ul>
-                    <li><a href="../Frontend/Login_Registration_Formular.html">REGISTRIERUNG</a></li>
-                    <li><a href="#">SUCHEN</a></li>
-                    <li><a href="../Backend/LandingPage.php">STARTSEITE</a></li>
-                    <li><a href="#">MEIN KONTO</a>
-                        <div class="dropdown">
-                            <ul>
-                                <li><a href="#">PROFIL ANSEHEN</a></li>
-                                <li><a href="#">PROFIL BEARBEITEN</a></li>
-                            </ul>
-                        </div>
-                    <li><a href="#">LOGIN</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
 
-
-
-
-
-
-
-
+        <?php include "../Frontend/NavBar.html"?>
 
 
         <!-- <h1>FAQ</h1> -->
         <div class = Image-Box alt= "faq">
-            <img id="FAQ-Bild" src="pictures/FAQ_Image.jpg"  alt = "FAQ-Bild" />
+            <img id="FAQ-Bild" src="../image/FAQ_Image.jpg" alt = "FAQ-Bild" />
         </div>
-
-
 
 
 
@@ -235,7 +203,7 @@
                 <p> Sie haben Fragen an das Linkvel-Team? Bitte füllen Sie das Formular aus und wir melden uns schnellstmöglich bei Ihnen.</p>
                 <div class="border"></div>
 
-                <form class = "contact-form" action="index.html" method= "post">
+                <form class = "contact-form" action="FAQ_Page.php" method= "post">
                     <input type="text"          class = "contact-form-text"           placeholder = "Benutzername">
                     <input type="email"         class = "contact-form-text"           placeholder = "Email">
                     <input type="tel"           class = "contact-form-text"           placeholder = "Handynummer">
