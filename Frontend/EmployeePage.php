@@ -3,44 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Mitarbeiter-Bereich</title>
-    <link rel="stylesheet" href="EmployeePage_Style.css">
+    <link rel="stylesheet" href="../CSS/EmployeePage_Style.css">
+    <script src="../Frontend/EmployeePage.js"></script>
 </head>
 <body>
 
 
-
-<nav class="navigation_bar">
-    <a href="#" class="nav_logo">LiVe</a>
-    <a href="#" class="toggle-button">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </a>
-    <div class="list-container">
-        <ul>
-            <li><a href="../Frontend/Login_Registration_Formular.html">REGISTRIERUNG</a></li>
-            <li><a href="#">SUCHEN</a></li>
-            <li><a href="../Backend/LandingPage.php">STARTSEITE</a></li>
-            <li><a href="#">MEIN KONTO</a>
-                <div class="dropdown">
-                    <ul>
-                        <li><a href="#">PROFIL ANSEHEN</a></li>
-                        <li><a href="#">PROFIL BEARBEITEN</a></li>
-                    </ul>
-                </div>
-            <li><a href="#">LOGIN</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-
-
-
-
-
-<div class="container">
-
+<?php include '../Frontend/NavBar.html'?>
 
     <!-------------------------- TOP Container -------------------------------------------------------------------------------------------------------------------------------- -->
 
@@ -55,10 +24,10 @@
 
                     <div class="left-side-input">
                         <form id="register" class="input-group">
-                            <label class="label">Vorname        </label>           <input autocomplete="on"        class="input-field"        name="FirstName"       type="text">
-                            <label class="label">Nachname       </label>           <input autocomplete="on"        class="input-field"        name="LastName"        type="text">
-                            <label class="label">Benutzername   </label>           <input autocomplete="on"        class="input-field"        name="UserName"        type="text">
-                            <label class="label">Email          </label>           <input autocomplete="on"        class="input-field"        name="Email"           type="email">
+                            <label class="label">Vorname        </label>           <input autocomplete="on"        class="input-field"        name="FirstName"   id="FirstName"     type="text">
+                            <label class="label">Nachname       </label>           <input autocomplete="on"        class="input-field"        name="LastName"    id="LastName"      type="text">
+                            <label class="label">Benutzername   </label>           <input autocomplete="on"        class="input-field"        name="UserName"    id="UserName"      type="text">
+                            <label class="label">Email          </label>           <input autocomplete="on"        class="input-field"        name="Email"       id="Email"         type="email">
                         </form>
                     </div>
                 </div>
@@ -66,12 +35,12 @@
 
                 <div class="right-side">
                     <div class="right-side-box">
-                        <div class="output-field">
-                            <h4> User ID  </h4>
+                        <div class="output-field" >
+                            <h4 id="OutPutAccountID"> AccountID </h4>
                         </div>
 
                         <div class="button-box">
-                            <button type="submit" class="submit-button">UserID suchen</button>
+                            <button type="submit" class="submit-button" onclick="getAccountID();"> AccountID  suchen</button>
                         </div>
                     </div>
 
@@ -89,14 +58,17 @@
 
 
         <div class="id-input">
-            <label class="label">Hier die User ID : </label>    <input autocomplete="on"      class="id-input-field"      name="UserID"     required    type="text">
+            <form action="../Backend/UserDataLoading.php" method="post">
+            <label class="label">Hier die AccountID : </label>
+                <input      class="id-input-field"      name="InputAccountID"     required    type="text" > </input>e
+            </form>
         </div>
+
 
 
         <div class="middle-container-button-box">
             <button type="submit" class="user-search-button">User-Daten suchen</button>
         </div>
-
 
         <div class="middle-container-button-box">
             <button type="submit" class="user-search-button">User-Daten speichern</button>
@@ -150,8 +122,21 @@
 
                     <!-- User-Rolle: 2 inputs Standard-User und Super-User-->
                     <div class="bottom-container-right-box-left">
-                        <form class="container-input">
-                            <label class="bottom-container-label">Geschlecht: Männlich               </label>            <input class="container-input-field">    </input>
+                        <form class="container-input" method="post" >
+                            <label class="bottom-container-label">
+                                Geschlecht:
+                                <?php
+                                    include_once ("../Backend/UserDataLoading.php");
+                                    $UserData = new CUserDataLoading();
+                                    $AccountID = $UserData::getAccountIDEmployeePage();
+                                    $UserData::getUserName($AccountID);
+                                ?>
+                            </label>
+
+                            <input class="container-input-field" name="Gender">    </input>
+
+
+
                             <label class="bottom-container-label">Vorname: Kylian                    </label>            <input class="container-input-field">     </input>
                             <label class="bottom-container-label">Mittelname: -                      </label>            <input class="container-input-field">    </input>
                             <label class="bottom-container-label">Nachname: Mbappe                   </label>            <input class="container-input-field">    </input>
@@ -180,7 +165,6 @@
     </div>
 </div>
 
-
-
 </body>
+
 </html>

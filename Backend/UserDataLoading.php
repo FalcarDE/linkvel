@@ -10,7 +10,7 @@ $ServerSession = new CServerConnection("localhost","root", "");
 $ServerSession::connectServer();
 //========= Server Connection =========
 
-
+echo $_POST['InputAccountID'];
 
 class CUserDataLoading
 {
@@ -111,6 +111,11 @@ class CUserDataLoading
                                                                     where ad.AccountKey= '$AccountKey'");
         $Sql_Statement->execute();
         return $Sql_Statement->fetch(PDO::FETCH_COLUMN);
+    }
+
+    static function getAccountIDEmployeePage()
+    {
+        return $_POST['InputAccountID'];
     }
 
 }
