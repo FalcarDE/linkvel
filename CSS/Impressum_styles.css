@@ -1,0 +1,94 @@
+/* Created by @Antonia Geschke*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+
+
+}
+
+.main-container{
+    background-color: lightblue;
+    background-image: linear-gradient(to top, cadetblue, lightblue, white);
+}
+
+.container{
+    width: 100%;
+}
+
+
+.Impressum{
+    height: 40%;
+    width: 40rem;
+    padding-top: 10rem;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+h1{
+    font-family: "Source Code Pro",sans-serif;
+    font-size: 3rem;
+    color: #333333;
+
+}
+.Impressum p{
+    font-family: "Source Code Pro",sans-serif;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+    color: #333333;
+    display: block;
+
+}
+
+
+.image{
+    width: 100%;
+}
+
+.slideImage{
+    margin-top: 2rem;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+.Policy{
+    margin-top: 5rem;
+    height: 70%;
+    width: 40rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 6.25rem;
+
+}
+
+.Policy p{
+    font-family: "Source Code Pro",sans-serif;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+    color: #333333;
+    display: block;
+}
+
+
+@media screen and (max-width: 776px) {
+
+    .Impressum{
+        width: 100%;
+        margin-left: 1rem;
+    }
+
+    .Policy{
+        width: 100%;
+        margin-left: 1rem;
+    }
+}
+

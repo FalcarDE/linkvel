@@ -3,6 +3,7 @@
     margin      : 0;
     padding     : 0;
     box-sizing  : border-box;
+
 }
 
 
@@ -13,12 +14,12 @@ body{
 
 
 .container{
+
     width           : 75rem;
     height          : 37.5rem;
-    position        : relative;
     border-radius   : 0.438rem;
     background      : white;
-    padding         : 0.313rem;
+
 }
 
 /* --------------------------------------------- LEFT-PART ---------------------------------------------------------- */

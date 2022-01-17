@@ -58,17 +58,15 @@
 
 
         <div class="id-input">
-            <form action="../Backend/UserDataLoading.php" method="post">
-            <label class="label">Hier die AccountID : </label>
-                <input      class="id-input-field"      name="InputAccountID"     required    type="text" > </input>e
-            </form>
+
+            <label      class="label"                          >Hier die AccountID :                     </label>
+            <input      class="input-field" id="IDInputfield"   name="InputAccountID"     required    type="text" >
+            <button     type="submit"                           class="user-search-button"  onclick="getUserDataSet()">User-Daten suchen           </button>
+
         </div>
 
 
 
-        <div class="middle-container-button-box">
-            <button type="submit" class="user-search-button">User-Daten suchen</button>
-        </div>
 
         <div class="middle-container-button-box">
             <button type="submit" class="user-search-button">User-Daten speichern</button>
@@ -83,30 +81,36 @@
     <!-------------------------- Middle Container -------------------------------------------------------------------------------------------------------------------------------- -->
 
 
-    <div class="bottom-container">
-        <div class="bottom-container-box">
-
-            <div class="bottom-container-left">
-                <div class="profile-box">
-                    <img class="profile-img" src="../image/mbappe.jpg" alt="Profil-Bild">
-                </div>
-
-
-                <div class="underline">
-                    <h3 id="profile-name">Vorname Nachname</h3>
-                    <div class="profil-roll-box">
-                        <h5 id="permission">User-Rolle</h5>
-                    </div>
-                    <div class="last-login-box">
-                        <h5 id="last-login-time">zuletzt online: gestern</h5>
-                    </div>
-                </div>
-            </div>
+    <div class="bottom-container" >
+        <div class="bottom-container-box" id="bottom-container-box">
 
 
 
+            <!--
+            <div class="bottom-container-left" >
 
-    <!-------------------------- Bottom Container -------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+                 <div class="profile-box">
+                     <img class="profile-img" src="../image/mbappe.jpg" alt="Profil-Bild">
+                 </div>
+
+
+                                 <div class="underline">
+                                     <h3 id="profile-name">Vorname Nachname</h3>
+                                     <div class="profil-roll-box">
+                                         <h5 id="permission">User-Rolle</h5>
+                                     </div>
+                                     <div class="last-login-box">
+                                         <h5 id="last-login-time">zuletzt online: gestern</h5>
+                                     </div>
+                                 </div>
+                             </div>
+
+                 -->
+
+
+                    <!-------------------------- Bottom Container --------------------------------------------------------------------------------------------------------------------------------
 
 
             <div class="bottom-container-right">
@@ -120,23 +124,30 @@
                 <div class="bottom-container-right-box">
 
 
-                    <!-- User-Rolle: 2 inputs Standard-User und Super-User-->
+
                     <div class="bottom-container-right-box-left">
                         <form class="container-input" method="post" >
                             <label class="bottom-container-label">
                                 Geschlecht:
                                 <?php
-                                    include_once ("../Backend/UserDataLoading.php");
-                                    $UserData = new CUserDataLoading();
-                                    $AccountID = $UserData::getAccountIDEmployeePage();
-                                    $UserData::getUserName($AccountID);
+                                    //include_once ("../Backend/CLoadingEmployeePage.php");
+                                    //$Userdata = new CLoadingEmployeePage();
+                                    //$Result   = $Userdata->getUserName();
+                                    //if(empty($Result))
+                                    //{
+                                    //    echo "undefined";
+                                    //}
+//
+                                    //else
+                                    //{
+                                    //    echo $Result;
+                                    //}
+
+
                                 ?>
                             </label>
 
                             <input class="container-input-field" name="Gender">    </input>
-
-
-
                             <label class="bottom-container-label">Vorname: Kylian                    </label>            <input class="container-input-field">     </input>
                             <label class="bottom-container-label">Mittelname: -                      </label>            <input class="container-input-field">    </input>
                             <label class="bottom-container-label">Nachname: Mbappe                   </label>            <input class="container-input-field">    </input>
@@ -147,7 +158,7 @@
                     </div>
 
 
-                    <!-- container-input-field-info-->
+                    container-input-field-info
                     <div class="bottom-container-right-box-right">
                         <form class="container-input">
                             <label class="bottom-container-label">Adresse: -                         </label>           <input class="container-input-field"> </input>
@@ -158,11 +169,13 @@
                             <label class="bottom-container-label">Passwort: -                        </label>           <input class="container-input-field"> </input>
                             <label class="bottom-container-label">Super-User: ?                      </label>           <input class="container-input-field"> </input>
                         </form>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+-->
 </div>
 
 </body>

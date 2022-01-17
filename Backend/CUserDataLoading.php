@@ -10,7 +10,6 @@ $ServerSession = new CServerConnection("localhost","root", "");
 $ServerSession::connectServer();
 //========= Server Connection =========
 
-echo $_POST['InputAccountID'];
 
 class CUserDataLoading
 {
@@ -113,9 +112,47 @@ class CUserDataLoading
         return $Sql_Statement->fetch(PDO::FETCH_COLUMN);
     }
 
-    static function getAccountIDEmployeePage()
+
+    static function getUserRole($AccountKey)
     {
-        return $_POST['InputAccountID'];
+        $Sql_Statement = CServerConnection::$DB_connection->query(" SELECT supu.SuperUserToken FROM superuser AS supu
+                                                                    INNER JOIN user AS usr ON usr.UserKey = supu.UserRefKey
+                                                                    INNER JOIN accountdetails AS ad ON ad.AccountKey = usr.AccountRefKey
+                                                                    WHERE ad.AccountKey= '$AccountKey'");
+        $Sql_Statement->execute();
+        $SuperUserKey = $Sql_Statement->fetch(PDO::FETCH_COLUMN);
+
+
+        $Sql_Statement = CServerConnection::$DB_connection->query(" SELECT standu.StandardUserKey FROM standarduser AS standu 
+                                                                    INNER JOIN user AS usr ON usr.UserKey = standu.UserRefKey
+                                                                    INNER JOIN accountdetails AS ad ON ad.AccountKey = usr.AccountRefKey
+                                                                    WHERE ad.AccountKey = '$AccountKey'");
+        $Sql_Statement->execute();
+        $StandardUserKey = $Sql_Statement->fetch(PDO::FETCH_COLUMN);
+
+
+        if(!empty($StandardUserKey))
+        {
+            echo "Standarduser";
+        }
+        elseif(!empty($SuperUserKey))
+        {
+            echo "Superuser";
+        }
+        else
+        {
+            echo "Non-Role";
+        }
+
+    }
+
+    static function getUserLastLogIn($AccountKey)
+    {
+        $Sql_Statement = CServerConnection::$DB_connection->query(" SELECT usr.LastLogin_Date_Time FROM user AS usr
+                                                                    INNER JOIN accountdetails AS ad ON ad.AccountKey = usr.AccountRefKey
+                                                                    WHERE ad.AccountKey = '$AccountKey'");
+        $Sql_Statement->execute();
+        return $Sql_Statement->fetch(PDO::FETCH_COLUMN);
     }
 
 }

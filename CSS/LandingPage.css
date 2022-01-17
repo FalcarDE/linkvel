@@ -13,6 +13,7 @@ created by @Hoang
 /* ------------------------------- Left Filler ---------------------------- */
 .LeftSide
 {
+    box-sizing: border-box;
     width: 25%;
     float:left;
     border: 1px solid transparent;
@@ -111,10 +112,12 @@ created by @Hoang
     border-radius: 1.5em ;
 
 
+
+
     /* border: 1px solid red; */
 }
 
-#headline
+.headline
 {
     box-sizing: border-box;
     margin-right: auto;
@@ -163,10 +166,8 @@ created by @Hoang
 .InteractionMediaIcon
 {
     box-sizing: border-box;
-    display: block;
     margin-right: auto;
     margin-left: auto;
-    /* border: 1px solid red; */
     max-width: 25em;
 
 
@@ -174,18 +175,16 @@ created by @Hoang
 
 .IconBlock
 {
+
     box-sizing: border-box;
     margin-right: auto;
     margin-left: auto;
     width: 33.3%;
     display: inline-block;
-    align-content: center;
-
 }
 
 .InteractionMediaIcon label
 {
-
     text-align: left;
     cursor: pointer; /* Pointer/hand icon */
     float: left; /* Float the buttons side by side */
@@ -194,6 +193,8 @@ created by @Hoang
     margin-top: 5%;
     margin-left: 2%;
     width: 60%;
+
+
 
 
 }
@@ -218,21 +219,255 @@ created by @Hoang
 
 .RightSide
 {
+    position: fixed;
+    box-sizing: border-box;
     width: 25%;
-    float:left;
-    /* border: 1px solid red; */
+    height: 100%;
+    margin-top: 5%;
+    margin-left: 70%;
+}
+
+.CommentSection
+{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    margin-top: 2%;
+
+}
+
+.CommentInputArea
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    margin-top: 2%;
 }
 
 
-.ApiWeather
-{
-    box-sizing: border-box;
-    width: 20%;
-    margin-left: 77%;
-    /* border: 1px solid red; */
-    background-color: white;
-    margin-top: 20%;
-    position: fixed;
+.textarea {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    resize: both;
+    min-height: 40px;
+    line-height: 20px;
+    border: 1px solid black;
+    background-color: lightgoldenrodyellow;
+
+
+}
+
+.textarea[contenteditable]:empty::before {
+    content: "Teile deine Meinung mit der Community!";
+    color: gray;
+}
+
+
+@media(max-width:992px) {
+    .IconBar
+    {
+        position: fixed;
+        margin-right: auto;
+        margin-left: 10%;
+        margin-top: 5%;
+        max-width: 100%;
+        /* border: 1px solid red; */    }
+
+
+    .IconBar ul
+    {
+        background-color: white;
+        border-radius: 1.5em;
+        max-width: 100%;
+
+    }
+    .IconBar ul li
+    {
+        box-sizing: border-box;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 100%;
+        font-size:xx-small;
+        list-style-type: none;
+        /* border: 1px solid red; */
+
+
+    }
+    .IconBar ul li button
+    {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 100%;
+        font-size:xx-small;
+        background-color: transparent;
+
+    }
+
+    .WelcomeCard {
+        box-sizing: border-box;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 5%;
+        justify-content: center;
+        max-width: 43.5%;
+        background: #d8effd;
+        border-radius: 1.5em;
+
+
+        /* border: 1px solid red; */
+    }
+
+    #WelcomeInitUser
+    {
+        box-sizing: border-box;
+        max-width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: smaller;
+    }
+
+    #WelcomeNotInitUser
+    {
+        box-sizing: border-box;
+        max-width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: smaller;
+
+        /* border: 1px solid red; */
+    }
+    .headline
+    {
+        box-sizing: border-box;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: small;
+
+        /* border: 1px solid red; */
+
+    }
+
+    #UserName
+    {
+
+        box-sizing: border-box;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: small;
+
+        /* border: 1px solid red; */
+    }
+
+    #UserText
+    {
+        box-sizing: border-box;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: small;
+
+        /* border: 1px solid red; */
+    }
+
+    .img
+    {
+        box-sizing: border-box;
+        display: block;
+        /* border: 1px solid red; */
+        margin-right: auto;
+        margin-left: auto;
+        max-width: border-box;
+        width: 100%;
+        height: auto;
+
+
+    }
+
+    .IconBlock
+    {
+        box-sizing: border-box;
+        margin-right: auto;
+        margin-left: 2%;
+        max-width: 100%;
+        display: flex;
+        align-content: center;
+
+
+        border: 1px solid red;
+
+    }
+
+    .InteractionMediaIcon label
+    {
+
+        text-align: left;
+        cursor: pointer; /* Pointer/hand icon */
+        float: left; /* Float the buttons side by side */
+        align-content: center;
+        font-size: smaller;
+        margin-top: 5%;
+
+    }
+
+    .InteractionMediaIcon button {
+
+        font-size: smaller;
+        border: none;
+        cursor: pointer; /* hand icon when go to icons */
+        float: left; /* Float the buttons next to each other with */
+
+    }
+
+
+    /* hover effect when use button */
+    .InteractionMediaIcon button:hover {
+        background-color: lightskyblue;
+    }
+
+
+    .RightSide
+    {
+        position: fixed;
+        box-sizing: border-box;
+        max-width: 100%;
+        max-height: 100%;
+        margin-top: 5%;
+        margin-left: 70%;
+    }
+
+    .CommentSection
+    {
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: white;
+        border-radius: 2%;
+        font-size:xx-small;
+
+        border: 1px solid red;
+
+
+    }
+
+
+    .textarea {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        resize: both;
+        min-height: 40px;
+        line-height: 20px;
+        font-size:xx-small;
+        border: 1px solid black;
+
+    }
+
+
 }
 
 

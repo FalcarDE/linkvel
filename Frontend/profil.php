@@ -15,11 +15,11 @@ session_start();
 
 <body>
 <?php
-include "../Frontend/NavBar.html"
+include "../Frontend/NavBar.php"
 ?>
 
 <!--------------------------------------------------------------------------------------------------------------->
-<div class="container">
+<div class="container_1">
 
 
             <!--------------------------------------------------------------------------------------------------------------->
@@ -32,11 +32,10 @@ include "../Frontend/NavBar.html"
                     <h3 id="profile-name">
                         <?php
 
-                            require_once('../Backend/UserDataLoading.php');
-                            $UserData   =   new CUserDataLoading();
-                            $FirstName  =   $UserData::getUserFirstname(implode($_SESSION['AccountKey']));
-                            $Midname    =   $UserData::getUserMidname(implode($_SESSION['AccountKey']));
-                            $LastName   =   $UserData::getUserLastname(implode($_SESSION['AccountKey']));
+                            require_once('../Backend/CUserDataLoading.php');
+                            $FirstName  =   CUserDataLoading::getUserFirstname(implode($_SESSION['AccountKey']));
+                            $Midname    =   CUserDataLoading::getUserMidname(implode($_SESSION['AccountKey']));
+                            $LastName   =   CUserDataLoading::getUserLastname(implode($_SESSION['AccountKey']));
 
                             if(empty($Midname))
                             {
@@ -49,10 +48,22 @@ include "../Frontend/NavBar.html"
                         ?>
                     </h3>
                     <div class="profil-roll-box">
-                        <h5 id="permission">User-Rolle</h5>
+                        <h5 id="permission">
+                            User-Rolle:
+                                <?php
+                                    require_once('../Backend/CUserDataLoading.php');
+                                    echo CUserDataLoading::getUserRole(implode($_SESSION['AccountKey']));
+                                ?>
+                        </h5>
                     </div>
                     <div class="last-login-box">
-                        <h5 id="last-login-time">zuletzt online: gestern</h5>
+                        <h5 id="last-login-time">
+                            zuletzt online:
+                            <?php
+                            require_once('../Backend/CUserDataLoading.php');
+                            echo CUserDataLoading::getUserLastLogIn(implode($_SESSION['AccountKey']));
+                            ?>
+                        </h5>
                     </div>
                 </div>
             </div>
@@ -79,9 +90,8 @@ include "../Frontend/NavBar.html"
                             <div class="input-field">
                                 <h4 class="input-field-info">
                                     <?php
-                                        require_once('../Backend/UserDataLoading.php');
-                                        $UserData = new CUserDataLoading();
-                                        echo $UserData::getUserFirstname(implode($_SESSION['AccountKey']));
+                                        require_once('../Backend/CUserDataLoading.php');
+                                        echo CUserDataLoading::getUserFirstname(implode($_SESSION['AccountKey']));
                                     ?>
                                 </h4>
                             </div>
@@ -90,9 +100,8 @@ include "../Frontend/NavBar.html"
                             <div class="input-field">
                                 <h4 class="input-field-info">
                                     <?php
-                                        require_once('../Backend/UserDataLoading.php');
-                                        $UserData = new CUserDataLoading();
-                                        $Midname  = $UserData::getUserMidname(implode($_SESSION['AccountKey']));
+                                        require_once('../Backend/CUserDataLoading.php');
+                                        $Midname  = CUserDataLoading::getUserMidname(implode($_SESSION['AccountKey']));
 
                                         if(empty($Midname))
                                         {
@@ -103,16 +112,15 @@ include "../Frontend/NavBar.html"
                                             echo $Midname;
 
                                         }
-
                                     ?>
                                 </h4></div>
                             <label class="label">Nachname          </label>
                             <div class="input-field">
                                 <h4 class="input-field-info">
                                     <?php
-                                        require_once('../Backend/UserDataLoading.php');
-                                        $UserData = new CUserDataLoading();
-                                        echo $UserData::getUserLastname(implode($_SESSION['AccountKey']));
+                                        require_once('../Backend/CUserDataLoading.php');
+
+                                        echo CUserDataLoading::getUserLastname(implode($_SESSION['AccountKey']));
                                     ?>
                                 </h4>
                             </div>
@@ -121,9 +129,9 @@ include "../Frontend/NavBar.html"
                             <div class="input-field">
                                 <h4 class="input-field-info">
                                     <?php
-                                        require_once('../Backend/UserDataLoading.php');
-                                        $UserData = new CUserDataLoading();
-                                        echo $UserData::getUserBirthDate(implode($_SESSION['AccountKey']));
+                                        require_once('../Backend/CUserDataLoading.php');
+
+                                        echo CUserDataLoading::getUserBirthDate(implode($_SESSION['AccountKey']));
                                     ?>
                                 </h4>
                             </div>
@@ -132,9 +140,9 @@ include "../Frontend/NavBar.html"
                             <div class="input-field">
                                 <h4 class="input-field-info">
                                     <?php
-                                        require_once('../Backend/UserDataLoading.php');
-                                        $UserData = new CUserDataLoading();
-                                        echo $UserData::getUserTelNumber(implode($_SESSION['AccountKey']));
+                                        require_once('../Backend/CUserDataLoading.php');
+
+                                        echo CUserDataLoading::getUserTelNumber(implode($_SESSION['AccountKey']));
                                     ?>
                                 </h4>
                             </div>
@@ -148,9 +156,8 @@ include "../Frontend/NavBar.html"
                             <div class="input-field">
                                 <h4 class="input-field-info">
                                     <?php
-                                        require_once('../Backend/UserDataLoading.php');
-                                        $UserData = new CUserDataLoading();
-                                        echo $UserData::getUserAddress(implode($_SESSION['AccountKey']));
+                                        require_once('../Backend/CUserDataLoading.php');
+                                        echo CUserDataLoading::getUserAddress(implode($_SESSION['AccountKey']));
                                     ?>
                                 </h4>
                             </div>
@@ -159,9 +166,8 @@ include "../Frontend/NavBar.html"
                             <div class="input-field">
                                 <h4 class="input-field-info">
                                     <?php
-                                        require_once('../Backend/UserDataLoading.php');
-                                        $UserData = new CUserDataLoading();
-                                        echo $UserData::getUserZipCode(implode($_SESSION['AccountKey']));
+                                        require_once('../Backend/CUserDataLoading.php');
+                                        echo CUserDataLoading::getUserZipCode(implode($_SESSION['AccountKey']));
                                     ?>
                                 </h4></div>
 
@@ -169,9 +175,8 @@ include "../Frontend/NavBar.html"
                             <div class="input-field">
                                 <h4 class="input-field-info">
                                     <?php
-                                        require_once('../Backend/UserDataLoading.php');
-                                        $UserData = new CUserDataLoading();
-                                        echo $UserData::getUserCountry(implode($_SESSION['AccountKey']));
+                                        require_once('../Backend/CUserDataLoading.php');
+                                        echo CUserDataLoading::getUserCountry(implode($_SESSION['AccountKey']));
                                     ?>
                                 </h4>
                             </div>
@@ -180,7 +185,7 @@ include "../Frontend/NavBar.html"
                             <div class="input-field">
                                 <h4 class="input-field-info">
                                     <?php
-                                        require_once('../Backend/UserDataLoading.php');
+                                        require_once('../Backend/CUserDataLoading.php');
                                         $UserData = new CUserDataLoading();
                                         echo $UserData::getUserName(implode($_SESSION['AccountKey']));
                                     ?>
@@ -191,7 +196,7 @@ include "../Frontend/NavBar.html"
                             <div class="input-field">
                                 <h4 class="input-field-info">
                                     <?php
-                                        require_once('../Backend/UserDataLoading.php');
+                                        require_once('../Backend/CUserDataLoading.php');
                                         $UserData = new CUserDataLoading();
                                         echo $UserData::getUserEmail(implode($_SESSION['AccountKey']));
                                     ?>
@@ -227,6 +232,12 @@ include "../Frontend/NavBar.html"
 
 
     <!------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- Buttom damit der User seine persönlichen Daten ändern kann -->
+    <div class="middle-container-button-box">
+        <button type="submit" class="user-profile-edit">Profil bearbeiten</button>
+    </div>
+
 </div>
 
 

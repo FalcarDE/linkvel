@@ -11,7 +11,7 @@
 
 </head>
 <body>
-<?php include "../Frontend/NavBar.html" ?>
+<?php include "../Frontend/NavBar.php" ?>
 
 
 <div class="Container">

@@ -14,24 +14,26 @@ $ServerSession::connectServer();
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-$User = new CLoadingUserAccountID($_GET['FirstName'], $_GET['LastName'],$_GET['UserName'], $_GET['Email'] );
+$User = new CSearchingUserID();
 $User->getAccountID();
 
-class CLoadingUserAccountID
+
+class CSearchingUserID
 {
 
     private $FirstName;
     private $LastName;
     private $UserName;
     private $Email;
+    private $SpecificUserAccountID;
 
 
-    function __construct($FirstName, $LastName, $UserName, $Email )
+    function __construct()
     {
-        $this->FirstName    = $FirstName;
-        $this->LastName     = $LastName;
-        $this->UserName     = $UserName;
-        $this->Email        = $Email;
+        $this->FirstName    = ($_GET['FirstName']   ?? null);
+        $this->LastName     = ($_GET['LastName']    ?? null);
+        $this->UserName     = ($_GET['UserName']    ?? null);
+        $this->Email        = ($_GET['Email']       ?? null);
     }
 
     function getAccountID()
@@ -45,11 +47,22 @@ class CLoadingUserAccountID
                                                                      OR ad.UserName         = '$this->UserName'; ");
         CExceptionHandler::DisplayPDOHandler(CServerConnection::$DB_connection, $Sql_Statement);
         $Sql_Statement->execute();
-        $specificUserAccountID= $Sql_Statement->fetch(PDO::FETCH_COLUMN);
-        echo $specificUserAccountID;
+        $this->SpecificUserAccountID= $Sql_Statement->fetch(PDO::FETCH_COLUMN);
+        echo $this->SpecificUserAccountID;
     }
 
+
+    function getUserName()
+    {
+        include_once "../Backend/CUserDataLoading.php";
+        $UserData = new CUserDataLoading();
+        return $UserData::getUserName($this->SpecificUserAccountID);
+
+    }
 }
+
+
+
 
 ?>
 

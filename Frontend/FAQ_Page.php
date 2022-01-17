@@ -13,7 +13,7 @@
 
 
 
-        <?php include "../Frontend/NavBar.html"?>
+        <?php include "../Frontend/NavBar.php"?>
 
 
         <!-- <h1>FAQ</h1> -->
