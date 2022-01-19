@@ -169,7 +169,6 @@ Class CRegistrationVerify
         CExceptionHandler::DisplayPDOHandler(CServerConnection::$DB_connection, $SqlKeyData);
         $SqlKeyData->execute();
         return $this->UserKey = $SqlKeyData->fetchColumn();
-
     }
 
     function getContactKey()
@@ -200,8 +199,6 @@ Class CRegistrationVerify
         CExceptionHandler::DisplayPDOHandler(CServerConnection::$DB_connection,$Sql_Insertion_Statement);
         $Sql_Insertion_Statement->execute([$this->UserKey , 1]);
     }
-
-
 
 }
 

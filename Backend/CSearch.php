@@ -5,60 +5,37 @@ include_once ('CServerConnection.php');
 include_once ('CExceptionHandler.php');
 
 
-$Result = new CSearch();
-$Result::Search();
-
 class CSearch
 {
-    private static $statement;
-    private static $KeyIndex;
-
-    public function __construct()
-    {
-        self::$statement = $_GET['Search'];
-    }
-
-
+    static private $NumberOfPost;
     //========= Searches for Hashtags =========
-    public static function SearchHashtag()
+    public static function SearchHashtag(String $statement)
     {
-        include_once('../Backend/CFeedsloading.php');
-
-        $statement = self::$statement;
         $ServerSession   = new CServerConnection("localhost","root", "");
         $pdoServer = $ServerSession::connectServer();
         $SearchResult = $pdoServer->query("SELECT PostKey FROM linkvel.post WHERE Hashtags LIKE '%{$statement}%' ");
 
-        self::$KeyIndex = count($SearchResult->fetchAll(PDO::FETCH_ASSOC));
-        $Result = $SearchResult[0];
-
-        self::showPostResult($Result);
-
+        return $SearchResult->fetchAll(PDO::FETCH_ASSOC);
     }
 
     //========= Searches for Headlines =========
-    public static function SearchHeadline()
+    public static function SearchHeadline(String $statement)
     {
-        include_once('../Backend/CFeedsloading.php');
-
-        $statement = self::$statement;
         $ServerSession   = new CServerConnection("localhost","root", "");
         $pdoServer = $ServerSession::connectServer();
         $SearchResult = $pdoServer->query("SELECT PostKey FROM linkvel.post WHERE Headline LIKE '%{$statement}%' ");
-        self::$KeyIndex = count($SearchResult->fetchAll(PDO::FETCH_ASSOC));
+        self::$NumberOfPost = $SearchResult->fetchAll(PDO::FETCH_ASSOC);
+        return self::$NumberOfPost;
 
-        self::showPostResult(implode($SearchResult->fetchAll(PDO::FETCH_ASSOC)));
     }
 
 
 
 //========= Searches for Hashtags if Search-statement contains '#'. Otherwise it will search for Headlines=========
-    public static function Search()
+    public static function Search(string $statement)
     {
-        $statement = self::$statement;
-
         if(str_contains($statement, '#')){
-           return self::SearchHashtag($statement);
+            return self::SearchHashtag($statement);
         }
         else{
             return self::SearchHeadline($statement);
@@ -67,27 +44,30 @@ class CSearch
     }
 
 
-    public static function showPostResult($Result)
+    public static function showPostResult()
     {
-
-
-        $PostKey   = intval($Result);
-
+        require_once('../Backend/CFeedsloading.php');
+        $NumberOfPostID = count(self::$NumberOfPost);
         /*
             PostNumber is a specific Value for the functions "generateHeadlineID(), generateLikeButtonID(), generateCommentButtonID(), generateShareButtonID()
             Those function has the task to generate different IDs from each other for the HTML Tags
          */
         $IDNumber = 1;
 
-        for ($Index = 0; $Index < self::$KeyIndex ; $Index++)
+        for ($Index = 0; $Index < $NumberOfPostID  ; $Index++)
         {
-            $HeadlineID = CFeedsloading::generateHeadlineID($IDNumber);
-            $LikeButtonID = CFeedsloading::generateLikeButtonID($IDNumber);
-            $CommentButtonID = CFeedsloading::generateCommentButtonID($IDNumber);
-            $ShareButtonID = CFeedsloading::generateShareButtonID($IDNumber);
-            CFeedsloading::generateHtml($PostKey, $HeadlineID, $LikeButtonID, $CommentButtonID, $ShareButtonID);
+            $PostKey            = implode(self::$NumberOfPost[$Index]);
+            $HeadlineID         = CFeedsloading::generateHeadlineID($IDNumber);
+            $LikeButtonID       = CFeedsloading::generateLikeButtonID($IDNumber);
+            $CommentButtonID    = CFeedsloading::generateCommentButtonID($IDNumber);
+            $ShareButtonID      = CFeedsloading::generateShareButtonID($IDNumber);
+            $LikeLabelID        = CFeedsloading::generateLikeLabel($IDNumber);
+            $CommentLabelID     = CFeedsloading::generateCommentLabel($IDNumber);
+            CFeedsloading::generateHtml($PostKey, $HeadlineID, $LikeButtonID, $CommentButtonID, $ShareButtonID, $LikeLabelID, $CommentLabelID);
             $PostKey =  $PostKey + 1;
             $IDNumber = $IDNumber + 1;
         }
     }
+
+
 }

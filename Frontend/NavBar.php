@@ -39,7 +39,7 @@
 
                 <div class="box">
 
-                    <form method="get" action="../Backend/CSearch.php">
+                    <form method="get" action="../Frontend/SearchPage.php">
                         <input name="Search" class="input" type="text"  placeholder="SUCHE">
                         <button class="button" href="#">
                             <a href="#"> <i class="material-icons"> search </i></a>

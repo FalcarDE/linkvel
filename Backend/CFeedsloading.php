@@ -93,14 +93,7 @@ class CFeedsloading
 
         echo(
 
-            "<script type='text/javascript'>"       ."let HeadlineID= '$HeadlineID'; " ."</script>"
-            ."<script type='text/javascript'>"      ."let LikeButtonID = '$LikeButtonID'; " ."</script>"
-            ."<script type='text/javascript'>"      ."let LikeLabelID = '$LikeLabelID'; " ."</script>"
-
-
-
-
-            ."<div class='UserPost' >"
+            "<div class='UserPost' >"
                 ."<article>"
                 ."<br>"
                 . "<h1 class='headline' id='$HeadlineID' onclick='generateCommentSection(this.id)'>$Headline</h1>"
@@ -118,12 +111,12 @@ class CFeedsloading
 
                 ."<div class='InteractionMediaIcon'>"
                     ."<div class='IconBlock'>"
-                    ."<button class='material-icons' id='$LikeButtonID' onclick='UpdateLikes(LikeButtonID, LikeLabelID, HeadlineID );' > &#xe80b; </button>"
+                    ."<button class='material-icons' id='$LikeButtonID' onclick='UpdateLikes(\"".$LikeButtonID."\", \"".$LikeLabelID."\", \"".$HeadlineID."\");' > &#xe80b; </button>"
                     ."<label id='$LikeLabelID' > ". CFeedsloading::getNumberOfPostLikes($PostKey) . "</label>"
                     ."</div>"
 
                     ."<div class='IconBlock'>"
-                        ."<button class='material-icons' id='$CommentButtonID' onclick='generateCommentSection(this.id, HeadlineID)' > &#xe0b9; </button>"
+                        ."<button class='material-icons' id='$CommentButtonID' onclick='generateCommentSection(\"".$HeadlineID."\");' > &#xe0b9; </button>"
                         ."<label id='$CommentLabelID' >". CFeedsloading::getNumberOfComments($PostKey) ."</label>"
                     ."</div>"
 
@@ -162,6 +155,7 @@ class CFeedsloading
         $Results = $Sql_Statement->fetch(PDO::FETCH_COLUMN);
         return $Results;
     }
+
     static function GetUserName($PostKey)
     {
 

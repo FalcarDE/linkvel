@@ -248,23 +248,18 @@ created by @Hoang
 }
 
 
-.textarea {
+.input {
     display: block;
     width: 100%;
     overflow: hidden;
-    resize: both;
-    min-height: 40px;
-    line-height: 20px;
+    min-height: 25px;
     border: 1px solid black;
     background-color: lightgoldenrodyellow;
-
+    text-indent: 0;
 
 }
 
-.textarea[contenteditable]:empty::before {
-    content: "Teile deine Meinung mit der Community!";
-    color: gray;
-}
+
 
 
 @media(max-width:992px) {

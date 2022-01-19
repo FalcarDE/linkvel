@@ -35,9 +35,9 @@ class CUpdatingLikes
 
     function getPostKey()
     {
-        require_once('../Backend/CCommentSection.php');
-        $this->PostKey  = CCommentSection::getPostKey($this->Headline);
-
+        $Sql_Statement  = CServerConnection::$DB_connection->query("SELECT p.PostKey from post AS p where p.Headline = '$this->Headline';");
+        $Sql_Statement->execute();
+        return $this->PostKey = $Sql_Statement->fetch(PDO::FETCH_COLUMN);
     }
 
     function getUserKey()

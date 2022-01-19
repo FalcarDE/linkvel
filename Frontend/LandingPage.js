@@ -1,7 +1,23 @@
+
+
+
+
+
+/*
+*
+* function for
+*
+* */
+
+let global_Headline;
+
+
 function generateCommentSection(headlineID)
 {
     let Headline   = document.getElementById(headlineID).innerHTML
-    alert(json_encode(Headline))
+    global_Headline = Headline;
+
+    alert(Headline)
 
 
     let xhttp;
@@ -21,7 +37,7 @@ function generateCommentSection(headlineID)
                 document.getElementById("RightSide").innerHTML = this.responseText;
             }
         };
-        xhttp.open("GET", "../Backend/CCommentSection.php?Headline="+ Headline);
+        xhttp.open("GET", "../Backend/CCommentSection.php?Headline="+ Headline );
         xhttp.send();
 
     }
@@ -29,10 +45,11 @@ function generateCommentSection(headlineID)
 
 
 
-function UpdateLikes(LikeButtonlID, LikeLabelID ,HeadlineID)
+function UpdateLikes(LikeButtonID, LikeLabelID ,HeadlineID)
 {
-    let Headline        = document.getElementById(HeadlineID).innerHTML;
-    alert(LikeButtonlID);
+    let Headline            = document.getElementById(HeadlineID).innerHTML;
+    //let LikeButtonID        = LikeButtonID;
+    //alert(LikeLabelID);
 
     let xhttp;
 
@@ -42,7 +59,7 @@ function UpdateLikes(LikeButtonlID, LikeLabelID ,HeadlineID)
     {
         if (this.readyState === 4 && this.status === 200)
         {
-            document.getElementById(LikeButtonID).style.color = "skyblue";
+            document.getElementById(LikeButtonID).style.color = 'skyblue';
             document.getElementById(LikeLabelID).innerHTML = this.responseText;
         }
     };
@@ -56,30 +73,35 @@ function UpdateLikes(LikeButtonlID, LikeLabelID ,HeadlineID)
 
 function UploadComments()
 {
-    let like   = document.getElementById(headlineID).innerHTML;
-    alert(like);
+    let comment = document.getElementById('CommentInputArea').value;
+    alert(global_Headline);
 
-    let xhttp;
 
-    if (Headline === "")
-    {
-        document.getElementById('RightSide').innerHTML = "undefined";
-    }
-
-    else
-    {
+    //if (comment === "")
+    //{
+    //    //document.getElementById('CommentInputArea').innerHTML = "\"Bitte gebe zunächst dein Kommentar ab, damit du erst posten kannst!\"";
+    //    alert("Bitte gebe zunächst dein Kommentar ab, damit du erst posten kannst!");
+    //}
+    //else
+    //{
+        let xhttp;
         xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function()
+        xhttp.onreadystatechange = function ()
         {
             if (this.readyState === 4 && this.status === 200)
             {
-                document.getElementById(LikeID).style.color = "skyblue";
+                document.getElementById("RightSide").innerHTML = this.responseText;
             }
         };
-        xhttp.open("GET", "../Backend/CCommentSection.php=Headline"+ Headline);
+
+        xhttp.open("GET", "../Backend/CUploadComment.php?comment=" + comment + "&headline=" + global_Headline);
         xhttp.send();
 
-    }
+
 }
+
+
+
+
 
 

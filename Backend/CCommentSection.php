@@ -12,33 +12,37 @@ $ServerSession::connectServer();
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-//$CommentSection = new CCommentSection;
-//$CommentSection->getPostKey($this->Headline);
-//$NumberOfComment = count($CommentSection->getAllCommentsFromPost());
-//$NumberOfComment= 3;
-//$CommentSection->generateCommentSectionFrame($NumberOfComment);
+$CommentSection = new CCommentSection;
+$CommentSection->getPostKey($_GET['Headline']);
+$NumberOfComment = count($CommentSection->getAllCommentsFromPost());
+////$NumberOfComment= 3;
+$CommentSection->generateCommentSectionFrame($NumberOfComment);
+
+
 class CCommentSection
 {
-    private $Headline;
-    static private $PostKey;
-    static private $CommentsSectionIndex;
-    static private $CommentsSectionKeys = array();
+    private static  $Headline;
+    private static  $PostKey;
+    private static  $NumberOfComment;
+    private static  $CommentsSectionKeys;
 
 
 
 
     function __construct()
     {
-        $this->Headline    = ($_GET['Headline']   ?? null);
+        self::$Headline   = ($_GET['Headline']   ?? null);
 
     }
 
-    static function getPostKey($Headline)
+    static function getPostKey()
     {
-        $Sql_Statement = CServerConnection::$DB_connection->query("  SELECT p.PostKey from post AS p where p.Headline = '$Headline' ");
+        $Headline = self::$Headline;
+
+        $Sql_Statement = CServerConnection::$DB_connection->query("SELECT p.PostKey from post AS p where p.Headline = '$Headline' ;");
         $Sql_Statement->execute();
-        self::$PostKey = $Sql_Statement->fetch(PDO::FETCH_COLUMN);
-        return self::$PostKey;
+        return self::$PostKey = $Sql_Statement->fetch(PDO::FETCH_COLUMN);
+
     }
 
 
@@ -50,91 +54,93 @@ class CCommentSection
                                                                     INNER JOIN post AS p ON p.PostKey = cs.PostRefKey
                                                                     WHERE PostKey = '$PostKey'");
         $Sql_Statement->execute();
-        $Results = $Sql_Statement->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($Results as $Result)
-        {
-            self::$CommentsSectionKeys = $Result;
-            print_r(self::$CommentsSectionKeys);
+        return self::$CommentsSectionKeys = $Sql_Statement->fetchAll(PDO::FETCH_ASSOC);
 
-        }
-        self::$CommentsSectionIndex = implode(self::$CommentsSectionKeys);
-        return self::$CommentsSectionKeys;
+
+        //return $this->CommentsSectionKeys;
+        //return $this->CommentsSectionKeys['CommentsSectionKey'];
     }
 
-    function generateCommentSectionFrame($NumberOfComment)
+    static function generateCommentSectionFrame($NumberOfComment)
     {
+        //$this->NumberOfComment = $NumberOfComment;
+        //echo "<br>";
+        //print_r( $this->CommentsSectionKeys);
+        //echo "<br>";
+        //echo implode($this->CommentsSectionKeys[1]);
 
 
         for ($Index = 0; $Index < $NumberOfComment ; $Index++)
         {
-            CCommentSection::generateHTMLCommentFrameBuilder();
+            $UserCommentsKey = implode(self::$CommentsSectionKeys[$Index]);
+
+            self::generateHTMLCommentFrameBuilder($Index, $UserCommentsKey);
         }
 
-        CCommentSection::generateHTMLCommentInput();
-
+        self::generateHTMLCommentInput();
 
     }
 
-    static function generateHTMLCommentFrameBuilder()
+
+    static function generateHTMLCommentFrameBuilder($Index ,$UserCommentsKey)
     {
-        for($Index = 0; $Index < self::$CommentsSectionIndex; $Index++)
-        {
+
+
             echo
-                "<div class='CommentSection'>"
+                "<div id='CommentSection' class='CommentSection'>"
                 . "<p>"
-                . CCommentSection::getUserName(self::$PostKey, )
+                . CCommentSection::getUserName( self::$PostKey,$UserCommentsKey )
                 . "</p>"
                 . "<p>"
-                . CCommentSection::getCommentDateTime(self::$PostKey)
+                . CCommentSection::getCommentDateTime( self::$PostKey,$UserCommentsKey)
                 . "</p>"
                 . "<br>"
                 . "<p>"
-                . CCommentSection::getCommentsContents(self::$PostKey)
+                . CCommentSection::getCommentsContents( self::$PostKey,$UserCommentsKey)
                 . "</p>"
                 . "</div>"
                 . "<br>";
-        }
+
     }
 
     static function generateHTMLCommentInput()
     {
             echo
-            "<div class='CommentInputArea'>"
-            ."<span  class='textarea' role='textbox' contenteditable >" ."</span>"
-            ."<button onclick='UploadComments'> Senden </button>"."</div>";
+            "<div class='CommentInputArea'> "
+            ."<input  id='CommentInputArea' class='input' role='textbox' type='text' placeholder='Teile deine Meinung mit der Community!'> "
+            ."<button onclick='UploadComments()'> Senden </button>"
+            ."</div>";
     }
 
 
-    static function getUserName($PostKey )
+    static function getUserName($PostKey, $UserCommentsKey)
     {
 
         $Sql_Statement = CServerConnection::$DB_connection->query("SELECT ad.UserName from accountdetails as ad 
                                                                    INNER join user AS usr ON ad.AccountKey = usr.AccountRefKey 
                                                                    INNER JOIN commentssection as cs On cs.UserRefKey = usr.UserKey
-                                                                   where cs.CommentsSectionKey = '$PostKey' ");
+                                                                   INNER JOIN post AS p ON cs.PostRefKey = p.PostKey  
+                                                                   where cs.CommentsSectionKey = '$UserCommentsKey' AND p.PostKey = '$PostKey'; ");
         $Sql_Statement->execute();
         $Results = $Sql_Statement->fetch(PDO::FETCH_COLUMN);
-        print_r(self::$CommentsSectionKeys);
         return $Results;
     }
 
-    static function getCommentDateTime( $PostKey)
+    static function getCommentDateTime( $PostKey, $UserCommentsKey)
     {
 
             $Sql_Statement = CServerConnection::$DB_connection->query("SELECT c.Comment_Date_Time from commentssection AS c  INNER JOIN post AS p ON p.PostKey = c.PostRefKey
-                                                                        WHERE c.CommentsSectionKey = '$CommentsSectionKey' AND p.PostKey = '$PostKey' ; ");
+                                                                        WHERE c.CommentsSectionKey = '$UserCommentsKey' AND p.PostKey = '$PostKey' ; ");
             $Sql_Statement->execute();
             $Results = $Sql_Statement->fetch(PDO::FETCH_COLUMN);
             return $Results;
-
-
     }
 
-    static function getCommentsContents($PostKey)
+    static function getCommentsContents($PostKey, $UserCommentsKey)
     {
         $Sql_Statement = CServerConnection::$DB_connection->query(" SELECT c.CommentText from commentssection AS c 
                                                                     INNER JOIN post AS p ON p.PostKey = c.PostRefKey
-                                                                    WHERE c.CommentsSectionKey = ' $CommentsSectionKey    ' AND p.PostKey = '$PostKey' ; ");
+                                                                    WHERE c.CommentsSectionKey = ' $UserCommentsKey' AND p.PostKey = '$PostKey'; ");
         $Sql_Statement->execute();
         $Results = $Sql_Statement->fetch(PDO::FETCH_COLUMN);
         return $Results;
