@@ -10,12 +10,11 @@ $ServerSession::connectServer();
 
 
 $UserComment = new CUploadComment();
-//$UserComment->print();
 $UserComment->getPostKey();
 $UserComment->getUserKey();
 $UserComment->setUserCommentSection();
 $UserComment->displayUpdatedCommentSection();
-//$UserComment->checkUser();
+
 
 
 class CUploadComment
@@ -36,14 +35,6 @@ class CUploadComment
         self::$Headline         = $_GET['headline'];
         self::$AccountKey       = implode($_SESSION['AccountKey']);
     }
-
-
-    //function print()
-    //{
-    //    echo "\n".$this->comment."\n";
-    //    echo "\n".$this->AccountKey;
-    //    echo "\n".$this->Headline;
-    //}
 
 
     function checkUser()
@@ -87,17 +78,14 @@ class CUploadComment
     function displayUpdatedCommentSection()
     {
         require_once '../Backend/CCommentSection.php';
-        self::$CommentsSectionKeys = CCommentSection::getAllCommentsFromPost();
-        self::$NumberOfComment = count(CCommentSection::getAllCommentsFromPost());
-
+        self::$CommentsSectionKeys = CCommentSection::getAllCommentsFromPost(self::$PostKey);
+        self::$NumberOfComment = count(self::$CommentsSectionKeys);
 
         for ($Index = 0; $Index < self::$NumberOfComment ; $Index++)
         {
             $UserCommentsKey = implode(self::$CommentsSectionKeys[$Index]);
-            CCommentSection::generateHTMLCommentFrameBuilder($Index,$UserCommentsKey );
+            echo CCommentSection::generateHTMLCommentFrameBuilder(self::$PostKey,$UserCommentsKey );
         }
-
-        CCommentSection::generateHTMLCommentInput();
 
     }
 

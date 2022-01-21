@@ -27,13 +27,13 @@ session_start();
         <div class="IconBar">
             <ul >
                 <br>
-                <li><button>    <a style="color:black; text-decoration:none" href="../Frontend/FAQ_Page.php" >            <i class="material-icons">create          </i>    Create New Post                 </a></button></li>
+                <li><button>    <a style="color:black; text-decoration:none" href="../Backend/CreatePostSuperUserValidation.php" >                <i class="material-icons">create          </i>    Create New Post                 </a></button></li>
                 <br>
-                <li><button>    <a style="color:black; text-decoration:none" href="../Frontend/FAQ_Page.php" >            <i class="material-icons">help            </i>    FAQ                             </a></button></li>
+                <li><button>    <a style="color:black; text-decoration:none" href="../Frontend/FAQ_Page.php" >                  <i class="material-icons">help            </i>    FAQ                             </a></button></li>
                 <br>
-                <li> <button>   <a style="color:black; text-decoration:none" href="../Backend/SessionValidation.php" >    <i class="material-icons">account_circle  </i>    Mein Account                    </a></button></li>
+                <li> <button>   <a style="color:black; text-decoration:none" href="../Backend/UserProfilValidation.php" >       <i class="material-icons">account_circle  </i>    Mein Account                    </a></button></li>
                 <br>
-                <li><button>    <a style="color:black; text-decoration:none" href="../Backend/logout.php" >               <i class="material-icons">logout          </i>    Logout                          </a></button></li>
+                <li><button>    <a style="color:black; text-decoration:none" href="../Backend/logout.php" >                     <i class="material-icons">logout          </i>    Logout                          </a></button></li>
                 <br>
             </ul>
         </div>
@@ -76,10 +76,10 @@ session_start();
                             $HeadlineID         = CFeedsloading::generateHeadlineID($IDNumber);
                             $LikeButtonID       = CFeedsloading::generateLikeButtonID($IDNumber);
                             $CommentButtonID    = CFeedsloading::generateCommentButtonID($IDNumber);
-                            $ShareButtonID      = CFeedsloading::generateShareButtonID($IDNumber);
+                            $LocationButtonID   = CFeedsloading::generateLocationButtonID($IDNumber);
                             $LikeLabelID        = CFeedsloading::generateLikeLabel($IDNumber);
                             $CommentLabelID     = CFeedsloading::generateCommentLabel($IDNumber);
-                            CFeedsloading::generateHtml($PostKey, $HeadlineID, $LikeButtonID, $CommentButtonID, $ShareButtonID, $LikeLabelID, $CommentLabelID);
+                            CFeedsloading::generateHtml($PostKey, $HeadlineID, $LikeButtonID, $CommentButtonID, $LocationButtonID, $LikeLabelID, $CommentLabelID);
                             $PostKey =  $PostKey + 1;
                             $IDNumber = $IDNumber + 1;
                         }
@@ -88,14 +88,12 @@ session_start();
     </div>
 
     <!-------------------------------------  Section rechte Seite für mittlere Einrückung ------------------------------------->
-    <div class="RightSide" id="RightSide">
-
-    </div>
-
-
-
-
+    <div class="RightSide" id="RightSide"></div>
 
 </div>
+
+
+
+
 </body>
 </html>

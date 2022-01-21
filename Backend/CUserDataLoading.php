@@ -113,6 +113,7 @@ class CUserDataLoading
     }
 
 
+    //
     static function getUserRole($AccountKey)
     {
         $Sql_Statement = CServerConnection::$DB_connection->query(" SELECT supu.SuperUserToken FROM superuser AS supu
@@ -145,7 +146,7 @@ class CUserDataLoading
         }
 
     }
-
+    //
     static function getUserLastLogIn($AccountKey)
     {
         $Sql_Statement = CServerConnection::$DB_connection->query(" SELECT usr.LastLogin_Date_Time FROM user AS usr

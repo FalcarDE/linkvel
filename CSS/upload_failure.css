@@ -1,0 +1,33 @@
+.failure_box{
+    padding-top: 12rem;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.failure_box a{
+    text-align: center;
+    font-family: "Century Gothic", sans-serif;
+    font-size: 1.5rem;
+    color: #333333;
+    line-height: 200%;
+    text-decoration: none;
+}
+
+.failure_box p{
+    text-align: center;
+    font-family: "Century Gothic", sans-serif;
+    font-size: 1.5rem;
+    color: #333333;
+    line-height: 200%;
+    text-decoration: none;
+}
+
+.failure_box a:hover{
+    color: white;
+}

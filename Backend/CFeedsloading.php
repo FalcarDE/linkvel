@@ -34,7 +34,7 @@ class CFeedsloading
         return "comment_".$IDNumber;
     }
 
-    static function generateShareButtonID($IDNumber): string
+    static function generateLocationButtonID($IDNumber): string
     {
 
         return "button_".$IDNumber;
@@ -86,10 +86,20 @@ class CFeedsloading
     }
 
 
-    static function generateHtml($PostKey, $HeadlineID, $LikeButtonID, $CommentButtonID, $ShareButtonID ,$LikeLabelID, $CommentLabelID)
+    static function generateHtml($PostKey, $HeadlineID, $LikeButtonID, $CommentButtonID, $LocationButtonID ,$LikeLabelID, $CommentLabelID)
     {
         $Headline               = CFeedsloading::getPostHeadline($PostKey);
         $MediaFileDirectory     = CFeedsloading::getUserMedia($PostKey);
+
+        if(!empty($_SESSION['AccountKey']))
+        {
+            $Session            = implode($_SESSION['AccountKey']);
+        }
+        else
+        {
+            $Session            = "";
+        }
+
 
         echo(
 
@@ -111,17 +121,17 @@ class CFeedsloading
 
                 ."<div class='InteractionMediaIcon'>"
                     ."<div class='IconBlock'>"
-                    ."<button class='material-icons' id='$LikeButtonID' onclick='UpdateLikes(\"".$LikeButtonID."\", \"".$LikeLabelID."\", \"".$HeadlineID."\");' > &#xe80b; </button>"
+                    ."<button class='material-icons' id='$LikeButtonID' onclick='UpdateLikes(\"".$LikeButtonID."\", \"".$LikeLabelID."\", \"".$HeadlineID."\", \"".$Session."\" );' > &#xe80b; </button>"
                     ."<label id='$LikeLabelID' > ". CFeedsloading::getNumberOfPostLikes($PostKey) . "</label>"
                     ."</div>"
 
                     ."<div class='IconBlock'>"
-                        ."<button class='material-icons' id='$CommentButtonID' onclick='generateCommentSection(\"".$HeadlineID."\");' > &#xe0b9; </button>"
+                        ."<button class='material-icons' id='$CommentButtonID' onclick='generateCommentSection(\"".$HeadlineID."\", \"".$Session."\" , \"".$CommentLabelID."\"   );' > &#xe0b9; </button>"
                         ."<label id='$CommentLabelID' >". CFeedsloading::getNumberOfComments($PostKey) ."</label>"
                     ."</div>"
 
                     ."<div class='IconBlock'>"
-                        ."<button class='material-icons' id='$ShareButtonID'> &#xe80d; </button>"
+                        ."<button class='material-icons' id='$LocationButtonID'> location_on </button>"
                     ."</div>"
                 ."</div>"
                 ."<br>"

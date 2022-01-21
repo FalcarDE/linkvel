@@ -1,4 +1,4 @@
-<!-- Created by @HelenLaible  Extended by @Antonia Geschke-->
+<!-- Created by <@!770261677630291979>Laible  Extended by @Antonia Geschke-->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -9,72 +9,61 @@
     <title>Responsive Navigationsleiste</title>
     <link rel="stylesheet" href="../CSS/NavBarStyle.css">
     <script type="text/javascript" src="../Frontend/nav.js" defer></script>
-
 </head>
 <body>
 <div id="top">
 
-    <nav class="navigation_bar">
-        <div class="LeftSideBar">
-            <a href="../Frontend/LandingPage.php" class="nav_logo">linkvel</a>
-            <div class="UserName" >
+    <nav class="nav">
+        <div class="nav-inner">
+            <div>
+                <a href="../Frontend/LandingPage.php" class="nav_logo">Linkvel</a> <br>
                 <?php
-                if (isset($_SESSION['AccountKey']))
-                {
-                    require_once('../Backend/CUserDataLoading.php');
-                    echo CUserDataLoading::getUserName(implode($_SESSION['AccountKey']));
-                }
+                require_once '../Backend/CNavBarBuilder.php';
+                CNavBarBuilder::chooseUsername();
                 ?>
             </div>
         </div>
 
-
         <a href="#" class="toggle-button">
-            <span class="bar"></span>
+            <xspan class="bar"></xspan>
             <span class="bar"></span>
             <span class="bar"></span>
         </a>
+
         <div class="list-container">
             <ul>
-
                 <div class="box">
 
                     <form method="get" action="../Frontend/SearchPage.php">
-                        <input name="Search" class="input" type="text"  placeholder="SUCHE">
+                        <input name="Search" class="searchinput" type="text"  placeholder="SUCHE">
                         <button class="button" href="#">
-                            <a href="#"> <i class="material-icons"> search </i></a>
-
-
+                            <a href="#"><i class="material-icons"></a>search</i>
                         </button>
                     </form>
                 </div>
 
-                <li><a href="../Frontend/LandingPage.php">STARTSEITE</a></li>
-                <li><a href="#">MEIN KONTO</a>
-                    <div class="dropdown">
-                        <ul>
-                            <li><a href="../Backend/SessionValidation.php">PROFIL ANSEHEN</a></li>
-                            <li><a href="#">PROFIL BEARBEITEN</a></li>
-                            <li><a href="../Frontend/Login_Registration_Formular.html">LOGIN</a></li>
-                        </ul>
-                    </div>
-                <li><a href="../Backend/logout.php">LOGOUT</a>
-                </li>
+                <?php
+                require_once '../Backend/CNavBarBuilder.php';
+                CNavBarBuilder::chooseNavView();?>
+
             </ul>
         </div>
     </nav>
 </div>
-<!--
-<bottom>
-    <footer>
-        <ul class="footer">
-            <li><a href="#">FAQ</a></li>
-            <li><a href="../Frontend/Impressum.php">POLICY & IMPRESSUM</a></li>
-        </ul>
-    </footer>
-</bottom>
--->
+
+<footer>
+    <div class="footer-outer">
+        <div class="footer-inner">
+            <ul id="footer-links">
+                <li><a href="../Frontend/FAQ_Page.php">FAQ</a></li>
+                <li><a href="../Frontend/Impressum.php">POLICY & IMPRESSUM</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
 </body>
 
-</html>
 
+
+</html>

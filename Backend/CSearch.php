@@ -14,8 +14,8 @@ class CSearch
         $ServerSession   = new CServerConnection("localhost","root", "");
         $pdoServer = $ServerSession::connectServer();
         $SearchResult = $pdoServer->query("SELECT PostKey FROM linkvel.post WHERE Hashtags LIKE '%{$statement}%' ");
-
-        return $SearchResult->fetchAll(PDO::FETCH_ASSOC);
+        self::$NumberOfPost = $SearchResult->fetchAll(PDO::FETCH_ASSOC);
+        return self::$NumberOfPost;
     }
 
     //========= Searches for Headlines =========
@@ -60,11 +60,10 @@ class CSearch
             $HeadlineID         = CFeedsloading::generateHeadlineID($IDNumber);
             $LikeButtonID       = CFeedsloading::generateLikeButtonID($IDNumber);
             $CommentButtonID    = CFeedsloading::generateCommentButtonID($IDNumber);
-            $ShareButtonID      = CFeedsloading::generateShareButtonID($IDNumber);
+            $ShareButtonID      = CFeedsloading::generateLocationButtonID($IDNumber);
             $LikeLabelID        = CFeedsloading::generateLikeLabel($IDNumber);
             $CommentLabelID     = CFeedsloading::generateCommentLabel($IDNumber);
             CFeedsloading::generateHtml($PostKey, $HeadlineID, $LikeButtonID, $CommentButtonID, $ShareButtonID, $LikeLabelID, $CommentLabelID);
-            $PostKey =  $PostKey + 1;
             $IDNumber = $IDNumber + 1;
         }
     }

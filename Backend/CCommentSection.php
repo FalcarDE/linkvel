@@ -13,8 +13,8 @@ $ServerSession::connectServer();
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 
 $CommentSection = new CCommentSection;
-$CommentSection->getPostKey($_GET['Headline']);
-$NumberOfComment = count($CommentSection->getAllCommentsFromPost());
+$CommentSection->setPostKey();
+$NumberOfComment = count($CommentSection->getAllCommentsFromPost(CCommentSection::getPostKey()));
 ////$NumberOfComment= 3;
 $CommentSection->generateCommentSectionFrame($NumberOfComment);
 
@@ -25,17 +25,22 @@ class CCommentSection
     private static  $PostKey;
     private static  $NumberOfComment;
     private static  $CommentsSectionKeys;
+    private static  $Session;
+    private static  $CommentLabelID;
 
 
 
 
     function __construct()
     {
-        self::$Headline   = ($_GET['Headline']   ?? null);
+        self::$Headline                 = ($_GET["Headline"]        ?? null);
+        self::$Session                  = ($_GET["Session"]         ?? null);
+        self::$CommentLabelID           = ($_GET["CommentLabelID"] ?? null);
+
 
     }
 
-    static function getPostKey()
+    static function setPostKey()
     {
         $Headline = self::$Headline;
 
@@ -45,15 +50,20 @@ class CCommentSection
 
     }
 
-
-    static function getAllCommentsFromPost()
+    static function getPostKey()
     {
-        $PostKey = self::$PostKey;
+        return self::$PostKey;
+    }
+
+    static function getAllCommentsFromPost($PostKey)
+    {
+
 
         $Sql_Statement = CServerConnection::$DB_connection->query("select CommentsSectionKey from linkvel.commentssection AS cs
                                                                     INNER JOIN post AS p ON p.PostKey = cs.PostRefKey
                                                                     WHERE PostKey = '$PostKey'");
         $Sql_Statement->execute();
+
         return self::$CommentsSectionKeys = $Sql_Statement->fetchAll(PDO::FETCH_ASSOC);
 
 
@@ -74,7 +84,7 @@ class CCommentSection
         {
             $UserCommentsKey = implode(self::$CommentsSectionKeys[$Index]);
 
-            self::generateHTMLCommentFrameBuilder($Index, $UserCommentsKey);
+            self::generateHTMLCommentFrameBuilder(self::$PostKey, $UserCommentsKey);
         }
 
         self::generateHTMLCommentInput();
@@ -82,36 +92,34 @@ class CCommentSection
     }
 
 
-    static function generateHTMLCommentFrameBuilder($Index ,$UserCommentsKey)
+    static function generateHTMLCommentFrameBuilder($PostKey,$UserCommentsKey)
     {
 
 
             echo
                 "<div id='CommentSection' class='CommentSection'>"
-                . "<p>"
-                . CCommentSection::getUserName( self::$PostKey,$UserCommentsKey )
+                . "<p class='CommentUserName'>"
+                . CCommentSection::getUserName($PostKey,$UserCommentsKey )
                 . "</p>"
-                . "<p>"
-                . CCommentSection::getCommentDateTime( self::$PostKey,$UserCommentsKey)
+                . "<p  class='CommentDateTime'>"
+                . CCommentSection::getCommentDateTime( $PostKey,$UserCommentsKey)
                 . "</p>"
-                . "<br>"
-                . "<p>"
-                . CCommentSection::getCommentsContents( self::$PostKey,$UserCommentsKey)
+                . "<p class='CommentContent'>"
+                . CCommentSection::getCommentsContents( $PostKey,$UserCommentsKey)
                 . "</p>"
-                . "</div>"
-                . "<br>";
+                . "</div>";
 
     }
+
 
     static function generateHTMLCommentInput()
     {
             echo
-            "<div class='CommentInputArea'> "
+            "<div class='CommentInputArea'>"
             ."<input  id='CommentInputArea' class='input' role='textbox' type='text' placeholder='Teile deine Meinung mit der Community!'> "
-            ."<button onclick='UploadComments()'> Senden </button>"
+            ."<button onclick='UploadComments(\"".self::$Session."\" , \"".self::$CommentLabelID."\")'> Senden </button>"
             ."</div>";
     }
-
 
     static function getUserName($PostKey, $UserCommentsKey)
     {

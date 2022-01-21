@@ -1,8 +1,3 @@
-
-
-
-
-
 /*
 *
 * function for
@@ -12,12 +7,12 @@
 let global_Headline;
 
 
-function generateCommentSection(headlineID)
+function generateCommentSection(headlineID , Session , CommentLabelID)
 {
     let Headline   = document.getElementById(headlineID).innerHTML
     global_Headline = Headline;
 
-    alert(Headline)
+    //alert(Headline)
 
 
     let xhttp;
@@ -37,7 +32,7 @@ function generateCommentSection(headlineID)
                 document.getElementById("RightSide").innerHTML = this.responseText;
             }
         };
-        xhttp.open("GET", "../Backend/CCommentSection.php?Headline="+ Headline );
+        xhttp.open("GET", "../Backend/CCommentSection.php?Headline="+ Headline + "&Session=" + Session + "&CommentLabelID=" + CommentLabelID, true);
         xhttp.send();
 
     }
@@ -45,7 +40,7 @@ function generateCommentSection(headlineID)
 
 
 
-function UpdateLikes(LikeButtonID, LikeLabelID ,HeadlineID)
+function UpdateLikes(LikeButtonID, LikeLabelID ,HeadlineID , Session )
 {
     let Headline            = document.getElementById(HeadlineID).innerHTML;
     //let LikeButtonID        = LikeButtonID;
@@ -53,49 +48,66 @@ function UpdateLikes(LikeButtonID, LikeLabelID ,HeadlineID)
 
     let xhttp;
 
-
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function()
+    if ( Session === "")
     {
-        if (this.readyState === 4 && this.status === 200)
+       alert("Bitte einloggen um liken zu können!")
+    }
+    else
+    {
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function()
         {
-            document.getElementById(LikeButtonID).style.color = 'skyblue';
-            document.getElementById(LikeLabelID).innerHTML = this.responseText;
-        }
-    };
-    xhttp.open("GET", "../Backend/CUpdatingLikes.php?Headline="+ Headline);
-    xhttp.send();
+            if (this.readyState === 4 && this.status === 200)
+            {
+                document.getElementById(LikeButtonID).style.color = 'skyblue';
+                document.getElementById(LikeLabelID).innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "../Backend/CUpdatingLikes.php?Headline="+ Headline, true);
+        xhttp.send();
+    }
+
 
 }
 
 
-
-
-function UploadComments()
+function UploadComments(Session, CommentLabelID)
 {
     let comment = document.getElementById('CommentInputArea').value;
-    alert(global_Headline);
 
+    if ( Session === "")
+    {
+        alert("Bitte einloggen um liken zu können!")
+    }
 
-    //if (comment === "")
-    //{
-    //    //document.getElementById('CommentInputArea').innerHTML = "\"Bitte gebe zunächst dein Kommentar ab, damit du erst posten kannst!\"";
-    //    alert("Bitte gebe zunächst dein Kommentar ab, damit du erst posten kannst!");
-    //}
-    //else
-    //{
+    else if (comment === "")
+    {
+        alert("Bitte gebe zunächst dein Kommentar ab, damit du erst posten kannst!");
+    }
+
+    else
+    {
         let xhttp;
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function ()
         {
             if (this.readyState === 4 && this.status === 200)
             {
+
+
                 document.getElementById("RightSide").innerHTML = this.responseText;
+
+
+
+                let NumberOfCommentNew = parseInt(document.getElementById(CommentLabelID).innerHTML) + 1;
+                document.getElementById(CommentLabelID).innerHTML = NumberOfCommentNew;
             }
         };
 
-        xhttp.open("GET", "../Backend/CUploadComment.php?comment=" + comment + "&headline=" + global_Headline);
+        xhttp.open("GET", "../Backend/CUploadComment.php?comment=" + comment + "&headline=" + global_Headline, true);
         xhttp.send();
+    }
+
 
 
 }

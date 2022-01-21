@@ -23,6 +23,7 @@ created by @Hoang
 /* ------------------------------- Iconbar ---------------------------- */
 .IconBar
 {
+    z-index: -1;
     box-sizing: border-box;
     margin-right: auto;
     margin-left: 10%;
@@ -35,13 +36,13 @@ created by @Hoang
 
 .IconBar ul
 {
+    max-width: 23rem;
     background-color: white;
     border-radius: 1.5em;
 }
 .IconBar ul li
 {
     box-sizing: border-box;
-
     margin-right: auto;
     margin-left: auto;
     width: 50%;
@@ -73,7 +74,7 @@ created by @Hoang
     margin-left: auto;
     margin-top: 5%;
     justify-content: center;
-    max-width: 43.5%;
+    max-width: 28rem;
     background: #d8effd;
     border-radius: 1.5em;
 
@@ -107,7 +108,8 @@ created by @Hoang
     margin-left: auto;
     margin-top: 5%;
     justify-content: center;
-    max-width: 43.5%;
+    max-width: 28rem;
+    width: 100%;
     background-color: whitesmoke;
     border-radius: 1.5em ;
 
@@ -119,33 +121,57 @@ created by @Hoang
 
 .headline
 {
+    color: lightskyblue;
+    text-decoration: underline;
+    font-style: italic;
+    font-size: 30px;
     box-sizing: border-box;
     margin-right: auto;
     margin-left: auto;
-    max-width: 11em;
+    text-align: center;
+    width: 90%;
+    font-weight: 800;
+    text-transform: uppercase;
+
 
     /* border: 1px solid red; */
+}
 
+
+/* hover effect when use button */
+.headline:hover {
+    background-image: linear-gradient(to right, rgba(255,250,250,0) 50%, lightskyblue 50%);
+    background-size: 200% auto;
+    color: whitesmoke;
+    font-size: 1.75em;
+    text-decoration: underline;
+    transition: background-position 0.5s ease-out;
+    background-position: -99.99% 0;
 }
 
 #UserName
 {
+    font-style: italic;
     box-sizing: border-box;
     margin-right: auto;
     margin-left: auto;
     max-width: 25em;
-
+    width: 90%;
     /* border: 1px solid red; */
 }
 
 #UserText
 {
+
     box-sizing: border-box;
     display: block;
     max-width: 25em;
+    width: 90%;
+    margin-top: 1%;
     margin-right: auto;
     margin-left: auto;
 
+    font-size: 20px;
     /* border: 1px solid red; */
 }
 
@@ -153,15 +179,13 @@ created by @Hoang
 {
     box-sizing: border-box;
     display: block;
-    /* border: 1px solid red; */
     margin-right: auto;
     margin-left: auto;
     max-width: 25em;
-    width: 100%;
+    width: 90%;
     height: auto;
-
+    /* border: 1px solid red; */
 }
-
 
 .InteractionMediaIcon
 {
@@ -169,9 +193,9 @@ created by @Hoang
     margin-right: auto;
     margin-left: auto;
     max-width: 25em;
-
-
+    width: 90%;
 }
+
 
 .IconBlock
 {
@@ -181,6 +205,8 @@ created by @Hoang
     margin-left: auto;
     width: 33.3%;
     display: inline-block;
+    align-items: center;
+
 }
 
 .InteractionMediaIcon label
@@ -191,16 +217,15 @@ created by @Hoang
     align-content: center;
     font-size: 16px;
     margin-top: 5%;
-    margin-left: 2%;
-    width: 60%;
-
-
-
+    margin-left: 5%;
+    width: 20%;
+    /*border: 1px solid red;*/
 
 }
 
 .InteractionMediaIcon button {
 
+    margin-left: 20%;
     font-size: 28px;
     border: none;
     cursor: pointer; /* hand icon when go to icons */
@@ -215,28 +240,48 @@ created by @Hoang
 }
 
 
-
-
 .RightSide
 {
-    position: fixed;
+    z-index: 1;
+    position: sticky;
     box-sizing: border-box;
-    width: 25%;
+    max-width: 25%;
     height: 100%;
-    margin-top: 5%;
+    margin-top: 20%;
     margin-left: 70%;
+
 }
 
 .CommentSection
 {
-
+    outline-style: solid;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     background-color: white;
     margin-top: 2%;
+    border-radius: 10px;
+}
+
+.CommentUserName
+{
+    margin-left: 2%;
 
 }
+
+.CommentDateTime
+{
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+.CommentContent
+{
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
 
 .CommentInputArea
 {
@@ -260,16 +305,15 @@ created by @Hoang
 }
 
 
-
-
 @media(max-width:992px) {
     .IconBar
     {
+        z-index: -1;
         position: fixed;
         margin-right: auto;
-        margin-left: 10%;
+        margin-left: 8%;
         margin-top: 5%;
-        max-width: 100%;
+        max-width: 28rem;
         /* border: 1px solid red; */    }
 
 
@@ -277,7 +321,7 @@ created by @Hoang
     {
         background-color: white;
         border-radius: 1.5em;
-        max-width: 100%;
+
 
     }
     .IconBar ul li
@@ -308,7 +352,7 @@ created by @Hoang
         margin-left: auto;
         margin-top: 5%;
         justify-content: center;
-        max-width: 43.5%;
+        max-width: 28rem;
         background: #d8effd;
         border-radius: 1.5em;
 
@@ -340,7 +384,9 @@ created by @Hoang
         box-sizing: border-box;
         margin-right: auto;
         margin-left: auto;
-        font-size: small;
+        font-size: larger;
+        width: 90%;
+
 
         /* border: 1px solid red; */
 
@@ -361,6 +407,7 @@ created by @Hoang
     {
         box-sizing: border-box;
         display: block;
+        margin-top: 1%;
         margin-right: auto;
         margin-left: auto;
         font-size: small;
@@ -376,7 +423,7 @@ created by @Hoang
         margin-right: auto;
         margin-left: auto;
         max-width: border-box;
-        width: 100%;
+        width: 90%;
         height: auto;
 
 
@@ -386,13 +433,10 @@ created by @Hoang
     {
         box-sizing: border-box;
         margin-right: auto;
-        margin-left: 2%;
+        margin-left: auto;
         max-width: 100%;
         display: flex;
-        align-content: center;
-
-
-        border: 1px solid red;
+        /*border: 1px solid red;*/
 
     }
 
@@ -403,14 +447,14 @@ created by @Hoang
         cursor: pointer; /* Pointer/hand icon */
         float: left; /* Float the buttons side by side */
         align-content: center;
-        font-size: smaller;
+        font-size: medium;
         margin-top: 5%;
 
     }
 
     .InteractionMediaIcon button {
 
-        font-size: smaller;
+        font-size: medium;
         border: none;
         cursor: pointer; /* hand icon when go to icons */
         float: left; /* Float the buttons next to each other with */
@@ -426,12 +470,14 @@ created by @Hoang
 
     .RightSide
     {
-        position: fixed;
+        position: sticky;
         box-sizing: border-box;
         max-width: 100%;
         max-height: 100%;
-        margin-top: 5%;
-        margin-left: 70%;
+        margin-right: 8%;
+        margin-top: 20%;
+        margin-left: 80%;
+
     }
 
     .CommentSection
@@ -443,12 +489,10 @@ created by @Hoang
         background-color: white;
         border-radius: 2%;
         font-size:xx-small;
-
+        max-width: 28rem;
         border: 1px solid red;
 
-
     }
-
 
     .textarea {
         display: block;
@@ -459,9 +503,7 @@ created by @Hoang
         line-height: 20px;
         font-size:xx-small;
         border: 1px solid black;
-
     }
-
 
 }
 

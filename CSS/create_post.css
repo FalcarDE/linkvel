@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.create_post{ /*fertig*/
+    margin-top: auto;
+    background-color: white;
+    width: 1200px;
+    height: 450px;
+    border-radius: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.upload_picture{ /*fertig*/
+    margin-top: 1.5rem;
+}
+
+.content{ /*fertig auf keinen Fall änder!*/
+    padding-top: 8rem;
+}
+
+.post{
+    float: left;
+}
+
+h1{ /*fertig*/
+    padding-top: 20px;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+}
+
+.inputs{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.inputs input{
+    margin-top: 2rem;
+}
+
+.options{ /*fertig*/
+    display: table-cell;
+    padding-top: 70px;
+    font-family: "Century Gothic", sans-serif;
+    line-height: 300%;
+    font-weight: bold;
+    color: #333333;
+    padding-left: 120px;
+}
+
+.inputs{
+    float: right;
+    width: 200px;
+    margin-top: -260px;
+    margin-right: 12rem;
+}
+
+.file-btn p{
+    margin-left: 40px;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: bold;
+    color: #333333;
+}
+
+.file-btn{
+    float: left;
+    margin-left: 150px;
+    margin-top: 130px;
+}
+
+.inputs textarea{
+    margin-top: 1rem;
+}

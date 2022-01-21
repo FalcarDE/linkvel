@@ -1,0 +1,32 @@
+
+
+.success_box{
+    padding-top: 12rem;
+    justify-content: center;
+    width: auto;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.success_box p{
+    text-align: center;
+    font-family: "Century Gothic", sans-serif;
+    font-size: 1.5rem;
+    color: #333333;
+    line-height: 200%;
+    text-decoration: none;
+}
+
+.success_box a:hover{
+    color: white;
+}
+
+.success_box a{
+    text-align: center;
+    font-family: "Century Gothic", sans-serif;
+    color: #333333;
+    line-height: 200%;
+    text-decoration: none;
+}
+
