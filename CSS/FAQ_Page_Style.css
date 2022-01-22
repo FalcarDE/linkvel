@@ -1,3 +1,5 @@
+
+
 /* Für alle Elemente */
 *{
     margin      : 0;
@@ -13,178 +15,6 @@ body{
 }
 
 
-
-/*----------------------------------------------- Navigation ---------------------------------------------------------*/
-
-.navigation_bar
-{
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */    height: 85px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #309bfa;
-    letter-spacing: 0.2rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.144);
-    z-index: 0;
-
-}
-.nav_logo{
-    margin: 25px;
-    color: #6b6b6b;
-    font-weight: bold;
-    font-size: 30px;
-    font-family: "Century Gothic", serif;
-    font-style: revert;
-    text-decoration: none;
-}
-
-nav ul{
-    display: flex;
-    float: right;
-}
-
-nav ul li{
-    height: 80%;
-    float: left;
-    position: relative;
-    list-style-type: none;
-}
-
-nav ul li a:hover{
-    border-bottom: 4px solid #6b6b6b;
-}
-
-nav ul li a{
-    color: #6b6b6b;
-    padding: 30px;
-    letter-spacing: 0.2rem;
-    text-decoration: none;
-    font-size: 22px;
-    font-family: "Century Gothic", sans-serif;
-    font-weight: inherit;
-    display: block;
-}
-
-nav ul li ul{
-    display: none;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 8px;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 0.14rem 0.25rem rgba(0, 0, 0, 0.144);
-    z-index: 1;
-    width: 100%;
-}
-
-nav ul li:hover ul{ /*Drop-Down*/
-    display: block;
-    top: 91px;
-    width: 218px;
-}
-
-nav ul li ul li a{ /*Drop-Down Elemente von Mein Konto*/
-    color: #6b6b6b;
-    padding: 16px 20px;
-    text-align: center;
-}
-
-.dropdown{
-    z-index: 1;
-    width: 100%;
-}
-
-.toggle-button{
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 23px;
-}
-
-.toggle-button .bar{
-    height: 4px;
-    width: 100%;
-    background-color: #6b6b6b;
-    border-radius: 100px;
-}
-
-@media(max-width:750px){
-    .list-container{
-        display: none;
-        width: 100%;
-    }
-    .toggle-button{
-        display: flex;
-    }
-    nav{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .nav_logo{
-        display: block;
-    }
-    .list-container ul{
-        flex-direction: column;
-        width: 100%;
-    }
-    .list-container li{
-        text-align: center;
-    }
-    .list-container.active{
-        display: flex;
-    }
-    .dropdown{
-        width: 100%;
-    }
-}
-/*
-.search-box{
-    position: absolute;
-    top: 42px;
-    left: 1170px;
-    width: 500px;
-    transform: translate(-50%, -50%);
-}
-
-input{
-    position: relative;
-    display: inline-block;
-    font-size: 20px;
-    box-sizing: border-box;
-}
-
-input[type="text"]{
-    color: white;
-    background: #309bfa;
-    width: 340px;
-    height: 35px;
-    border: none;
-    outline: none;
-    padding: 0 25px;
-    border-radius: 20px 0 0 20px;
-}
-
-input[type="submit"]{
-    position: relative;
-    border-radius: 0 20px 20px 0;
-    height: 35px;
-    width: 80px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background: #309bfa;
-}
-
-input[type="submit"]:hover{
-    background: #309bfa;
-}
-*/
 /*--------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -332,7 +162,7 @@ footer{
 .contact-section{
     background-color  : #2c3e50;
     background-size   : cover;
-    padding           : 40px 0;     /* top - right - bottom - left */
+    padding           : 40px 0 90px 0;     /* top - right - bottom - left */
 }
 
 
@@ -419,13 +249,3 @@ textarea.contact-form-text{
 .contact-form-button:hover{
     background: #2ecc71;
 }
-
-
-
-
-
-
-
-
-
-

@@ -18,6 +18,39 @@ $ServerSession::connectServer();
 
 //========= Server Connection =========
 
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+if(CRegistrationVerify::ValidateEmail($_POST['Email']) && CRegistrationVerify::ValidatePhoneNumber($_POST['Phonenumber']))
+{
+    $NewUser = new CRegistrationVerify();
+    $NewUser->setNewAccountDetails();
+    $NewUser->setContactDetails();
+    $NewUser->getAccountKey();
+    $NewUser->getContactKey();
+    $NewUser->setUserData();
+    $NewUser->getUserKey();
+    $NewUser->setUserRole();
+    session_start();
+    header('Location: ../Frontend/SucessfulRegistration.php');
+    exit();
+}
+else
+{
+    echo("Registrierung war nicht erfolgreich! Bitte geben Sie ihre Daten neu ein!");
+    echo "<br>";
+    die ('<a href="/Frontend/Login_Registration_Formular.html"> Back to Registration Formular </a>');
+}
+
+//$getAccountDetailsKey   = $NewSuperUser->getAccountDetailsKey($pdoServer);
+//$getContactDetailsKey   = $NewSuperUser->getContactDetailsKey($pdoServer);
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 
 Class CRegistrationVerify
@@ -102,9 +135,6 @@ Class CRegistrationVerify
 
 
     }
-
-
-
 
     static function ValidateEmail($Email)
     {
@@ -202,38 +232,5 @@ Class CRegistrationVerify
 
 }
 
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-if(CRegistrationVerify::ValidateEmail($_POST['Email']) && CRegistrationVerify::ValidatePhoneNumber($_POST['Phonenumber']))
-{
-    $NewUser = new CRegistrationVerify();
-    $NewUser->setNewAccountDetails();
-    $NewUser->setContactDetails();
-    $NewUser->getAccountKey();
-    $NewUser->getContactKey();
-    $NewUser->setUserData();
-    $NewUser->getUserKey();
-    $NewUser->setUserRole();
-    session_start();
-    header('Location: ../Frontend/SucessfulRegistration.php');
-    exit();
-}
-else
-{
-    echo("Registrierung war nicht erfolgreich! Bitte geben Sie ihre Daten neu ein!");
-    echo "<br>";
-    die ('<a href="/Frontend/Login_Registration_Formular.html"> Back to Registration Formular </a>');
-}
-
-//$getAccountDetailsKey   = $NewSuperUser->getAccountDetailsKey($pdoServer);
-//$getContactDetailsKey   = $NewSuperUser->getContactDetailsKey($pdoServer);
-//--------------------------------------------------------------------------------------------------------------------------------------------------
-
 ?>
-
-
 

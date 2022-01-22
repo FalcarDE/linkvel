@@ -40,6 +40,7 @@ body{
 }
 
 
+
 .footer-outer {
     position: fixed;
     left: 0;
@@ -195,7 +196,6 @@ nav ul li ul li a{ /*Drop-Down Elemente von Mein Konto*/
 
 
 
-
 @media(max-width: 1200px){
     .list-container{
         display: none;
@@ -249,6 +249,7 @@ nav ul li ul li a{ /*Drop-Down Elemente von Mein Konto*/
         flex-direction: column;
         background-color: rgba(255, 255, 255, 0.9);
     }
+
 
 }
 

@@ -94,11 +94,8 @@ function UploadComments(Session, CommentLabelID)
             if (this.readyState === 4 && this.status === 200)
             {
 
-
                 document.getElementById("RightSide").innerHTML = this.responseText;
-
-
-
+                
                 let NumberOfCommentNew = parseInt(document.getElementById(CommentLabelID).innerHTML) + 1;
                 document.getElementById(CommentLabelID).innerHTML = NumberOfCommentNew;
             }

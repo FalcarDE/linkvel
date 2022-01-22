@@ -1,5 +1,5 @@
-<!-- Created by @Doung, Extended by @Hoang-->
-<!-- Created by @Doung, extended and improved by @Hoang-->
+<!-- Created by @Doung -->
+
 
 let login = document.getElementById("login");
 let register = document.getElementById("register");
@@ -18,11 +18,19 @@ function logined()
     buttom.style.left       = "0";
 }
 
-function validateEmail(Email)
+/* Created by @Hoang */
+
+function validateEmail()
 {
+    let Email       = document.getElementById("Email").value;
+
+
     let Mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(Email.value.match(Mailformat))
+
+    if(Email.match(Mailformat))
     {
+        alert(Email);
+
         return true;
     }
     else
@@ -34,10 +42,14 @@ function validateEmail(Email)
 
 }
 
-function validatePhoneNumber(Phonenumber)
+function validatePhoneNumber()
 {
+    let Phonenumber = document.getElementById("Phonenumber").value;
+    alert(Phonenumber);
+
+
     let Phoneformat = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-    if(Phonenumber.value.match(Phoneformat))
+    if(Phonenumber.match(Phoneformat))
     {
         return false;
     }

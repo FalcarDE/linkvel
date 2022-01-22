@@ -3,7 +3,7 @@ session_start();
 
 if ($_SESSION["AccountKey"])
 {
-    header('Location: ../Frontend/UserProfilPage.php');
+    header('Location: ../Frontend/UserProfilePage.php');
 }
 else
 {

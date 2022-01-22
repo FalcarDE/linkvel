@@ -41,10 +41,9 @@ session_start();
                     <?php
 
                     require_once('../Backend/CUserDataLoading.php');
-                    $UserData   =   new CUserDataLoading();
-                    $FirstName  =   $UserData::getUserFirstname(implode($_SESSION['AccountKey']));
-                    $Midname    =   $UserData::getUserMidname(implode($_SESSION['AccountKey']));
-                    $LastName   =   $UserData::getUserLastname(implode($_SESSION['AccountKey']));
+                    $FirstName  =   CUserDataLoading::getUserFirstname(implode($_SESSION['AccountKey']));
+                    $Midname    =   CUserDataLoading::getUserMidname(implode($_SESSION['AccountKey']));
+                    $LastName   =   CUserDataLoading::getUserLastname(implode($_SESSION['AccountKey']));
 
                     if(empty($Midname))
                     {
@@ -94,20 +93,18 @@ session_start();
             <!-- In den Placeholder sollen dir Daten, die schon vorhanden sind rein  -->
 
             <div class="form-box">
-                <form id="register" method="post" action="../Backend/UserDataEdit.php" class="input-group">
+                <form id="register" method="post" action="../Backend/CUserDataEdit.php" class="input-group">
 
                     <div class="form-box-left">
 
                         <label class="label">Vorname             </label>        <input autocomplete="on"       class="input-field"        name="FirstName"         type="text"         placeholder='<?php
                                                                                                                                                                                                      require_once('../Backend/CUserDataLoading.php');
-                                                                                                                                                                                                     $UserData = new CUserDataLoading();
-                                                                                                                                                                                                     echo $UserData::getUserFirstname(implode($_SESSION['AccountKey']));
+                                                                                                                                                                                                     echo CUserDataLoading::getUserFirstname(implode($_SESSION['AccountKey']));
                                                                                                                                                                                                      ?>'>
 
                         <label class="label">Mittelname          </label>        <input autocomplete="on"       class="input-field"        name="MidName"           type="text"         placeholder='<?php
                                                                                                                                                                                                      require_once('../Backend/CUserDataLoading.php');
-                                                                                                                                                                                                     $UserData = new CUserDataLoading();
-                                                                                                                                                                                                     $Midname  = $UserData::getUserMidname(implode($_SESSION['AccountKey']));
+                                                                                                                                                                                                     $Midname  = CUserDataLoading::getUserMidname(implode($_SESSION['AccountKey']));
                                                                                                                                                                                                      if(empty($Midname))
                                                                                                                                                                                                      {echo "-";}
                                                                                                                                                                                                      else
@@ -117,14 +114,12 @@ session_start();
 
                         <label class="label">Nachname            </label>        <input autocomplete="on"       class="input-field"        name="LastName"          type="text"         placeholder='<?php
                                                                                                                                                                                                      require_once('../Backend/CUserDataLoading.php');
-                                                                                                                                                                                                     $UserData = new CUserDataLoading();
-                                                                                                                                                                                                     echo $UserData::getUserLastname(implode($_SESSION['AccountKey']));
+                                                                                                                                                                                                     echo CUserDataLoading::getUserLastname(implode($_SESSION['AccountKey']));
                                                                                                                                                                                                      ?>'>
 
                         <label class="label">Adresse             </label>        <input autocomplete="on"       class="input-field"        name="StreetAddress"     type="text"         placeholder='<?php
                                                                                                                                                                                                      require_once('../Backend/CUserDataLoading.php');
-                                                                                                                                                                                                     $UserData = new CUserDataLoading();
-                                                                                                                                                                                                     echo $UserData::getUserAddress(implode($_SESSION['AccountKey']));
+                                                                                                                                                                                                     echo CUserDataLoading::getUserAddress(implode($_SESSION['AccountKey']));
                                                                                                                                                                                                      ?>'>
 
                     </div>
@@ -133,20 +128,17 @@ session_start();
                     <div class="form-box-right">
                         <label class="label">Postleitzahl        </label>        <input autocomplete="on"       class="input-field"        name="ZipCode"           type="number"       placeholder='<?php
                                                                                                                                                                                                      require_once('../Backend/CUserDataLoading.php');
-                                                                                                                                                                                                     $UserData = new CUserDataLoading();
-                                                                                                                                                                                                     echo $UserData::getUserZipCode(implode($_SESSION['AccountKey']));
+                                                                                                                                                                                                     echo CUserDataLoading::getUserZipCode(implode($_SESSION['AccountKey']));
                                                                                                                                                                                                      ?>'>
 
                         <label class="label">Land                </label>        <input autocomplete="on"       class="input-field"        name="Country"           type="text"         placeholder='<?php
                                                                                                                                                                                                      require_once('../Backend/CUserDataLoading.php');
-                                                                                                                                                                                                     $UserData = new CUserDataLoading();
-                                                                                                                                                                                                     echo $UserData::getUserCountry(implode($_SESSION['AccountKey']));
+                                                                                                                                                                                                     echo CUserDataLoading::getUserCountry(implode($_SESSION['AccountKey']));
                                                                                                                                                                                                      ?>'>
 
                         <label class="label">Email               </label>        <input autocomplete="on"       class="input-field"        name="Email"             type="email"        placeholder='<?php
                                                                                                                                                                                                      require_once('../Backend/CUserDataLoading.php');
-                                                                                                                                                                                                     $UserData = new CUserDataLoading();
-                                                                                                                                                                                                     echo $UserData::getUserEmail(implode($_SESSION['AccountKey']));
+                                                                                                                                                                                                     echo CUserDataLoading::getUserEmail(implode($_SESSION['AccountKey']));
                                                                                                                                                                                                      ?>'>
 
                         <label class="label">Passwort            </label>        <input autocomplete="on"       class="input-field"        name="Password"          type="password"     placeholder=''>
@@ -166,8 +158,8 @@ session_start();
 
                 <div class="middle-container-button-box">
 
-                    <form action="../Frontend/profil.php">
-                        <button type="submit class" class="back-button">Zurück</button>
+                    <form action="../Frontend/UserProfilePage.php">
+                        <button type="submit" class="back-button">Zurück</button>
                     </form>
                 </div>
             </div>

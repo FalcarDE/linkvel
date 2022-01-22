@@ -61,7 +61,7 @@ class CNavBarBuilder
             . "<li><a href='#'>MEIN KONTO</a>"
             . "<div class='dropdown'>"
             . "<ul>"
-            . "<li><a href='../Frontend/UserProfilPage.php'>PROFIL ANSEHEN</a></li>"
+            . "<li><a href='../Backend/UserProfilValidation.php' >PROFIL ANSEHEN</a></li>"
             . "<li><a href='#'>PROFIL BEARBEITEN</a></li>"
             . "</ul>"
             . "</div>"

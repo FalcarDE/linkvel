@@ -63,7 +63,8 @@ session_start();
 
                         //started by one, because the Key in Post - Database started by one
                         //everytime the loop is called, the PostKey will be increment by 1, so all the keys will be load
-                        $PostKey   = 1;
+                        $PostKeyIndex   = CFeedsloading::getAllPostId();
+                        //print_r($PostKeyIndex);
 
                         /*
                             PostNumber is a specific Value for the functions "generateHeadlineID(), generateLikeButtonID(), generateCommentButtonID(), generateShareButtonID()
@@ -73,6 +74,7 @@ session_start();
 
                         for ($Index = 0; $Index < $KeyIndex ; $Index++)
                         {
+                            $PostKey = $PostKeyIndex[$Index];
                             $HeadlineID         = CFeedsloading::generateHeadlineID($IDNumber);
                             $LikeButtonID       = CFeedsloading::generateLikeButtonID($IDNumber);
                             $CommentButtonID    = CFeedsloading::generateCommentButtonID($IDNumber);
@@ -80,7 +82,6 @@ session_start();
                             $LikeLabelID        = CFeedsloading::generateLikeLabel($IDNumber);
                             $CommentLabelID     = CFeedsloading::generateCommentLabel($IDNumber);
                             CFeedsloading::generateHtml($PostKey, $HeadlineID, $LikeButtonID, $CommentButtonID, $LocationButtonID, $LikeLabelID, $CommentLabelID);
-                            $PostKey =  $PostKey + 1;
                             $IDNumber = $IDNumber + 1;
                         }
 

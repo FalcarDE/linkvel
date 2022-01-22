@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title> Authentication </title>
     <link rel="stylesheet" href="../CSS/Login_Registration_Style.css" >
-    <!-- <script src="Login_Registration_Formular.js"> </script> -->
+
 
 </head>
 <body>
@@ -36,22 +36,22 @@
         <form action="../Backend/CRegistrationData.php" class="input-group" id="register"
               method="POST" name="RegiForm">
             <input class="gender-field" name="Gender" placeholder="Geschlecht"                                                                      required    type="text">
-            <input autocomplete="on" class="input-field"        name="FirstName"        placeholder="Vorname *"                                     required    type="text">
-            <input autocomplete="on" class="input-field"        name="MidName"          placeholder="Mittelname"                                                type="text">
-            <input autocomplete="on" class="input-field"        name="LastName"         placeholder="Nachname *"                                    required    type="text">
-            <input autocomplete="on" class="input-field"        name="StreetAddress"    placeholder="Straße und Hausnummer *"                       required    type="text">
-            <input autocomplete="on" class="input-field"        name="ZipCode"          placeholder="Postleitzahl *"                                required    type="number">
-            <input autocomplete="on" class="input-field"        name="Country"          placeholder="Land*"                                         required    type="text">
-            <input autocomplete="on" class="input-field"        name="UserName"         placeholder="Username *"                                    required    type="text">
-            <input autocomplete="on" class="input-field"        name="Email"            placeholder="Email *"                                       required    type="email">
-            <input autocomplete="on" class="input-field"        name="Birthdate"        placeholder="Gebutsdatum *"  onfocus="(this.type='date')"   required    type="text">
-            <input autocomplete="on" class="input-field"        name="Password"         placeholder="Passwort *"                                    required    type="password">
-            <input autocomplete="on" class="input-field"        name="Phonenumber"      placeholder="Handynummer *"                                 required    type="tel">
+            <input autocomplete="on" class="input-field"      id="FirstName"        name="FirstName"        placeholder="Vorname *"                                     required    type="text">
+            <input autocomplete="on" class="input-field"      id="MidName"          name="MidName"          placeholder="Mittelname"                                                type="text">
+            <input autocomplete="on" class="input-field"      id="LastName"         name="LastName"         placeholder="Nachname *"                                    required    type="text">
+            <input autocomplete="on" class="input-field"      id="StreetAddress"    name="StreetAddress"    placeholder="Straße und Hausnummer *"                       required    type="text">
+            <input autocomplete="on" class="input-field"      id="ZipCode"          name="ZipCode"          placeholder="Postleitzahl *"                                required    type="number">
+            <input autocomplete="on" class="input-field"      id="Country"          name="Country"          placeholder="Land*"                                         required    type="text">
+            <input autocomplete="on" class="input-field"      id="UserName"         name="UserName"         placeholder="Username *"                                    required    type="text">
+            <input autocomplete="on" class="input-field"      id="Email"            name="Email"            placeholder="Email *"                                       required    type="email">
+            <input autocomplete="on" class="input-field"      id="Birthdate"        name="Birthdate"        placeholder="Gebutsdatum *"  onfocus="(this.type='date')"   required    type="text">
+            <input autocomplete="on" class="input-field"      id="Password"         name="Password"         placeholder="Passwort *"                                    required    type="password">
+            <input autocomplete="on" class="input-field"      id="Phonenumber"      name="Phonenumber"      placeholder="Handynummer *"                                 required    type="tel">
             <p class="extend-informations"> *Pflichtfelder </p>
 
             <input class="check-box" required type="checkbox"> <span> Ich akzeptiere die AGB und Datenschutz </span>
 
-            <button class="submit-button" name="Submit" onclick="validateEmail(document.RegiForm.Email); validatePhoneNumber(document.RegiForm.Phonenumber)" type="submit"> Registrieren </button>
+            <button class="submit-button" name="Submit" onclick=" validateEmail(); validatePhoneNumber();  " type="submit"> Registrieren </button>
         </form>
     </div>
 </div>

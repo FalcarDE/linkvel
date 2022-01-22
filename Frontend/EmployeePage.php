@@ -1,3 +1,7 @@
+
+<!-- Created by @Duc Duong -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,179 +9,119 @@
     <title>Mitarbeiter-Bereich</title>
     <link rel="stylesheet" href="../CSS/EmployeePage_Style.css">
     <script src="../Frontend/EmployeePage.js"></script>
+    <script src="../Frontend/Login_Registration_Formular.js"></script>
 </head>
 <body>
 
+<!-------------------------- Nav Container -------------------------------------------------------------------------------------------------------------------------------- -->
 
-<?php include '../Frontend/NavBar.php'?>
-
-    <!-------------------------- TOP Container -------------------------------------------------------------------------------------------------------------------------------- -->
-
-    <div class="top-container">
-        <div class="top-container-head">Mitarbeiter - Bereich</div>
-
-        <div class="top-box">
-
-            <div class="top-box-container">
-
-                <div class="left-side">
-
-                    <div class="left-side-input">
-                        <form id="register" class="input-group">
-                            <label class="label">Vorname        </label>           <input autocomplete="on"        class="input-field"        name="FirstName"   id="FirstName"     type="text">
-                            <label class="label">Nachname       </label>           <input autocomplete="on"        class="input-field"        name="LastName"    id="LastName"      type="text">
-                            <label class="label">Benutzername   </label>           <input autocomplete="on"        class="input-field"        name="UserName"    id="UserName"      type="text">
-                            <label class="label">Email          </label>           <input autocomplete="on"        class="input-field"        name="Email"       id="Email"         type="email">
-                        </form>
-                    </div>
-                </div>
-
-
-                <div class="right-side">
-                    <div class="right-side-box">
-                        <div class="output-field" >
-                            <h4 id="OutPutAccountID"> AccountID </h4>
-                        </div>
-
-                        <div class="button-box">
-                            <button type="submit" class="submit-button" onclick="getAccountID();"> AccountID  suchen</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <!-------------------------- Middle Container -------------------------------------------------------------------------------------------------------------------------------- -->
-
-    <div class="middle-container">
-
-
-        <div class="id-input">
-
-            <label      class="label"                          >Hier die AccountID :                     </label>
-            <input      class="input-field" id="IDInputfield"   name="InputAccountID"     required    type="text" >
-            <button     type="submit"                           class="user-search-button"  onclick="getUserDataSet()">User-Daten suchen           </button>
-
-        </div>
-
-
-
-
-        <div class="middle-container-button-box">
-            <button type="submit" class="user-search-button">User-Daten speichern</button>
-        </div>
-    </div>
-
-
-
-
-
-
-    <!-------------------------- Middle Container -------------------------------------------------------------------------------------------------------------------------------- -->
-
-
-    <div class="bottom-container" >
-        <div class="bottom-container-box" id="bottom-container-box">
-
-
-
-            <!--
-            <div class="bottom-container-left" >
-
-
-
-                 <div class="profile-box">
-                     <img class="profile-img" src="../image/mbappe.jpg" alt="Profil-Bild">
-                 </div>
-
-
-                                 <div class="underline">
-                                     <h3 id="profile-name">Vorname Nachname</h3>
-                                     <div class="profil-roll-box">
-                                         <h5 id="permission">User-Rolle</h5>
-                                     </div>
-                                     <div class="last-login-box">
-                                         <h5 id="last-login-time">zuletzt online: gestern</h5>
-                                     </div>
-                                 </div>
-                             </div>
-
-                 -->
-
-
-                    <!-------------------------- Bottom Container --------------------------------------------------------------------------------------------------------------------------------
-
-
-            <div class="bottom-container-right">
-
-
-                    <div class="profil-tag-box">
-                        <h1 id="profil-tag">Persönliches Profil </h1>
-                    </div>
-
-
-                <div class="bottom-container-right-box">
-
-
-
-                    <div class="bottom-container-right-box-left">
-                        <form class="container-input" method="post" >
-                            <label class="bottom-container-label">
-                                Geschlecht:
-                                <?php
-                                    //include_once ("../Backend/CLoadingEmployeePage.php");
-                                    //$Userdata = new CLoadingEmployeePage();
-                                    //$Result   = $Userdata->getUserName();
-                                    //if(empty($Result))
-                                    //{
-                                    //    echo "undefined";
-                                    //}
-//
-                                    //else
-                                    //{
-                                    //    echo $Result;
-                                    //}
-
-
-                                ?>
-                            </label>
-
-                            <input class="container-input-field" name="Gender">    </input>
-                            <label class="bottom-container-label">Vorname: Kylian                    </label>            <input class="container-input-field">     </input>
-                            <label class="bottom-container-label">Mittelname: -                      </label>            <input class="container-input-field">    </input>
-                            <label class="bottom-container-label">Nachname: Mbappe                   </label>            <input class="container-input-field">    </input>
-                            <label class="bottom-container-label">Gebutsdatum: 20.12.1998            </label>            <input class="container-input-field">    </input>
-                            <label class="bottom-container-label">Telefonnummer: 0176 420472023      </label>            <input class="container-input-field">     </input>
-                            <label class="bottom-container-label">Standard-User: ?                   </label>            <input class="container-input-field">    </input>
-                        </form>
-                    </div>
-
-
-                    container-input-field-info
-                    <div class="bottom-container-right-box-right">
-                        <form class="container-input">
-                            <label class="bottom-container-label">Adresse: -                         </label>           <input class="container-input-field"> </input>
-                            <label class="bottom-container-label">Postleitzahl: -                    </label>           <input class="container-input-field"> </input>
-                            <label class="bottom-container-label">Land: -                            </label>           <input class="container-input-field"> </input>
-                            <label class="bottom-container-label">Benutzername: -                    </label>           <input class="container-input-field"> </input>
-                            <label class="bottom-container-label">Email: -                           </label>           <input class="container-input-field"> </input>
-                            <label class="bottom-container-label">Passwort: -                        </label>           <input class="container-input-field"> </input>
-                            <label class="bottom-container-label">Super-User: ?                      </label>           <input class="container-input-field"> </input>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
--->
+<div class="nav-bar-container">
+    <?php include '../Frontend/NavBar.php'?>
 </div>
 
-</body>
 
+<!-------------------------- TOP Container -------------------------------------------------------------------------------------------------------------------------------- -->
+
+<div class="top-container">
+    <div class="top-container-head">Mitarbeiter - Bereich</div>
+
+    <div class="top-box">
+
+        <div class="top-box-container">
+
+            <div class="left-side">
+
+                <div class="left-side-input">
+                    <form id="register" class="input-group">
+                        <label class="label">Vorname        </label>           <input autocomplete="on"        class="input-field"        name="FirstName"   id="FirstName"     type="text">
+                        <label class="label">Nachname       </label>           <input autocomplete="on"        class="input-field"        name="LastName"    id="LastName"      type="text">
+                        <label class="label">Benutzername   </label>           <input autocomplete="on"        class="input-field"        name="UserName"    id="UserName"      type="text">
+                        <label class="label">Email          </label>           <input autocomplete="on"        class="input-field"        name="Email"       id="Email"         type="email">
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="right-side">
+                <div class="right-side-box">
+                    <div class="output-field" >
+                        <h4 id="OutPutAccountID"> AccountID </h4>
+                    </div>
+
+                    <div class="button-box">
+                        <button type="submit" class="submit-button" onclick="getAccountID();"> AccountID  suchen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-------------------------- Middle Container -------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+<div class="middle-container" >
+
+    <div class="search-part">
+
+        <div class="id-input">
+        <label      class="label"                          >Hier die AccountID :                     </label>
+        <input      class="input-field" id="IDInputfield"   name="InputAccountID"     required    type="text" >
+        <button     type="submit"                           class="user-search-button"  onclick="getUserDataSet()">User-Daten suchen           </button>
+        </div>
+
+        <div class="middle-container-button-box">
+            <button onclick="editUserData()" class="user-search-button"> User Daten speichern </button>
+        </div>
+
+        <div class="id-input">
+            <label      class="label"                          >Hier die PostID eingeben :                                                  </label>
+            <input      class="input-field" id="PostID"   name="InputAccountID"     required    type="text" >
+            <button     class="user-search-button"  onclick="validateEmail(document.)   deletePost()"> Post löschen         </button>
+        </div>
+
+
+    </div>
+
+    <div class="middle-container-output-box" id="middle-container-output-box"></div>
+</div>
+
+
+
+<!-------------------------- Lower-Part Container -------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+<div class="bottom-container">
+
+        <div class="bottom-container-box" >
+
+
+                  <div  class="bottom-container-right" >
+                         <label class="bottom-container-label">Geschlecht:          <br>                   </label>       <input type="text" id="InputGender"> </input>         <br>
+                         <label class="bottom-container-label">Vorname:             <br>                   </label>       <input type="text" id="InputFirstName"> </input>      <br>
+                         <label class="bottom-container-label">Mittelname:          <br>                   </label>       <input type="text" id="InputMidName"> </input>        <br>
+                         <label class="bottom-container-label">Nachname:            <br>                   </label>       <input type="text" id="InputLastName"> </input>       <br>
+                         <label class="bottom-container-label">Gebutsdatum:         <br>                   </label>       <input type="date" id="InputBirthDate"> </input>      <br>
+                         <label class="bottom-container-label">Telefonnummer:       <br>                   </label>       <input name="InputTel" type="number" id="InputTel"> </input>          <br>
+                         <label class="bottom-container-label">Standard-User:       <br>                   </label>       <input type="number" id="InputStandardUser"> </input> <br>
+                  </div
+
+                  <div class="bottom-container-left">
+                         <label class="bottom-container-label">Adresse:      <br>                     </label>       <input type="text" id="InputAddress">        <br>
+                         <label class="bottom-container-label">Postleitzahl: <br>                     </label>       <input type="text" id="InputPlz">            <br>
+                         <label class="bottom-container-label">Land:         <br>                     </label>       <input type="text" id="InputCountry">        <br>
+                         <label class="bottom-container-label">Benutzername: <br>                     </label>       <input type="text" id="InputUserName">       <br>
+                         <label class="bottom-container-label">Email:        <br>                     </label>       <input type="Email" id="InputEmail">         <br>
+                         <label class="bottom-container-label">Passwort:     <br>                     </label>       <input type="password" id="InputPassword">   <br>
+                         <label class="bottom-container-label">Super-User:   <br>                     </label>       <input type="number" id="InputSuperUser">    <br>
+                  </div>
+        </div>
+
+
+        <div id="result-bottom-container-box"" > </div>
+</div>
+</body>
 </html>

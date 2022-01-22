@@ -1,3 +1,7 @@
+/*
+ * Created by @Duc Duong
+ */
+
 
 /*----------------------------------------------- Foundation ---------------------------------------------------------*/
 
@@ -9,11 +13,11 @@ body{
 
     font-family             :Georgia;
     display                 : grid;
-    height                  : 80%;
-    width                   : 80%;
+
     grid-template-columns   : 100%;
-    grid-template-rows      : 450px 130px 740px;
-    grid-template-areas     :    "top-container"
+    grid-template-rows      : 300px 450px 400px 740px;
+    grid-template-areas     :    "nav-bar-container"
+                                 "top-container"
                                  "middle-container"
                                  "bottom-container";
 
@@ -31,11 +35,21 @@ body{
 
 /*------------------------------------------------- TOP-Part ---------------------------------------------------------*/
 
+.nav-bar-container{
+    width               : 100%;
+    height              : auto;
+    grid-area           : nav-bar-container;
+    margin-bottom       : 20px;
+}
+
+
+/*------------------------------------------------- TOP-Part ---------------------------------------------------------*/
+
 
 .top-container{
     /* Zuordnung zu den jeweiligen Felder in "grid-template-area" in cantainer */
     grid-area           : top-container;
-    padding-top         : 5em;
+    padding-top         : 7em;
     background          : white;
     margin-bottom       : 20px;
     border              : 5px solid lightgrey;
@@ -56,18 +70,18 @@ body{
     border-bottom       : 1px solid darkgrey;
 }
 
-
 .top-box{
-    width               : 100%;
-    height              : 100%;
-    /*flex-flow: wrap;    -->Bei Platzmangel machen die Boxen ein umbruch*/
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 
 .top-box-container{
     width               : 90%;
     height              : 90%;
-    margin              : auto;
+    margin-left         : auto;
+    margin-right        : auto;
+    margin-bottom       : 20px;
     display             : flex;
     justify-content     : center;  /* zentriert die boxen*/
     align-items         : center;      /* zentriert die boxen*/
@@ -84,13 +98,13 @@ body{
     margin-top          :60px;
     margin-left         : auto;
     display             : flex;
-     flex-direction     : row;
+    flex-direction     : row;
 
 }
 
 
 .right-side{
-    width               : 25%;
+    width               : 35%;
     height              : 100%;
     margin-left         : 70px;
 }
@@ -100,6 +114,8 @@ body{
     width               : 90%;
     height              : 50%;
     margin-top          :140px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -130,8 +146,11 @@ body{
 
 
 .output-field{
-    width               : 100%;
+    width               : 70%;
     border              : 1px solid lightgray;
+    margin-left         : auto;
+    margin-right        : auto;
+
 }
 
 
@@ -152,12 +171,15 @@ body{
 
 .button-box{
     width               : 100%;
+    height              : auto;
+    display             : flex;
+    flex-display        : row;
 }
 
 
 .submit-button{
-    width               : 80%;
-    padding             : 13px 54px;
+    width               : 70%;
+    padding             : 13px 0 13px 0;
     cursor              : pointer;
     display             : block;
     margin-top          : 30px;
@@ -178,7 +200,6 @@ body{
     font-size           : 15px;
     font-weight         : bold;
     text-shadow         : 0px 0px 0px #ffffff;
-    text-align          : center;
 }
 
 
@@ -199,15 +220,30 @@ body{
 
 .middle-container{
     /* Zuordnung zu den jeweiligen Felder in "grid-template-area" in cantainer */
+    height              : 550px;
     grid-area           : middle-container;
     background          : white;
     border-top          : 3px solid lightgrey;
     border-left         : 3px solid lightgrey;
     border-right        : 3px solid lightgrey;
+}
 
+
+.search-part{
+    width               : 90%;
+    height              : 100px;
+    margin-top          : 10px;
+    margin-left         : auto;
+    margin-right        : auto;
+    margin-bottom       : 50px;
     display             : flex;
     flex-direction      : row;
     justify-content     : space-around;
+}
+
+
+#IDInputfield{
+    text-align: center;
 }
 
 
@@ -219,6 +255,32 @@ body{
 }
 
 
+/* ================= Input-Field ================= */
+
+#FirstName{
+    padding-left        : 10px;
+    padding-right       : 10px;
+}
+
+#LastName{
+    padding-left        : 10px;
+    padding-right       : 10px;
+}
+
+#UserName{
+    padding-left        : 10px;
+    padding-right       : 10px;
+}
+
+#Email{
+    padding-left        : 10px;
+    padding-right       : 10px;
+}
+
+/* =============================================== */
+
+
+
 .id-input-field{
     width               : 100%;
     padding             : 12px 0;
@@ -228,8 +290,7 @@ body{
     background          : transparent;
     text-align          : center;
     box-sizing          : border-box;
-    padding-left        : 10px;
-    padding-right       : 10px;
+
 }
 
 
@@ -243,13 +304,12 @@ body{
 }
 
 
-
-
 .user-search-button{
     box-shadow          : inset 0px 0px 0px 4px #ffffff;
     background          : linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
     background-color    : #ededed;
     border-radius       : 38px;
+
     border              : 1px solid #dcdcdc;
     display             : inline-block;
     cursor              : pointer;
@@ -273,6 +333,52 @@ body{
 }
 
 
+.middle-container-output-box{
+    width               : 70%;
+    height              : auto;
+    border-radius       : 5px;
+    border              : 1px solid lightgrey;
+    margin-left         : auto;
+    margin-right        : auto;
+    margin-top          : 90px;
+    margin-bottom       : 90px;
+    border-radius       : 5px;
+    display             : flex;
+}
+
+
+
+.table_contactdetails{
+    margin-left         : auto;
+    margin-right        : auto;
+    margin-top          : 3%;
+    margin-bottom       : 3%;
+    display             : flex;
+}
+
+.table_contactdetails , th, td{
+    border              : 1px solid black;
+
+}
+
+
+.table_post{
+    margin-left         : 10%;
+    margin-right        : 20%;
+    margin-top          : 3%;
+    margin-bottom       : 3%;
+    display             : flex;
+}
+
+.table_post th, td{
+    border              : 1px solid black;
+    padding             : 2px 5px 2px 5px;
+}
+
+
+
+
+
 
 
 /*---------------------------------------------- BOTTOM-Part ---------------------------------------------------------*/
@@ -280,141 +386,65 @@ body{
 
 .bottom-container{
     background          : white;
-
     /* Zuordnung zu den jeweiligen Felder in "grid-template-area" in cantainer */
     grid-area           : bottom-container;
     border-left         : 3px solid lightgrey;
     border-right        : 3px solid lightgrey;
     border-bottom       : 3px solid lightgrey;
-
     display             : flex;
 }
 
 
+
 .bottom-container-box{
-    width               : 1000px;
+    width               : 50%;
     height              : auto;
-
-    margin              : auto;
-    margin-top          : 65px;
-    border-radius       : 5px;
+    margin-top          : 15px;
+    margin-bottom       : 70px;
+    margin-left         : auto;
+    margin-right        : auto;
+    padding             : 40px;
     border              : 1px solid lightgrey;
+    border-radius       : 5px;
+}
 
-    display             : flex;
-    position            : relative;
-    flex-direction      : row;
+
+.bottom-container-right{
+    width               : 30%;
+    height              : auto;
+    margin-top          : 15px;
+    margin-right        : 8%;
+    margin-bottom       : 15px;
+    float               : right;
+
 }
 
 
 .bottom-container-left{
     width               : 30%;
     height              : auto;
-    margin-top          :15px;
-    margin-bottom       :15px;
-    margin-left         :35px;
-    border-right        : 1px solid lightgrey;
+    margin-top          : 15px;
+    margin-left         : 8%;
+    margin-bottom       : 15px;
+    float               :left;
 }
 
 
-.bottom-container-right{
-    width               : 65%;
-    height              : auto;
-    margin-top          :15px;
-    margin-bottom       :15px;
+.bottom-container-form-box{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
 }
 
-
-.profile-box{
-    height              : 40%;
-    width               : 60%;
-    margin              : auto;
-    margin-top          : 40px;
-}
-
-
-.profile-img{
-    height              : 100%;
-    width               : 100%;
-    border-radius       : 200px / 240px;
-    box-sizing          : border-box;
-}
-
-
-.underline{
-    width               : 80%;
-    height              : auto;
-    margin              : auto;
-}
-
-
-#profile-name{
-    font-size           : 20.8px;
-    text-align          : center;
-    margin-bottom       : 2%;
-}
-
-
-#permission{
-    font-weight         : 400;
-    font-size           : 16px;
-    color               : gray;
-    text-align          : center;
-}
-
-
-#last-login-time{
-    font-weight         : 100;
-    font-size           : 16px;
-    color               : gray;
-    text-align          : center;
-    margin-top          : 16px;
-}
-
-
-.profil-tag-box{
-margin-bottom           : 30px;
-}
-
-
-.profil-tag-box h1{
-    font-size           : 38px;
-    font-weight         : 100;
-    text-align          : center;
-}
 
 .container-input{
     width               : 100%;
 }
 
-
-.bottom-container-right-box{
-    width               : 94%;
-    height              : 85%;
-    margin              : auto;
-    display             : flex;
-}
-
-
-.bottom-container-right-box-left{
-    width               : 45%;
-    height              : 100%;
-    margin              :auto;
-    display             : flex;
-    flex-display        : row;
-}
-
-
-.bottom-container-right-box-right{
-    width               : 45%;
-    height              : 100%;
-    margin              :auto;
-}
-
-
 .bottom-container-label{
     font-size           : 15px;
     font-family         :Georgia;
-    font-weight: 100;
+    font-weight         : 100;
     margin              : 0;
     padding             : 0;
 
@@ -434,248 +464,6 @@ margin-bottom           : 30px;
 .container-input-field h5{
     margin              : 5px;
 }
-
-
-
-
-
-
-
-/*----------------------------------------------- Navigation ---------------------------------------------------------*/
-
-.navigation_bar
-{
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */    height: 85px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #309bfa;
-    letter-spacing: 0.2rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.144);
-
-}
-.nav_logo{
-    margin: 25px;
-    color: #6b6b6b;
-    font-weight: bold;
-    font-size: 30px;
-    font-family: "Century Gothic", serif;
-    font-style: revert;
-    text-decoration: none;
-}
-
-nav ul{
-    display: flex;
-    float: right;
-}
-
-nav ul li{
-    height: 80%;
-    float: left;
-    position: relative;
-    list-style-type: none;
-}
-
-nav ul li a:hover{
-    border-bottom: 4px solid #6b6b6b;
-}
-
-nav ul li a{
-    color: #6b6b6b;
-    padding: 30px;
-    letter-spacing: 0.2rem;
-    text-decoration: none;
-    font-size: 22px;
-    font-family: "Century Gothic", sans-serif;
-    font-weight: inherit;
-    display: block;
-}
-
-nav ul li ul{
-    display: none;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 8px;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 0.14rem 0.25rem rgba(0, 0, 0, 0.144);
-    z-index: 1;
-    width: 100%;
-}
-
-nav ul li:hover ul{ /*Drop-Down*/
-    display: block;
-    top: 91px;
-    width: 218px;
-}
-
-nav ul li ul li a{ /*Drop-Down Elemente von Mein Konto*/
-    color: #6b6b6b;
-    padding: 16px 20px;
-    text-align: center;
-}
-
-.dropdown{
-    z-index: 1;
-    width: 100%;
-}
-
-.toggle-button{
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 23px;
-}
-
-.toggle-button .bar{
-    height: 4px;
-    width: 100%;
-    background-color: #6b6b6b;
-    border-radius: 100px;
-}
-
-@media(max-width:750px){
-    .list-container{
-        display: none;
-        width: 100%;
-    }
-    .toggle-button{
-        display: flex;
-    }
-    nav{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .nav_logo{
-        display: block;
-    }
-    .list-container ul{
-        flex-direction: column;
-        width: 100%;
-    }
-    .list-container li{
-        text-align: center;
-    }
-    .list-container.active{
-        display: flex;
-    }
-    .dropdown{
-        width: 100%;
-    }
-}
-/*
-.search-box{
-    position: absolute;
-    top: 42px;
-    left: 1170px;
-    width: 500px;
-    transform: translate(-50%, -50%);
-}
-
-input{
-    position: relative;
-    display: inline-block;
-    font-size: 20px;
-    box-sizing: border-box;
-}
-
-input[type="text"]{
-    color: white;
-    background: #309bfa;
-    width: 340px;
-    height: 35px;
-    border: none;
-    outline: none;
-    padding: 0 25px;
-    border-radius: 20px 0 0 20px;
-}
-
-input[type="submit"]{
-    position: relative;
-    border-radius: 0 20px 20px 0;
-    height: 35px;
-    width: 80px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background: #309bfa;
-}
-
-input[type="submit"]:hover{
-    background: #309bfa;
-}
-*/
-/*--------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (max-width: 750px) {
-    .container{
-        grid-template-columns: 100%;
-        grid-template-rows: 400px 150px 700px;;
-        grid-template-areas:    "top-container"
-                                "middle-container"
-                                "bottom-container";
-    }
-
-}
-
-
-
 
 
 

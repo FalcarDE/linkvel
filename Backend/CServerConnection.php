@@ -18,7 +18,7 @@ class CServerConnection
     }
 
 
-    public function GetServerData()
+    public function getServerData()
     {
         $mServername    = self::$Servername;
         $mServerUser    = self::$ServerUser;
