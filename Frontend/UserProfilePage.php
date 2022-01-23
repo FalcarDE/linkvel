@@ -78,16 +78,16 @@ session_start();
 
 
 
-    <!---------------------------- Middle Container -->
+    <!---------------------------- Right Container -->
 
-    <div class="middle-container">
+    <div class="right-container">
 
         <div class="profil-tag-box">
-            <h2 id="profil-tag">Dein persönliches Profil</h2>
+            <h1 id="profil-tag">Dein persönliches Profil</h1>
         </div>
 
 
-        <div class="middle-container-box">
+        <div class="right-container-box">
 
             <div class="left-side">
                 <form id="UserData" class="input-group">
@@ -112,6 +112,7 @@ session_start();
                         <h4 class="input-field-info">
                             <?php
                             require_once('../Backend/CUserDataLoading.php');
+
                             $Midname  = CUserDataLoading::getUserMidname(implode($_SESSION['AccountKey']));
 
                             if(empty($Midname))
@@ -179,6 +180,7 @@ session_start();
                         <h4 class="input-field-info">
                             <?php
                             require_once('../Backend/CUserDataLoading.php');
+
                             echo CUserDataLoading::getUserZipCode(implode($_SESSION['AccountKey']));
                             ?>
                         </h4>
@@ -189,6 +191,7 @@ session_start();
                         <h4 class="input-field-info">
                             <?php
                             require_once('../Backend/CUserDataLoading.php');
+
                             echo CUserDataLoading::getUserCountry(implode($_SESSION['AccountKey']));
                             ?>
                         </h4>
@@ -225,38 +228,12 @@ session_start();
         </div>
 
         <!-- Buttom damit der User seine persönlichen Daten ändern kann -->
-        <div class="middle-container-button-box">
+        <div class="right-container-button-box">
             <form action="../Frontend/UserProfileEdit.php">
-                <button  class="user-profile-edit">Profil bearbeiten</button>
+                <button  class="user-profile-edit-button">Profil bearbeiten</button>
             </form>
         </div>
 
-    </div>
-
-
-
-    <!---------------------------- Right Container -->
-
-    <div class="right-container">
-
-        <div class="right-container-box">
-            <div class="post-link-headline">
-                <h3>Erstellte Posts:</h3>
-            </div>
-
-            <!-- <a> tag defines a hyperlink -->
-            <!-- <li> tag defines a list item -->
-            <div class="post-link-box">
-                <a href="https://de.wikipedia.org/wiki/Denver">                 <li>Denver    </li></a>
-                <a href="https://de.wikipedia.org/wiki/Rio_de_Janeiro">         <li>Rio       </li></a>
-                <a href="https://de.wikipedia.org/wiki/Tokio">                  <li>Tokio     </li></a>
-                <a href="https://de.wikipedia.org/wiki/Berlin">                 <li>Berlin    </li></a>
-                <a href="https://de.wikipedia.org/wiki/Nairobi">                <li>Nairobi   </li></a>
-                <a href="https://de.wikipedia.org/wiki/Helsinki">               <li>Helsinki  </li></a>
-                <a href="https://de.wikipedia.org/wiki/Bogot%C3%A1">            <li>Bogota    </li></a>
-            </div>
-
-        </div>
     </div>
 </div>
 

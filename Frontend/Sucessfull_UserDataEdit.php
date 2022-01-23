@@ -1,5 +1,7 @@
 <!-- Created by @Duc Duong -->
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
