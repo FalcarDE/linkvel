@@ -1,6 +1,9 @@
+
+
+
 <?php
 /*
- * Created by @Duong
+ * Created by @Duong, extended by @Hoang
 */
 
 ini_set('memory_limit', '1 GB');

@@ -71,7 +71,7 @@ function UpdateLikes(LikeButtonID, LikeLabelID ,HeadlineID , Session )
 }
 
 
-function UploadComments(Session, CommentLabelID , CommentButtonID)
+function UploadComments(Session, CommentLabelID )
 {
     let comment = document.getElementById('CommentInputArea').value;
 
@@ -94,11 +94,9 @@ function UploadComments(Session, CommentLabelID , CommentButtonID)
             if (this.readyState === 4 && this.status === 200)
             {
                 //document.getElementById("RightSide").innerHTML = this.responseText;
-                alert("Du hast erfolgreich dein Kommentar abgeben!");
                 let NumberOfCommentNew = parseInt(document.getElementById(CommentLabelID).innerHTML) + 1;
-                document.getElementById(CommentButtonID).style.color = 'skyblue';
                 document.getElementById(CommentLabelID).innerHTML = NumberOfCommentNew;
-
+                alert("Du hast erfolgreich dein Kommentar abgeben!");
             }
         };
 
@@ -112,21 +110,27 @@ function showLocation(HeadlineID)
 {
     let Headline = document.getElementById(HeadlineID).innerHTML;
     //alert(Headline);
-
-    let xhttp;
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function ()
+    if ( Headline === "")
     {
-        if (this.readyState === 4 && this.status === 200)
+        alert("Konnten keine Location gefunden werden!")
+    }
+    else
+    {
+        let xhttp;
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function ()
         {
-            let url = this.responseText;
-            window.open(url);
+            if (this.readyState === 4 && this.status === 200)
+            {
+                let url = this.responseText;
+                window.open(url);
 
-        }
-    };
+            }
+        };
 
-    xhttp.open("GET", "../Backend/CMapLocation.php?Headline=" + Headline, true);
-    xhttp.send();
+        xhttp.open("GET", "../Backend/CMapLocation.php?Headline=" + Headline, true);
+        xhttp.send();
+    }
 }
 
 

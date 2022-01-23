@@ -1,4 +1,6 @@
 <?php
+//Created by @Hoang
+
 $result = new CUserEditByEmployee();
 $result->UpdateUserData();
 class CUserEditByEmployee

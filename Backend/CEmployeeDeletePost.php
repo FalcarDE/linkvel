@@ -1,4 +1,5 @@
 <?php
+//created by @Hoang
 
 include_once('CServerConnection.php');
 include_once('CExceptionHandler.php');
@@ -30,6 +31,8 @@ class CEmployeeDeletePost
     {
         return self::$PostKey;
     }
+    //-------------------------------------------- those SQL Delete function are use to delete all the likes, comments and data from a post --------------------------------------------
+    //--------------------------------------------------------------- only Employees can use this functions -----------------------------------------------------------
 
     function deleteLikes($PostKey)
     {

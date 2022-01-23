@@ -56,6 +56,8 @@ class CFeedsloading
     //------------------------------------ Welcome Card Builder ---------------------------------------------------------------------------
     static function generateWelcomeCard()
     {
+        //------------------------------------ Check if your in loginIn. So they can have a personal welcome greet ---------------------------------------------------------------------------
+
         if (isset($_SESSION['AccountKey']))
         {
             require_once('../Backend/CUserDataLoading.php');
@@ -117,9 +119,9 @@ class CFeedsloading
 
 
 
-
-
-                ."<div class='InteractionMediaIcon'>"
+            // Every specific field has their own unique identifier, which are generate for each post
+            // all of the javascript function and PHP parameter are needed for Ajax
+            ."<div class='InteractionMediaIcon'>"
                     ."<div class='IconBlock'>"
                     ."<button class='material-icons' id='$LikeButtonID' onclick='UpdateLikes(\"".$LikeButtonID."\", \"".$LikeLabelID."\", \"".$HeadlineID."\", \"".$Session."\" );' > &#xe80b; </button>"
                     ."<label id='$LikeLabelID' > ". CFeedsloading::getNumberOfPostLikes($PostKey) . "</label>"
@@ -142,6 +144,7 @@ class CFeedsloading
     }
 
 
+    //------------------------------------ GET - Section from the Database ---------------------------------------------------------------------------
 
     static function getAllPostId(): array
     {

@@ -1,5 +1,6 @@
 function getAccountID()
 {
+    //Created by Hoang
     let FirstName   = document.getElementById('FirstName').value;
     let LastName    = document.getElementById('LastName').value;
     let UserName    = document.getElementById('UserName').value;
@@ -111,71 +112,6 @@ function editUserData()
 }
 
 
-function checkPhoneNumber(Phonenumber)
-{
-    if(Phonenumber === "")
-    {
-        return true
-    }
-    else
-    {
-        let Phoneformat = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-        let CheckPhoneValue =((Phonenumber.match(Phoneformat)) ? true : false);
-        alert(Phonenumber);
-        return CheckValue;
-    }
-
-}
-
-
-function checkEmail(Email)
-{
-    if(Email === "")
-    {
-        return true
-    }
-    else
-    {
-        let Mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        let CheckEmailValue =((Email.match(Mailformat)) ? true : false);
-        alert(Email);
-        return CheckEmailValue;
-    }
-}
-
-
-
-function checkAge(BirthDate)
-{
-    //alert(BirthDate);
-    let today               = new Date();
-    //let ISOBirthdateFormat  = birthDate.toISOString().split('T')[0];
-    let birthDate           = new Date(BirthDate);
-    let UserAge = today.getFullYear() - birthDate.getFullYear();
-
-
-
-    let UserBirthMonth = today.getMonth() - birthDate.getMonth();
-
-
-    if (UserBirthMonth < 0 || (UserBirthMonth === 0 && today.getDate() < birthDate.getDate()))
-    {
-        UserAge--;
-    }
-
-    //alert(UserAge)
-    if (UserAge < 16)
-    {
-        //alert(UserAge);
-        alert("Das Alter stimmt den AGBs nicht über ein. Bitte überprüfen!")
-        return false;
-    }
-    else
-    {
-        return true;
-    }
-}
-
 function deletePost()
 {
     let PostKey = document.getElementById('PostID').value;
@@ -221,3 +157,74 @@ function getEmployeeData()
     xmlHttpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlHttpRequest.send("EmployeeKey=" + EmployeeKey);
 }
+
+
+
+//zusaätzliche Prüfunktionen aus zeitlich Gründen und Bugs nicht mehr fertig gestellt
+//function checkPhoneNumber(Phonenumber)
+//{
+//    if(Phonenumber === "")
+//    {
+//        return true
+//    }
+//    else
+//    {
+//        let Phoneformat = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+//        let CheckPhoneValue =((Phonenumber.match(Phoneformat)) ? true : false);
+//        alert(Phonenumber);
+//        return CheckValue;
+//    }
+//
+//}
+//
+//
+//function checkEmail(Email)
+//{
+//    if(Email === "")
+//    {
+//        return true
+//    }
+//    else
+//    {
+//        let Mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//        let CheckEmailValue =((Email.match(Mailformat)) ? true : false);
+//        alert(Email);
+//        return CheckEmailValue;
+//    }
+//}
+//
+//
+//
+//function checkAge(BirthDate)
+//{
+//    //alert(BirthDate);
+//    let today               = new Date();
+//    //let ISOBirthdateFormat  = birthDate.toISOString().split('T')[0];
+//    let birthDate           = new Date(BirthDate);
+//    let UserAge = today.getFullYear() - birthDate.getFullYear();
+//
+//
+//
+//    let UserBirthMonth = today.getMonth() - birthDate.getMonth();
+//
+//
+//    if (UserBirthMonth < 0 || (UserBirthMonth === 0 && today.getDate() < birthDate.getDate()))
+//    {
+//        UserAge--;
+//    }
+//
+//    //alert(UserAge)
+//    if (UserAge < 16)
+//    {
+//        //alert(UserAge);
+//        alert("Das Alter stimmt den AGBs nicht über ein. Bitte überprüfen!")
+//        return false;
+//    }
+//    else
+//    {
+//        return true;
+//    }
+//}
+//
+
+

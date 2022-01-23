@@ -44,3 +44,11 @@
 
     width: 40em;
 }
+
+.UserText
+{
+    font-size: 30px;
+    font-weight: bolder;
+    margin-right: auto;
+
+}

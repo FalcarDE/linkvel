@@ -1,4 +1,7 @@
 <?php
+/*
+* Created by @Hoang
+*/
 session_start();
 include_once('CServerConnection.php');
 include_once('CExceptionHandler.php');
@@ -66,6 +69,7 @@ class CUploadComment
         self::$UserKey = $SqlKeyData->fetchColumn();
     }
 
+    //Most important Methode in this Class --> write the user input in the Dataset
     function setUserCommentSection()
     {
         date_default_timezone_set("MET");
@@ -75,6 +79,7 @@ class CUploadComment
         $Sql_Insertion_Statement->execute([self::$UserKey, self::$PostKey, $DateTime, self::$comment]);
     }
 
+    //this function should show the comment section live --> but has bugs not used
     function displayUpdatedCommentSection()
     {
         require_once '../Backend/CCommentSection.php';

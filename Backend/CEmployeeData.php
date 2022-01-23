@@ -1,4 +1,6 @@
 <?php
+//created by @Hoang
+
 include_once('CServerConnection.php');
 include_once('CExceptionHandler.php');
 
@@ -24,6 +26,8 @@ class CEmployeeData
     private $AccountID;
     private $EmployeeRole;
     private $EmployeeDeparment;
+
+
     public function __construct()
     {
         $this->EmployeeKey = $_POST['EmployeeKey'];
@@ -52,14 +56,22 @@ class CEmployeeData
         return $this->EmployeeDeparment = $Sql_Statement->fetch(PDO::FETCH_COLUMN);
     }
 
+    //------------------------------------ Table Builder for HMTL Request from Service "MITARBEITER - Opstions Suche" ---------------------------------------------------------------------------
+
+
     function printHTMLTableEmployeeData()
     {
         include_once "../Backend/CUserDataLoading.php";
 
-        if (empty($this->AccountID)) {
+        //------------- check if AccountKey of the User in the options in the database ---------
+
+        if (empty($this->AccountID))
+        {
             echo "Es wurden keine Datensätze gefunden.";
-        } else {
-            // Output: 2x9 table
+        }
+        else
+        {
+
             echo
 
                 "<table class='table_contactdetails' style=width: 369px; height: 250px;>"

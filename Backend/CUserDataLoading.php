@@ -1,5 +1,5 @@
 <?php
-
+// created by @Helen
 include_once('../Backend/CServerConnection.php');
 include_once('../Backend/CExceptionHandler.php');
 
@@ -113,7 +113,7 @@ class CUserDataLoading
     }
 
 
-    //
+    //Templating by @hoang
     static function getUserRole($AccountKey)
     {
         $Sql_Statement = CServerConnection::$DB_connection->query(" SELECT supu.SuperUserToken FROM superuser AS supu
@@ -146,7 +146,7 @@ class CUserDataLoading
         }
 
     }
-    //
+    //Templating by @hoang
     static function getUserLastLogIn($AccountKey)
     {
         $Sql_Statement = CServerConnection::$DB_connection->query(" SELECT usr.LastLogin_Date_Time FROM user AS usr

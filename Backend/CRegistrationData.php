@@ -198,9 +198,7 @@ Class CRegistrationVerify
 
         if (!empty($UserNameCheckResult) || !empty($EmailCheckResult) )
         {
-            echo "Dieser User existiert bereits. Bitte melde dich bei unseren Mitarbeitern für weiteren Support!";
-            echo "<br>";
-            die ('<a href="../Frontend/Login_Registration_Formular.html"> Back to Registration Formular </a>');
+            header('Location:../Frontend/NotSuccesfullRegistration.php');
             return false;
         }
         else

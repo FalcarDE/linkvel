@@ -24,7 +24,7 @@ session_start();
     </div>
 
     <div class="GoBackContainer">
-        <button type="button" class="GoBackButton" onclick="location.href ='profil.php'"> Zurück zu deinem Profil! </button>
+        <button type="button" class="GoBackButton" onclick="location.href ='../Frontend/UserProfilePage.php'"> Zurück zu deinem Profil! </button>
     </div>
 </div>
 

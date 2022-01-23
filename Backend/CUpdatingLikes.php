@@ -1,4 +1,6 @@
 <?php
+
+// created by @Hoang
 session_start();
 include_once('CServerConnection.php');
 include_once('CExceptionHandler.php');
@@ -50,6 +52,9 @@ class CUpdatingLikes
 
     }
 
+    // Most Important function --> before writing into the Database it has to check if the Like is already set by the User
+    // If it is not, than it has to write into the Database
+    // If the user already liked it, it wont write into it again --> Every Post can only liked once from one User
     function checkIfPostIsAlreadySet()
     {
         $Sql_Statement = CServerConnection::$DB_connection->prepare(" SELECT * FROM likes WHERE PostRefKey = ? AND UserRefKey = ? ");
@@ -67,7 +72,7 @@ class CUpdatingLikes
         }
 
     }
-
+    // methode to set the like
     function setNewPostLike()
     {
         $Sql_Insertion_Statement = CServerConnection::$DB_connection->prepare("INSERT INTO linkvel.likes(PostRefKey, UserRefKey) VALUES (?,?)");
@@ -76,6 +81,7 @@ class CUpdatingLikes
         $this->updateLikes();
     }
 
+    // methode to update the Number of likes in the label after write into the Database
     function updateLikes()
     {
         include_once '../Backend/CFeedsloading.php';

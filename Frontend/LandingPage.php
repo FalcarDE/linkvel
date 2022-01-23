@@ -115,7 +115,9 @@ session_start();
 
         3.2 HOW DOES THE LIKES AND COMMENTS WORKS?
 
-        Likes and Comments are generated through AJAX.
+        Likes and Comments are generated through AJAX and will be sent over HTTP Request.
+
+        For more information look into our documentation.
 
 
         //  ========= MAIN IDEA =========

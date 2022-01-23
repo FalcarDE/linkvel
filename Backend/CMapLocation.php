@@ -1,7 +1,7 @@
 <?php
 include_once('CServerConnection.php');
 include_once('CExceptionHandler.php');
-
+// created by @Hoang
 
 //========= Server Connection =========
 $ServerSession = new CServerConnection("localhost","root", "");
@@ -62,6 +62,10 @@ class CMapLocation
         $this->Ladiute = $Sql_Statement->fetch(PDO::FETCH_COLUMN);
     }
 
+
+
+    //-------------------------------------------- The magic is in this function. Getting the Ladiute and Longituide from the Database and put it into the Api URL from google MAPS
+    //---------------------------------------- and open it through a new tab in frontend ---------------------------------------------------------------------------------
 
     function showLocation()
     {
