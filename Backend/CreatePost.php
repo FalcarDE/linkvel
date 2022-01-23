@@ -73,7 +73,7 @@ else{
 
 // ==== SQL-Statement: Saves new post in the database ============
 
-    $SqlStatement= $pdoServer->prepare("INSERT INTO linkvel.post (SuperUserRefKey, PostTextFile, Headline, PictureFile, Post_Date_Time, Hashtags, MapLadiutes, MapLongitude)
+    $SqlStatement= $pdoServer->prepare("INSERT INTO linkvel.post (SuperUserRefKey, PostTextFile, Headline, PictureFile, Post_Date_Time, Hashtags, MapLadiutes, MapLingtitude)
                                          VALUES (:superUserRefKey, :textfile, :heading, :pictureFile, :postDateTime, :hashtags, :laditude, :longitude )");
 
 
