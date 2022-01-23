@@ -5,7 +5,13 @@ Installationshinweise:
 Zugangsdaten:
 
 StandardUser:
+- LisaHein
+- 123abc
 
 SuperUser:
+- PHeer
+- 123abc
 
 Admin:
+- DDuong
+- 123abc
