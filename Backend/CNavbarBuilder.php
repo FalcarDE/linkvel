@@ -15,7 +15,7 @@ class CNavBarBuilder
             . "<nav class='navigation_bar'>"
             . "<div class='list'>"
             . "<li><a href='../Frontend/LandingPage.php'>STARTSEITE</a></li>"
-            . "<li><a href='../Frontend/EmployeePage.php'>MEIN KONTO</a>"
+            . "<li><a href='../Frontend/EmployeePage.php'>Mitarbeiter Seite</a>"
             . "<li><a href='../Backend/logout.php'>LOGOUT</a></li>"
             . "</div>"
             . "</li>"
@@ -37,7 +37,7 @@ class CNavBarBuilder
             . "<div class='dropdown'>"
             . "<ul>"
             . "<li><a href='../Backend/UserProfilValidation.php'>PROFIL ANSEHEN</a></li>"
-            . "<li><a href='#'>PROFIL BEARBEITEN</a></li>"
+            . "<li><a href='../Backend/UserProfileEditValidation.php'>PROFIL BEARBEITEN</a></li>"
             . "</ul>"
             . "</div>"
             . "<li><a href='../Frontend/Login_Registration_Formular.html'>LOGIN</a></li>"
@@ -62,7 +62,7 @@ class CNavBarBuilder
             . "<div class='dropdown'>"
             . "<ul>"
             . "<li><a href='../Backend/UserProfilValidation.php' >PROFIL ANSEHEN</a></li>"
-            . "<li><a href='#'>PROFIL BEARBEITEN</a></li>"
+            . "<li><a href='../Backend/UserProfileEditValidation.php'>PROFIL BEARBEITEN</a></li>"
             . "</ul>"
             . "</div>"
             . "<li><a href='../Backend/logout.php'>LOGOUT</a></li>"
@@ -93,17 +93,16 @@ class CNavBarBuilder
     {
 
 
+
         if(!empty($_SESSION['AccountKey']))
         {
             $AccountKey = implode($_SESSION['AccountKey']);
             $ServerSession   = new CServerConnection("localhost","root", "");
             $pdoServer = $ServerSession::connectServer();
             $AdminKey = $pdoServer->query("SELECT EmployeeKey from employee e INNER JOIN accountdetails a ON e.AccountRefKey = a.AccountKey WHERE a.AccountKey='$AccountKey'");
+            $KeyArray = $AdminKey->fetchAll(PDO::FETCH_ASSOC);
 
-
-            $AdminKey->fetchAll(PDO::FETCH_ASSOC);
-
-            if(!isset($AdminKey)) {
+            if(!count($KeyArray) == 0) {
                 self::viewAdmin();
             }
 

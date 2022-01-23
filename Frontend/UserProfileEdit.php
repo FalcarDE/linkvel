@@ -41,9 +41,10 @@ session_start();
                     <?php
 
                     require_once('../Backend/CUserDataLoading.php');
-                    $FirstName  =   CUserDataLoading::getUserFirstname(implode($_SESSION['AccountKey']));
-                    $Midname    =   CUserDataLoading::getUserMidname(implode($_SESSION['AccountKey']));
-                    $LastName   =   CUserDataLoading::getUserLastname(implode($_SESSION['AccountKey']));
+                    $UserData   =   new CUserDataLoading();
+                    $FirstName  =   $UserData::getUserFirstname(implode($_SESSION['AccountKey']));
+                    $Midname    =   $UserData::getUserMidname(implode($_SESSION['AccountKey']));
+                    $LastName   =   $UserData::getUserLastname(implode($_SESSION['AccountKey']));
 
                     if(empty($Midname))
                     {
@@ -80,14 +81,14 @@ session_start();
 
     <!---------------------------- Right Container -->
 
-    <div class="middle-container">
+    <div class="right-container">
 
         <div class="profil-tag-box">
-            <h2 id="profil-tag">Profil-Daten bearbeiten</h2>
+            <h1 id="profil-tag">Profil-Daten bearbeiten</h1>
         </div>
 
 
-        <div class="middle-container-box">
+        <div class="right-container-box">
 
 
             <!-- In den Placeholder sollen dir Daten, die schon vorhanden sind rein  -->
@@ -98,55 +99,62 @@ session_start();
                     <div class="form-box-left">
 
                         <label class="label">Vorname             </label>        <input autocomplete="on"       class="input-field"        name="FirstName"         type="text"         placeholder='<?php
-                                                                                                                                                                                                     require_once('../Backend/CUserDataLoading.php');
-                                                                                                                                                                                                     echo CUserDataLoading::getUserFirstname(implode($_SESSION['AccountKey']));
-                                                                                                                                                                                                     ?>'>
+                        require_once('../Backend/CUserDataLoading.php');
+                        $UserData = new CUserDataLoading();
+                        echo $UserData::getUserFirstname(implode($_SESSION['AccountKey']));
+                        ?>'>
 
                         <label class="label">Mittelname          </label>        <input autocomplete="on"       class="input-field"        name="MidName"           type="text"         placeholder='<?php
-                                                                                                                                                                                                     require_once('../Backend/CUserDataLoading.php');
-                                                                                                                                                                                                     $Midname  = CUserDataLoading::getUserMidname(implode($_SESSION['AccountKey']));
-                                                                                                                                                                                                     if(empty($Midname))
-                                                                                                                                                                                                     {echo "-";}
-                                                                                                                                                                                                     else
-                                                                                                                                                                                                     {echo $Midname;}
-                                                                                                                                                                                                     ?>'>
+                        require_once('../Backend/CUserDataLoading.php');
+                        $UserData = new CUserDataLoading();
+                        $Midname  = $UserData::getUserMidname(implode($_SESSION['AccountKey']));
+                        if(empty($Midname))
+                        {echo "-";}
+                        else
+                        {echo $Midname;}
+                        ?>'>
 
 
                         <label class="label">Nachname            </label>        <input autocomplete="on"       class="input-field"        name="LastName"          type="text"         placeholder='<?php
-                                                                                                                                                                                                     require_once('../Backend/CUserDataLoading.php');
-                                                                                                                                                                                                     echo CUserDataLoading::getUserLastname(implode($_SESSION['AccountKey']));
-                                                                                                                                                                                                     ?>'>
+                        require_once('../Backend/CUserDataLoading.php');
+                        $UserData = new CUserDataLoading();
+                        echo $UserData::getUserLastname(implode($_SESSION['AccountKey']));
+                        ?>'>
 
                         <label class="label">Adresse             </label>        <input autocomplete="on"       class="input-field"        name="StreetAddress"     type="text"         placeholder='<?php
-                                                                                                                                                                                                     require_once('../Backend/CUserDataLoading.php');
-                                                                                                                                                                                                     echo CUserDataLoading::getUserAddress(implode($_SESSION['AccountKey']));
-                                                                                                                                                                                                     ?>'>
+                        require_once('../Backend/CUserDataLoading.php');
+                        $UserData = new CUserDataLoading();
+                        echo $UserData::getUserAddress(implode($_SESSION['AccountKey']));
+                        ?>'>
 
                     </div>
 
 
                     <div class="form-box-right">
                         <label class="label">Postleitzahl        </label>        <input autocomplete="on"       class="input-field"        name="ZipCode"           type="number"       placeholder='<?php
-                                                                                                                                                                                                     require_once('../Backend/CUserDataLoading.php');
-                                                                                                                                                                                                     echo CUserDataLoading::getUserZipCode(implode($_SESSION['AccountKey']));
-                                                                                                                                                                                                     ?>'>
+                        require_once('../Backend/CUserDataLoading.php');
+                        $UserData = new CUserDataLoading();
+                        echo $UserData::getUserZipCode(implode($_SESSION['AccountKey']));
+                        ?>'>
 
                         <label class="label">Land                </label>        <input autocomplete="on"       class="input-field"        name="Country"           type="text"         placeholder='<?php
-                                                                                                                                                                                                     require_once('../Backend/CUserDataLoading.php');
-                                                                                                                                                                                                     echo CUserDataLoading::getUserCountry(implode($_SESSION['AccountKey']));
-                                                                                                                                                                                                     ?>'>
+                        require_once('../Backend/CUserDataLoading.php');
+                        $UserData = new CUserDataLoading();
+                        echo $UserData::getUserCountry(implode($_SESSION['AccountKey']));
+                        ?>'>
 
                         <label class="label">Email               </label>        <input autocomplete="on"       class="input-field"        name="Email"             type="email"        placeholder='<?php
-                                                                                                                                                                                                     require_once('../Backend/CUserDataLoading.php');
-                                                                                                                                                                                                     echo CUserDataLoading::getUserEmail(implode($_SESSION['AccountKey']));
-                                                                                                                                                                                                     ?>'>
+                        require_once('../Backend/CUserDataLoading.php');
+                        $UserData = new CUserDataLoading();
+                        echo $UserData::getUserEmail(implode($_SESSION['AccountKey']));
+                        ?>'>
 
                         <label class="label">Passwort            </label>        <input autocomplete="on"       class="input-field"        name="Password"          type="password"     placeholder=''>
 
                     </div>
 
 
-                    <div class="middle-container-button-box">
+                    <div class="right-container-button-box">
                         <button type="submit" class="save-button">Speicher</button>
 
                         <!--
@@ -156,37 +164,12 @@ session_start();
                     </div>
                 </form>
 
-                <div class="middle-container-button-box">
+                <div class="right-container-button-box">
 
                     <form action="../Frontend/UserProfilePage.php">
-                        <button type="submit" class="back-button">Zurück</button>
+                        <button type="submit class" class="back-button">Zurück</button>
                     </form>
                 </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <!---------------------------- Right Container -->
-
-    <div class="right-container">
-
-        <div class="right-container-box">
-            <div class="post-link-headline">
-                <h3>Erstellte Posts:</h3>
-            </div>
-
-            <!-- <a> tag defines a hyperlink -->
-            <!-- <li> tag defines a list item -->
-            <div class="post-link-box">
-                <a href="https://de.wikipedia.org/wiki/Denver">                 <li>Denver    </li></a>
-                <a href="https://de.wikipedia.org/wiki/Rio_de_Janeiro">         <li>Rio       </li></a>
-                <a href="https://de.wikipedia.org/wiki/Tokio">                  <li>Tokio     </li></a>
-                <a href="https://de.wikipedia.org/wiki/Berlin">                 <li>Berlin    </li></a>
-                <a href="https://de.wikipedia.org/wiki/Lissabon">               <li>Lissabon  </li></a>
-                <a href="https://de.wikipedia.org/wiki/London">                 <li>London    </li></a>
-                <a href="https://de.wikipedia.org/wiki/Bogot%C3%A1">            <li>Bogota    </li></a>
             </div>
         </div>
     </div>

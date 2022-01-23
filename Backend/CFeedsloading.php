@@ -53,7 +53,7 @@ class CFeedsloading
 
 
 
-
+    //------------------------------------ Welcome Card Builder ---------------------------------------------------------------------------
     static function generateWelcomeCard()
     {
         if (isset($_SESSION['AccountKey']))
@@ -61,11 +61,11 @@ class CFeedsloading
             require_once('../Backend/CUserDataLoading.php');
 
             $FirstName  = CUserDataLoading::getUserFirstname(implode($_SESSION['AccountKey']));
-            $Midname    = CUserDataLoading::getUserLastname(implode($_SESSION['AccountKey']));
+            $Midname    = CUserDataLoading::getUserMidname(implode($_SESSION['AccountKey']));
             $LastName   = CUserDataLoading::getUserLastname(implode($_SESSION['AccountKey']));
             echo "<br>";
             echo "<h1 id='WelcomeInitUser'>";
-            echo "Willkommen " . $FirstName . " " . $LastName ."!". "\n";
+            echo "Willkommen " . $FirstName . " ". $Midname." ".$LastName ."!". "\n";
             echo "<br>";
             echo "Wir hoffen du hast einen wunderschönen Tag!";
             echo "</h1>";
@@ -85,7 +85,7 @@ class CFeedsloading
 
     }
 
-
+    //------------------------------------ UserPost - Builder ---------------------------------------------------------------------------
     static function generateHtml($PostKey, $HeadlineID, $LikeButtonID, $CommentButtonID, $LocationButtonID ,$LikeLabelID, $CommentLabelID)
     {
         $Headline               = CFeedsloading::getPostHeadline($PostKey);
@@ -126,12 +126,12 @@ class CFeedsloading
                     ."</div>"
 
                     ."<div class='IconBlock'>"
-                        ."<button class='material-icons' id='$CommentButtonID' onclick='generateCommentSection(\"".$HeadlineID."\", \"".$Session."\" , \"".$CommentLabelID."\"   );' > &#xe0b9; </button>"
+                        ."<button class='material-icons' id='$CommentButtonID' onclick='generateCommentSection(\"".$HeadlineID."\", \"".$Session."\" , \"".$CommentLabelID."\" );' > &#xe0b9; </button>"
                         ."<label id='$CommentLabelID' >". CFeedsloading::getNumberOfComments($PostKey) ."</label>"
                     ."</div>"
 
                     ."<div class='IconBlock'>"
-                        ."<button class='material-icons' id='$LocationButtonID'> location_on </button>"
+                        ."<button class='material-icons' id='$LocationButtonID' onclick='showLocation(\"".$HeadlineID."\")'> location_on </button>"
                     ."</div>"
                 ."</div>"
                 ."<br>"
@@ -141,20 +141,14 @@ class CFeedsloading
         );
     }
 
+
+
     static function getAllPostId(): array
     {
-
         $Sql_Statement = CServerConnection::$DB_connection->query("select PostKey from linkvel.post");
         $Sql_Statement->execute();
-        $Results = $Sql_Statement->fetchAll(PDO::FETCH_COLUMN);
-        $ids =[];
-        foreach ($Results as $Result)
-        {
-            $ids[] = $Result;
+        return $Sql_Statement->fetchAll(PDO::FETCH_ASSOC);
 
-        }
-
-        return $ids;
     }
 
     static function getPostHeadline($PostKey)
@@ -166,7 +160,7 @@ class CFeedsloading
         return $Results;
     }
 
-    static function GetUserName($PostKey)
+    static function getUserName($PostKey)
     {
 
         $Sql_Statement = CServerConnection::$DB_connection->query("select ad.UserName from accountdetails ad
@@ -211,23 +205,6 @@ class CFeedsloading
         return count($Sql_Statement->fetchAll(PDO::FETCH_ASSOC));
     }
 
-    static function getNumberOfShares($PostKey)
-    {
-        $Sql_Statement = CServerConnection::$DB_connection->query(" SELECT p.Shares from post as p where p.PostKey = '$PostKey';");
-        $Sql_Statement->execute();
-
-        //$results =$Sql_Statement->fetchAll(PDO::FETCH_ASSOC);
-        if($Sql_Statement->rowCount() > 0)
-        {
-            return count($Sql_Statement->fetchAll(PDO::FETCH_ASSOC));
-        }
-        else
-        {
-            return 0;
-        }
-
-        //return count();
-    }
 }
 
 ?>

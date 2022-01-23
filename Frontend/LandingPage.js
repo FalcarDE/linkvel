@@ -71,13 +71,13 @@ function UpdateLikes(LikeButtonID, LikeLabelID ,HeadlineID , Session )
 }
 
 
-function UploadComments(Session, CommentLabelID)
+function UploadComments(Session, CommentLabelID , CommentButtonID)
 {
     let comment = document.getElementById('CommentInputArea').value;
 
     if ( Session === "")
     {
-        alert("Bitte einloggen um liken zu können!")
+        alert("Bitte logge dich ein deine Meinung mit der Community teilen zu können!")
     }
 
     else if (comment === "")
@@ -93,11 +93,12 @@ function UploadComments(Session, CommentLabelID)
         {
             if (this.readyState === 4 && this.status === 200)
             {
-
-                document.getElementById("RightSide").innerHTML = this.responseText;
-                
+                //document.getElementById("RightSide").innerHTML = this.responseText;
+                alert("Du hast erfolgreich dein Kommentar abgeben!");
                 let NumberOfCommentNew = parseInt(document.getElementById(CommentLabelID).innerHTML) + 1;
+                document.getElementById(CommentButtonID).style.color = 'skyblue';
                 document.getElementById(CommentLabelID).innerHTML = NumberOfCommentNew;
+
             }
         };
 
@@ -105,11 +106,28 @@ function UploadComments(Session, CommentLabelID)
         xhttp.send();
     }
 
-
-
 }
 
+function showLocation(HeadlineID)
+{
+    let Headline = document.getElementById(HeadlineID).innerHTML;
+    //alert(Headline);
 
+    let xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function ()
+    {
+        if (this.readyState === 4 && this.status === 200)
+        {
+            let url = this.responseText;
+            window.open(url);
+
+        }
+    };
+
+    xhttp.open("GET", "../Backend/CMapLocation.php?Headline=" + Headline, true);
+    xhttp.send();
+}
 
 
 

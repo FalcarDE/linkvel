@@ -35,7 +35,7 @@ function validateEmail()
     }
     else
     {
-        alert("You have entered an invalid email address!");
+        alert("Du hast leider eine ungültige Email angegeben!");
         document.RegiForm.Email.focus();
         return false;
     }
@@ -45,18 +45,49 @@ function validateEmail()
 function validatePhoneNumber()
 {
     let Phonenumber = document.getElementById("Phonenumber").value;
-    alert(Phonenumber);
+
 
 
     let Phoneformat = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
     if(Phonenumber.match(Phoneformat))
     {
-        return false;
+        return true;
     }
     else
     {
-        alert("You have entered an invalid Phonenumber!");
+        alert("Du hast leider eine ungültige Telefonnummer angegeben! ");
         document.RegiForm.Phonenumber.focus();
         return false;
     }
+}
+
+function validateAge()
+{
+    //let birthday = document.getElementById("Birthdate").value; // Don't get Date yet...
+    //let regexVar = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/; // add anchors; use literal
+    //alert(birthday);
+
+    let today               = new Date();
+    let birthDate           = new Date(document.getElementById("Birthdate").value);
+    let ISOBirthdateFormat  = birthDate.toISOString().split('T')[0];
+
+
+    let UserAge = today.getFullYear() - birthDate.getFullYear();
+
+
+    let UserBirthMonth = today.getMonth() - birthDate.getMonth();
+
+
+    if (UserBirthMonth < 0 || (UserBirthMonth === 0 && today.getDate() < birthDate.getDate()))
+    {
+        UserAge--;
+    }
+
+    if (UserAge < 16)
+    {
+        //alert(UserAge);
+        alert("Das Alter stimmt den AGBs nicht über ein. Bitte überprüfen!")
+        return false;
+    }
+
 }

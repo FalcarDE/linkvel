@@ -112,7 +112,6 @@ session_start();
                         <h4 class="input-field-info">
                             <?php
                             require_once('../Backend/CUserDataLoading.php');
-
                             $Midname  = CUserDataLoading::getUserMidname(implode($_SESSION['AccountKey']));
 
                             if(empty($Midname))
@@ -180,7 +179,6 @@ session_start();
                         <h4 class="input-field-info">
                             <?php
                             require_once('../Backend/CUserDataLoading.php');
-
                             echo CUserDataLoading::getUserZipCode(implode($_SESSION['AccountKey']));
                             ?>
                         </h4>
@@ -191,7 +189,6 @@ session_start();
                         <h4 class="input-field-info">
                             <?php
                             require_once('../Backend/CUserDataLoading.php');
-
                             echo CUserDataLoading::getUserCountry(implode($_SESSION['AccountKey']));
                             ?>
                         </h4>

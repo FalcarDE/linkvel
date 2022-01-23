@@ -13,7 +13,7 @@ $UserComment = new CUploadComment();
 $UserComment->getPostKey();
 $UserComment->getUserKey();
 $UserComment->setUserCommentSection();
-$UserComment->displayUpdatedCommentSection();
+//$UserComment->displayUpdatedCommentSection();
 
 
 

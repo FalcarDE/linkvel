@@ -21,22 +21,11 @@ $ServerSession::connectServer();
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
-
-if(CRegistrationVerify::ValidateEmail($_POST['Email']) && CRegistrationVerify::ValidatePhoneNumber($_POST['Phonenumber']))
+if(CRegistrationVerify::validateEmail($_POST['Email']) && CRegistrationVerify::validatePhoneNumber($_POST['Phonenumber']) && CRegistrationVerify::validateAge($_POST['Birthdate']) )
 {
     $NewUser = new CRegistrationVerify();
-    $NewUser->setNewAccountDetails();
-    $NewUser->setContactDetails();
-    $NewUser->getAccountKey();
-    $NewUser->getContactKey();
-    $NewUser->setUserData();
-    $NewUser->getUserKey();
-    $NewUser->setUserRole();
-    session_start();
-    header('Location: ../Frontend/SucessfulRegistration.php');
-    exit();
+    $NewUser->checkIfDataIsAlreadySet();
+
 }
 else
 {
@@ -47,10 +36,6 @@ else
 
 //$getAccountDetailsKey   = $NewSuperUser->getAccountDetailsKey($pdoServer);
 //$getContactDetailsKey   = $NewSuperUser->getContactDetailsKey($pdoServer);
-//--------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 
 Class CRegistrationVerify
@@ -136,7 +121,11 @@ Class CRegistrationVerify
 
     }
 
-    static function ValidateEmail($Email)
+
+
+
+
+    static function validateEmail($Email)
     {
         if (filter_var($Email, FILTER_VALIDATE_EMAIL)) {
             echo "Email address is considered as valid.\n";
@@ -149,13 +138,15 @@ Class CRegistrationVerify
         }
     }
 
-    static function ValidatePhoneNumber($PhoneNumber)
+    static function validatePhoneNumber($PhoneNumber)
     {
         if ((preg_match("/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im", $PhoneNumber))) {
             echo "Phonenumber is considered as valid.\n";
             echo "<br>";
             return true;
-        } else {
+        }
+        else
+        {
             echo "Invalid Phonenumber!";
             echo "<br>";
             return false;
@@ -163,6 +154,68 @@ Class CRegistrationVerify
     }
 
 
+
+    static function validateAge($Birthdate)
+    {
+        $Today = DateTime::createFromFormat('Y-m-d', date("Y-m-d"));
+        $UserBirthdate = DateTime::createFromFormat('Y-m-d', $Birthdate);
+
+
+
+        $UserAge = $Today->format('Y') - $UserBirthdate->format('Y');
+        $UserBirthMonth =  $UserBirthdate->format('m');
+
+
+        if ($UserBirthMonth < 0 || ($UserBirthMonth === 0 && $Today->format('d') < $UserBirthdate->format('d'))) {
+            $UserAge--;
+        }
+
+        if ($UserAge < 18)
+        {
+            //alert(UserAge);
+            echo "Du bist zu Jung um dich auf unsere Seite anmelden zu können!";
+            return false;
+        }
+        else
+        {
+
+            return true;
+        }
+    }
+
+    function checkIfDataIsAlreadySet()
+    {
+
+        $Sql_Statement = CServerConnection::$DB_connection->prepare(" SELECT Email FROM contactdetails AS cd WHERE cd.Email = ? ;");
+        $Sql_Statement->execute([$this->NewUserEmail]);
+        $EmailCheckResult = $Sql_Statement->fetch();
+
+        $Sql_Statement = CServerConnection::$DB_connection->prepare(" SELECT ad.UserName FROM accountdetails AS ad WHERE ad.UserName = ? ;");
+        $Sql_Statement->execute([$this->NewUserName]);
+        $UserNameCheckResult = $Sql_Statement->fetch();
+
+
+
+        if (!empty($UserNameCheckResult) || !empty($EmailCheckResult) )
+        {
+            echo "Dieser User existiert bereits. Bitte melde dich bei unseren Mitarbeitern für weiteren Support!";
+            echo "<br>";
+            die ('<a href="../Frontend/Login_Registration_Formular.html"> Back to Registration Formular </a>');
+            return false;
+        }
+        else
+        {
+            $this->setNewAccountDetails();
+            $this->setContactDetails();
+            $this->getAccountKey();
+            $this->getContactKey();
+            $this->setUserData();
+            $this->getUserKey();
+            $this->setUserRole();
+            header('Location: ../Frontend/SucessfulRegistration.php');
+            exit();
+        }
+    }
     function setNewAccountDetails()
     {
         // prepare() --> prepares a statement for execution and returns a statement object

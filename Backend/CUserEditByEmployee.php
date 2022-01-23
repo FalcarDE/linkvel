@@ -40,6 +40,26 @@ class CUserEditByEmployee
     }
 
 
+    function printTest()
+    {
+
+        echo $this->InputGender;
+        echo $this->InputFirstName;;
+        echo $this->InputMidName;
+        echo $this->InputLastName;
+        echo $this->InputBirthDate;
+        echo $this->InputTel;
+        echo $this->InputStandardUser;
+        echo $this->InputAddress;
+        echo $this->InputZipcode;
+        echo $this->InputCountry;
+        echo $this->InputUserName;
+        echo $this->InputEmail;
+        echo $this->InputPassword;
+        echo $this->InputSuperUser;
+        echo $this->AccountKey;
+
+    }
     function UpdateUserData()
     {
         include_once '../Backend/CEditDataOfUser.php';
@@ -47,7 +67,7 @@ class CUserEditByEmployee
         CEditDataOfUser::updateFirstName        ($this->InputFirstName,$this->AccountKey);       
         CEditDataOfUser::updateMidName          ($this->InputMidName,$this->AccountKey);       
         CEditDataOfUser::updateLastName         ($this->InputLastName,$this->AccountKey);       
-        CEditDataOfUser::updateStreetAdd        ($this->InputAddress,$this->AccountKey);
+        CEditDataOfUser::updateStreetAddress    ($this->InputAddress,$this->AccountKey);
         CEditDataOfUser::updateZipCode          ($this->InputZipcode,$this->AccountKey);       
         CEditDataOfUser::updateCountry          ($this->InputCountry,$this->AccountKey);       
         CEditDataOfUser::updateEmail            ($this->InputEmail,$this->AccountKey);       
@@ -55,12 +75,12 @@ class CUserEditByEmployee
 
         /* ----------------------------------------------------------------------------- */
 
-        CEditDataOfUser::updateTel              ($this->InputTel,$this->AccountKey);
-        CEditDataOfUser::updateStandardUser     ($this->InputStandardUser,$this->AccountKey);
-        CEditDataOfUser::updateSuperUser        ($this->InputSuperUser,$this->AccountKey);
+        CEditDataOfUser::updatePhoneNumber      ($this->InputTel,$this->AccountKey);
+        CEditDataOfUser::updateStandardUserToken($this->InputStandardUser,$this->AccountKey);
+        CEditDataOfUser::updateSuperUserToken   ($this->InputSuperUser,$this->AccountKey);
         CEditDataOfUser::updateGender           ($this->InputGender,$this->AccountKey);
         CEditDataOfUser::updateBirthDate        ($this->InputBirthDate,$this->AccountKey);
-        
+
     }
     
     

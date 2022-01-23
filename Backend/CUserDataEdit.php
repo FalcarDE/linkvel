@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Created by @Duc Duong
+ * Created by @Duong
 */
 
 session_start();
@@ -21,8 +21,7 @@ $pdoServer = $ServerSession::connectServer();
 //----------------------------------------------------------------------------------------------------------------------
 
 
-//$NewPassword  = Password_hash($NewPassword, PASSWORD_BCRYPT);
-
+$InstanzOfCUserDataEdit = new CUserDataEdit();
 $UpadateUser = new CEditDataOfUser();
 
 
@@ -77,12 +76,14 @@ Class CUserDataEdit
     }
 
 
+
     /* ========== Getter ========== */
 
     public static function getFirstName()
     {
         return self::$NewFirstName;
     }
+
 
     public static function getMidName()
     {

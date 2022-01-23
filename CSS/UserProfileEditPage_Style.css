@@ -14,9 +14,11 @@ body{
 */
 
 .container{
-    width                   : 90%;
-    height                  : 580px;
-    margin                  : 150px 5% 150px;
+    margin-top              : 10%;
+    margin-right            : 11%;
+    margin-left             : 11%;
+
+
 
     background              : white;
     border                  : 3px solid lightgrey;
@@ -26,9 +28,9 @@ body{
     border-radius           : 10px;
 
     display                 : grid;
-    grid-template-columns   : 25% 55% 20%;
+    grid-template-columns   : 30% 70% ;
     grid-template-rows      : auto;
-    grid-template-areas     :"left-container  middle-container right-container";
+    grid-template-areas     :"left-container  right-container";
 }
 
 
@@ -37,6 +39,7 @@ body{
 
 .left-container{
     grid-area                   : left-container;
+    padding-bottom              : 60px;
 }
 
 .left-container-box{
@@ -92,18 +95,18 @@ body{
 
 /* -------------------------------------------- Middle Container ---------------------------------------------------- */
 
-.middle-container{
-    grid-area: middle-container;
-    border-left: 2px solid lightgrey;
-    border-right: 2px solid lightgrey;
-    margin: 10px;
+.right-container{
+    grid-area           : right-container;
+    border-left         : 2px solid lightgrey;
+
 }
 
-.middle-container-box{
+.right-container-box{
     width               : auto;
     height              : auto;
     margin-top          : 5%;
-    margin-left         : 5%;
+    margin-left         : 10%;
+    margin-right        : 10%;
 
 }
 
@@ -111,14 +114,17 @@ body{
 .profil-tag-box{
     width               : auto;
     height              : auto;
-    margin-top          : 45px;
+    margin-top          : 8%;
     margin-left         : 7%;
     font-weight         : 200;
-
+    font-size           : 0px;
 }
 
-#profil-tag{
-    font-size           : 32px;
+
+
+
+#profil-tag {
+    font-size: 40px;
 }
 
 
@@ -147,7 +153,7 @@ body{
 .label{
     font-family         :Georgia;
     font-weight         : 100;
-    font-size           : 15px;
+    font-size           : 17px;
     margin              : 0;
     padding             : 0;
 }
@@ -155,7 +161,7 @@ body{
 
 .input-field{
     width               : 90%;
-    height: 18px;
+    height              : 18px;
     padding             : 10px 0 10px 5px;
     margin              : 2px 0 10px;
     border-radius       : 5px;
@@ -188,7 +194,7 @@ body{
 }
 
 
-.middle-container-button-box{
+.right-container-button-box{
     width               : 40%;
     height              : 4%;
     margin-left         : auto;
@@ -258,39 +264,4 @@ body{
 .back-button:hover{
     border: 1px solid #309bfa;
     border-radius: 3px;
-}
-
-
-/* --------------------------------------------- Right Container ---------------------------------------------------- */
-
-.right-container {
-    grid-area                       : right-container;
-}
-
-
-.right-container-box{
-    margin              : 30% 20px 0;
-}
-
-.post-link-headline{
-}
-
-.post-link-headline h3{
-    font-size           : 23px;
-    font-weight         : 100;
-}
-
-.post-link-box{
-    margin-top: 20px;
-}
-
-.post-link-box li{
-    font-weight         : 100;
-    line-height         :130%;
-    margin-bottom       : 10px;
-}
-
-.post-link-box a{
-    color               : rgb(46, 134, 222);
-    text-decoration     : none;
 }

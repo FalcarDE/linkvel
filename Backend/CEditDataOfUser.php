@@ -1,5 +1,7 @@
 <?php
-session_start();
+/*
+ * Created by @Duong
+*/
 
 ini_set('memory_limit', '1 GB');
 
@@ -16,6 +18,188 @@ $pdoServer = $ServerSession::connectServer();
 class CEditDataOfUser
 {
 
+    /* ========== Update Data (DB) ==========
+     *
+     * method checks whether the parameter passed is empty,
+     * @return true, if the user has not entered a tag => record will not be changed
+     * @return false, if the user has entered something => record of the entry is changed
+     *
+     * =============================================================================================
+     */
+
+    public static function checkIsEmpty($checkValue)
+    {
+        return empty($checkValue);
+    }
+
+
+    public static function updateFirstName($editFirstName,$AccountKey)
+    {
+        if(CEditDataOfUser::checkIsEmpty($editFirstName)=== true)
+        {
+            return 0;
+        }
+        else
+        {
+            return CEditDataOfUser::updateContactdetailsOnFirstName($editFirstName,$AccountKey);
+        }
+    }
+
+    public static function updateMidName($editMidName,$AccountKey)
+    {
+        if(CEditDataOfUser::checkIsEmpty($editMidName) === true)
+        {
+            return 0;
+        }
+        else
+        {
+            return CEditDataOfUser::updateContactdetailsOnMidName($editMidName,$AccountKey);
+        }
+    }
+
+    public static function updateLastName($editLastName,$AccountKey)
+    {
+        if(CEditDataOfUser::checkIsEmpty($editLastName) === true)
+        {
+            return 0;
+        }
+        else
+        {
+            return CEditDataOfUser::updateContactdetailsOnLastName($editLastName,$AccountKey);
+        }
+    }
+
+    public static function updateStreetAddress($editStreetAddress,$AccountKey)
+    {
+        if(CEditDataOfUser::checkIsEmpty($editStreetAddress) === true)
+        {
+            return 0;
+        }
+        else
+        {
+            return CEditDataOfUser::updateContactdetailsOnStreetAddress($editStreetAddress,$AccountKey);
+        }
+    }
+
+    public static function updateZipCode($editZipCode,$AccountKey)
+    {
+        if(CEditDataOfUser::checkIsEmpty($editZipCode) === true)
+        {
+            return 0;
+        }
+        else
+        {
+            return CEditDataOfUser::updateContactdetailsOnZipCode($editZipCode,$AccountKey);
+        }
+    }
+
+    public static function updateCountry($editCountry,$AccountKey)
+    {
+        if(CEditDataOfUser::checkIsEmpty($editCountry) === true)
+        {
+            return 0;
+        }
+        else
+        {
+            return CEditDataOfUser::updateContactdetailsOnCountry($editCountry,$AccountKey);
+        }
+    }
+
+    public static function updateEmail($editEmail,$AccountKey)
+    {
+        if(CEditDataOfUser::checkIsEmpty($editEmail) === true)
+        {
+            return 0;
+        }
+        else
+        {
+            return CEditDataOfUser::updateContactdetailsOnEmail($editEmail,$AccountKey);
+        }
+    }
+
+    public static function updatePassword($editPassword,$AccountKey)
+    {
+        if(CEditDataOfUser::checkIsEmpty($editPassword) === false)
+        {
+            return CEditDataOfUser::updateContactdetailsOnPassword($editPassword,$AccountKey);
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+
+
+    public static function updatePhoneNumber($editTelNumber,$AccountKey)
+    {
+        if(CEditDataOfUser::checkIsEmpty($editTelNumber) === false)
+        {
+            return CEditDataOfUser::updateContactdetailsOnPhoneNumber($editTelNumber,$AccountKey);
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public static function updateBirthDate  ($editBirthDate  ,$AccountKey)
+    {
+        if(CEditDataOfUser::checkIsEmpty($editBirthDate ) === false)
+        {
+            return CEditDataOfUser::updateContactdetailsOnBirthDate($editBirthDate,$AccountKey);
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public static function updateGender ($editGender ,$AccountKey)
+    {
+        if(CEditDataOfUser::checkIsEmpty($editGender) === false)
+        {
+            return CEditDataOfUser::updateContactdetailsOnGender($editGender,$AccountKey);
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+
+
+    public static function updateStandardUserToken($editStandardUserToken, $AccountKey)
+    {
+        if(CEditDataOfUser::checkIsEmpty($editStandardUserToken) === false)
+        {
+            return CEditDataOfUser::updateContactdetailsOnStandardUserToken($editStandardUserToken ,$AccountKey);
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public static function updateSuperUserToken ($editSuperUserToken,$AccountKey)
+    {
+        if(CEditDataOfUser::checkIsEmpty($editSuperUserToken) === false)
+        {
+            return CEditDataOfUser::updateContactdetailsOnSuperUserToken($editSuperUserToken,$AccountKey);
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+
+
+
+
+
+
+
     /* ============================================================================================= */
     
     /* Method: updateContactdetailsOnFirstName()
@@ -27,7 +211,6 @@ class CEditDataOfUser
     public static function updateContactdetailsOnFirstName($NewFirstName, $AccountKey)
     {
         // prepare(): prepares an instruction(patter) for execution
-
 
 
         $Sql_Update_Statement = CServerConnection::$DB_connection->query("UPDATE contactdetails AS cd 
@@ -183,8 +366,6 @@ class CEditDataOfUser
     public static function updateContactdetailsOnPassword($NewPassword, $AccountKey)
     {
 
-        //lokale Variable
-
         $Sql_Update_Statement = CServerConnection::$DB_connection->query("UPDATE contactdetails AS cd 
                                                                           INNER JOIN user AS ur on cd.ContactKey = ur.ContactRefKey
                                                                           INNER JOIN accountdetails AS ad ON ur.AccountRefKey = ad.AccountKey    
@@ -199,170 +380,87 @@ class CEditDataOfUser
 
 
 
-    /* ========== Update Data (DB) ==========
-     *
-     * method checks whether the parameter passed is empty,
-     * @return true, if the user has not entered a tag => record will not be changed
-     * @return false, if the user has entered something => record of the entry is changed
-     *
-     * =============================================================================================
-     */
-
-    public static function checkIsEmpty($checkValue)
+    public static function updateContactdetailsOnPhoneNumber($NewPhoneNumber, $AccountKey)
     {
-        return empty($checkValue);
+
+
+        $Sql_Update_Statement = CServerConnection::$DB_connection->query("UPDATE contactdetails AS cd 
+                                                                          INNER JOIN user AS ur on cd.ContactKey = ur.ContactRefKey
+                                                                          INNER JOIN accountdetails AS ad ON ur.AccountRefKey = ad.AccountKey    
+                                                                          SET PhoneNumber= '$NewPhoneNumber'
+                                                                          WHERE ad.AccountKey = '$AccountKey'");
+
+        CExceptionHandler::DisplayPDOHandler(CServerConnection::$DB_connection, $Sql_Update_Statement);
+
+        $Sql_Update_Statement->execute();
     }
 
 
-    public static function updateFirstName($editFirstName,$AccountKey)
+    public static function updateContactdetailsOnBirthDate($NewBirthDate, $AccountKey)
     {
-        if(CEditDataOfUser::checkIsEmpty($editFirstName) === true)
-        {
-            return 0;
-        }
-        else
-        {
-            return CEditDataOfUser::updateContactdetailsOnFirstName($editFirstName,$AccountKey);
-        }
+
+
+        $Sql_Update_Statement = CServerConnection::$DB_connection->query("UPDATE contactdetails AS cd 
+                                                                          INNER JOIN user AS ur on cd.ContactKey = ur.ContactRefKey
+                                                                          INNER JOIN accountdetails AS ad ON ur.AccountRefKey = ad.AccountKey    
+                                                                          SET Birthday= '$NewBirthDate'
+                                                                          WHERE ad.AccountKey = '$AccountKey'");
+
+        CExceptionHandler::DisplayPDOHandler(CServerConnection::$DB_connection, $Sql_Update_Statement);
+
+        $Sql_Update_Statement->execute();
     }
 
-    public static function updateMidName($editMidName,$AccountKey)
+    public static function updateContactdetailsOnGender($NewGender,$AccountKey)
     {
-        if(CEditDataOfUser::checkIsEmpty($editMidName) === true)
-        {
-            return 0;
-        }
-        else
-        {
-            return CEditDataOfUser::updateContactdetailsOnMidName($editMidName,$AccountKey);
-        }
+
+
+        $Sql_Update_Statement = CServerConnection::$DB_connection->query("UPDATE contactdetails AS cd 
+                                                                          INNER JOIN user AS ur on cd.ContactKey = ur.ContactRefKey
+                                                                          INNER JOIN accountdetails AS ad ON ur.AccountRefKey = ad.AccountKey    
+                                                                          SET Gender= '$NewGender'
+                                                                          WHERE ad.AccountKey = '$AccountKey'");
+
+        CExceptionHandler::DisplayPDOHandler(CServerConnection::$DB_connection, $Sql_Update_Statement);
+
+        $Sql_Update_Statement->execute();
     }
 
-    public function updateLastName($editLastName,$AccountKey)
+
+
+    public static function updateContactdetailsOnStandardUserToken($editStandardUserToken, $AccountKey)
     {
-        if(CEditDataOfUser::checkIsEmpty($editLastName) === true)
-        {
-            return 0;
-        }
-        else
-        {
-            return CEditDataOfUser::updateContactdetailsOnLastName($editLastName,$AccountKey);
-        }
+
+        $Sql_Update_Statement = CServerConnection::$DB_connection->query("UPDATE standarduser AS su 
+                                                                          INNER JOIN user AS ur on su.UserRefKey = ur.UserKey
+                                                                          INNER JOIN accountdetails AS ad ON ur.AccountRefKey = ad.AccountKey    
+                                                                          SET StandardUserToken= '$editStandardUserToken'
+                                                                          WHERE ad.AccountKey = '$AccountKey'");
+
+        CExceptionHandler::DisplayPDOHandler(CServerConnection::$DB_connection, $Sql_Update_Statement);
+
+        $Sql_Update_Statement->execute();
     }
 
-    public function updateStreetAddress($editStreetAddress,$AccountKey)
-    {
-        if(CEditDataOfUser::checkIsEmpty($editStreetAddress) === true)
-        {
-            return 0;
-        }
-        else
-        {
-            return CEditDataOfUser::updateContactdetailsOnStreetAddress($editStreetAddress,$AccountKey);
-        }
-    }
 
-    public function updateZipCode($editZipCode,$AccountKey)
-    {
-        if(CEditDataOfUser::checkIsEmpty($editZipCode) === true)
-        {
-            return 0;
-        }
-        else
-        {
-            return CEditDataOfUser::updateContactdetailsOnZipCode($editZipCode,$AccountKey);
-        }
-    }
 
-    public function updateCountry($editCountry,$AccountKey)
+    public static function updateContactdetailsOnSuperUserToken($editSuperUserToken,$AccountKey)
     {
-        if(CEditDataOfUser::checkIsEmpty($editCountry) === true)
-        {
-            return 0;
-        }
-        else
-        {
-            return CEditDataOfUser::updateContactdetailsOnCountry($editCountry,$AccountKey);
-        }
-    }
 
-    public function updateEmail($editEmail,$AccountKey)
-    {
-        if(CEditDataOfUser::checkIsEmpty($editEmail) === true)
-        {
-            return 0;
-        }
-        else
-        {
-            return CEditDataOfUser::updateContactdetailsOnEmail($editEmail,$AccountKey);
-        }
-    }
+        $Sql_Update_Statement = CServerConnection::$DB_connection->query("UPDATE superuser AS su 
+                                                                          INNER JOIN user AS ur on su.UserRefKey = ur.UserKey
+                                                                          INNER JOIN accountdetails AS ad ON ur.AccountRefKey = ad.AccountKey    
+                                                                          SET SuperUserToken= '$editSuperUserToken'
+                                                                          WHERE ad.AccountKey = '$AccountKey'");
 
-    public function updatePassword($editPassword,$AccountKey)
-    {
-        if(CEditDataOfUser::checkIsEmpty($editPassword) === false)
-        {
-            return CEditDataOfUser::updateContactdetailsOnPassword($editPassword,$AccountKey);
-        }
+        CExceptionHandler::DisplayPDOHandler(CServerConnection::$DB_connection, $Sql_Update_Statement);
+
+        $Sql_Update_Statement->execute();
     }
 
 
 
 
-
-    /* -------------------------------- */
-
-
-
-
-    public function updateTel($editTelNumber,$AccountKey)
-    {
-        if(CEditDataOfUser::checkIsEmpty($editTelNumber) === false)
-        {
-            return CEditDataOfUser::updateContactdetailsOnPassword($editTelNumber,$AccountKey);
-        }
-    }
-
-
-
-
-    public function updateStandardUser ($editStandardUser, $AccountKey)
-    {
-        if(CEditDataOfUser::checkIsEmpty($editStandardUser) === false)
-        {
-            return CEditDataOfUser::updateContactdetailsOnPassword($editStandardUser ,$AccountKey);
-        }
-    }
-
-    public function updateSuperUser ($editSuperUser,$AccountKey)
-    {
-        if(CEditDataOfUser::checkIsEmpty($editSuperUser) === false)
-        {
-            return CEditDataOfUser::updateContactdetailsOnPassword($editSuperUser,$AccountKey);
-        }
-    }
-
-
-    public function updateGender ($editGender ,$AccountKey)
-    {
-        if(CEditDataOfUser::checkIsEmpty($editGender) === false)
-        {
-            return CEditDataOfUser::updateContactdetailsOnPassword($editGender,$AccountKey);
-        }
-    }
-
-    public function updateBirthDate  ($editBirthDate  ,$AccountKey)
-    {
-        if(CEditDataOfUser::checkIsEmpty($editBirthDate ) === false)
-        {
-            return CEditDataOfUser::updateContactdetailsOnPassword($editBirthDate,$AccountKey);
-        }
-    }
-    
-
-    /*
-     * =============================================================================================
-     */
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------

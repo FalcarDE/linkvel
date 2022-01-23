@@ -41,10 +41,11 @@ class CSearchingUserID
         $Sql_Statement = CServerConnection::$DB_connection->prepare("select AccountKey from accountdetails AS ad
                                                                      INNER join user AS usr ON ad.AccountKey = usr.AccountRefKey
                                                                      INNER JOIN contactdetails AS cd ON usr.ContactRefKey = cd.ContactKey 
-                                                                     where cd.FirstName     = '$this->FirstName'  
-                                                                     OR cd.LastName         = '$this->LastName' 
-                                                                     OR cd.Email            = '$this->Email' 
-                                                                     OR ad.UserName         = '$this->UserName'; ");
+                                                                     where 
+                                                                    (cd.FirstName     = '$this->FirstName'  
+                                                                     AND cd.LastName         = '$this->LastName') 
+                                                                     OR (cd.Email            = '$this->Email' 
+                                                                     AND ad.UserName         = '$this->UserName'); ");
         CExceptionHandler::DisplayPDOHandler(CServerConnection::$DB_connection, $Sql_Statement);
         $Sql_Statement->execute();
         $this->SpecificUserAccountID= $Sql_Statement->fetch(PDO::FETCH_COLUMN);

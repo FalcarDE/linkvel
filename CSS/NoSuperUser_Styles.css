@@ -1,0 +1,21 @@
+/*Created by @AntoniaGeschke*/
+
+.content{
+    padding-top: 12rem;
+    text-align: center;
+}
+
+.content p, .content .GoBack{
+    font-family: "Century Gothic", sans-serif;
+    font-size: 1.5rem;
+    color: #333333;
+    line-height: 200%;
+    text-decoration: none;
+}
+.content .GoBack{
+    text-decoration: underline;
+}
+
+.content a:hover{
+    color: white;
+}

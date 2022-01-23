@@ -1,6 +1,8 @@
 
 <!-- Created by @Duc Duong -->
-
+<?php
+    session_start()
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -74,20 +76,33 @@
         </div>
 
         <div class="middle-container-button-box">
-            <button onclick="editUserData()" class="user-search-button"> User Daten speichern </button>
+            <button class="user-search-button" onclick="editUserData()" class="user-search-button"> User Daten speichern </button>
         </div>
 
         <div class="id-input">
             <label      class="label"                          >Hier die PostID eingeben :                                                  </label>
             <input      class="input-field" id="PostID"   name="InputAccountID"     required    type="text" >
-            <button     class="user-search-button"  onclick="validateEmail(document.)   deletePost()"> Post löschen         </button>
+            <button     class="user-search-button"  onclick="deletePost()"> Post löschen         </button>
         </div>
 
-
+        <div class="id-input">
+        <label  class="label"  for="EmployeeOption">    Select Employee: </label>
+        <select id="EmployeeOption"  class="form-control">
+            <option value="1">  Antonia     </option>
+            <option value="2">  Helen       </option>
+            <option value="3">  Hoang       </option>
+            <option value="4">  Duong       </option>
+        </select>
+        <button class="user-search-button" onclick="getEmployeeData()"> Suchen! </button>
+        </div>
     </div>
 
     <div class="middle-container-output-box" id="middle-container-output-box"></div>
+
+
 </div>
+
+
 
 
 
@@ -100,28 +115,28 @@
 
 
                   <div  class="bottom-container-right" >
-                         <label class="bottom-container-label">Geschlecht:          <br>                   </label>       <input type="text" id="InputGender"> </input>         <br>
-                         <label class="bottom-container-label">Vorname:             <br>                   </label>       <input type="text" id="InputFirstName"> </input>      <br>
-                         <label class="bottom-container-label">Mittelname:          <br>                   </label>       <input type="text" id="InputMidName"> </input>        <br>
-                         <label class="bottom-container-label">Nachname:            <br>                   </label>       <input type="text" id="InputLastName"> </input>       <br>
-                         <label class="bottom-container-label">Gebutsdatum:         <br>                   </label>       <input type="date" id="InputBirthDate"> </input>      <br>
-                         <label class="bottom-container-label">Telefonnummer:       <br>                   </label>       <input name="InputTel" type="number" id="InputTel"> </input>          <br>
-                         <label class="bottom-container-label">Standard-User:       <br>                   </label>       <input type="number" id="InputStandardUser"> </input> <br>
+                         <label class="bottom-container-label">Geschlecht:          <br>                   </label>       <input type="text"               autocomplete="on"     id="InputGender">               <br>
+                         <label class="bottom-container-label">Vorname:             <br>                   </label>       <input type="text"               autocomplete="on"     id="InputFirstName">            <br>
+                         <label class="bottom-container-label">Mittelname:          <br>                   </label>       <input type="text"               autocomplete="on"     id="InputMidName">              <br>
+                         <label class="bottom-container-label">Nachname:            <br>                   </label>       <input type="text"               autocomplete="on"     id="InputLastName">             <br>
+                         <label class="bottom-container-label">Gebutsdatum:         <br>                   </label>       <input type="date"               autocomplete="on"     id="InputBirthDate">            <br>
+                         <label class="bottom-container-label">Telefonnummer:       <br>                   </label>       <input name="Tel" type="number"  autocomplete="on"     id="InputTel">               <br>
+                         <label class="bottom-container-label">Standard-User:       <br>                   </label>       <input type="number"             autocomplete="on"     id="InputStandardUser">         <br>
                   </div
 
                   <div class="bottom-container-left">
-                         <label class="bottom-container-label">Adresse:      <br>                     </label>       <input type="text" id="InputAddress">        <br>
-                         <label class="bottom-container-label">Postleitzahl: <br>                     </label>       <input type="text" id="InputPlz">            <br>
-                         <label class="bottom-container-label">Land:         <br>                     </label>       <input type="text" id="InputCountry">        <br>
-                         <label class="bottom-container-label">Benutzername: <br>                     </label>       <input type="text" id="InputUserName">       <br>
-                         <label class="bottom-container-label">Email:        <br>                     </label>       <input type="Email" id="InputEmail">         <br>
-                         <label class="bottom-container-label">Passwort:     <br>                     </label>       <input type="password" id="InputPassword">   <br>
-                         <label class="bottom-container-label">Super-User:   <br>                     </label>       <input type="number" id="InputSuperUser">    <br>
+                         <label class="bottom-container-label">Adresse:      <br>                     </label>       <input type="text"        autocomplete="on" id="InputAddress">          <br>
+                         <label class="bottom-container-label">Postleitzahl: <br>                     </label>       <input type="text"        autocomplete="on" id="InputPlz">              <br>
+                         <label class="bottom-container-label">Land:         <br>                     </label>       <input type="text"        autocomplete="on" id="InputCountry">          <br>
+                         <label class="bottom-container-label">Benutzername: <br>                     </label>       <input type="text"        autocomplete="on" id="InputUserName">         <br>
+                         <label class="bottom-container-label">Email:        <br>                     </label>       <input type="Email"       autocomplete="on" id="InputEmail">            <br>
+                         <label class="bottom-container-label">Passwort:     <br>                     </label>       <input type="password"    autocomplete="on" id="InputPassword">         <br>
+                         <label class="bottom-container-label">Super-User:   <br>                     </label>       <input type="number"      autocomplete="on" id="InputSuperUser">        <br>
                   </div>
         </div>
 
 
-        <div id="result-bottom-container-box"" > </div>
+        <div id="result-bottom-container-box" > </div>
 </div>
 </body>
 </html>

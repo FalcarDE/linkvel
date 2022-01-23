@@ -1,4 +1,8 @@
-    <!-- Created by @Antonia Geschke-->
+<!-- Created by @Antonia Geschke-->
+
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -26,7 +30,7 @@ include("../Frontend/NavBar.php");
 
 </div>
     <div class="image">
-        <BODY onload="ChangeImage()">
+        <BODY   onload="ChangeImage()">
         <img name="slide" class="slideImage">
     </div>
 </div>
