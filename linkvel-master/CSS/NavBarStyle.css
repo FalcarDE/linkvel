@@ -1,0 +1,272 @@
+/*created by Helen Laible Extended by @Antonia Geschke*/
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+
+body{
+    background-image: linear-gradient(to top, cadetblue, lightblue, white);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header{
+    position: fixed;
+    top: 0;
+}
+
+.nav{
+    z-index: 666;
+    float: right;
+    height: 84px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #309bfa;
+    letter-spacing: 0.2rem;
+    box-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.144);
+}
+
+
+.nav_logo{
+    margin: 100px;
+    color: #6b6b6b;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Century Gothic", serif;
+    font-style: revert;
+    text-decoration: none;
+}
+
+
+
+.footer-outer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: white;
+    text-align: center;
+    z-index: 666;
+}
+
+.footer-inner {
+    display: table;
+    margin: 0 auto;
+}
+
+ul#footer-links {
+    min-width: 696px;
+    list-style: none;
+    padding-top: 20px;
+    margin-bottom: 3%;
+
+}
+
+ul#footer-links li {
+    display: inline;
+    margin: 2%;
+}
+
+ul#footer-links li a {
+    text-decoration: none;
+    color: #333333;
+    font-family: "Century Gothic", serif;
+}
+
+.box {
+    position: absolute;
+    top: -4%;
+    left: 50%;
+    transform:  translate(-50%,50%);
+    background: #ececec;
+    height: 25px;
+    border-radius: 40px;
+    padding: 10px;
+
+}
+
+.box:hover > form .searchinput {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.button {
+    background: none;
+    border: none;
+    position: relative;
+    top: 5%;
+}
+
+form .searchinput {
+    border:none;
+    background: none;
+    outline:none;
+    float:left;
+    padding: 0;
+    color: #333333;
+    font-family: "Century Gothic", serif;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 25px;
+    width: 0px;
+
+}
+
+nav ul{
+    display: flex;
+    float: right;
+}
+
+nav ul li{
+    height: 80%;
+    float: left;
+    position: relative;
+    list-style-type: none;
+}
+
+nav ul li a:hover{
+    border-bottom: 4px solid #6b6b6b;
+}
+
+nav ul li a{
+    color: #6b6b6b;
+    padding: 30px;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: inherit;
+    display: block;
+}
+
+nav ul li ul{
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 0.14rem 0.25rem rgba(0, 0, 0, 0.144);
+    z-index: 666;
+}
+
+nav ul li:hover ul{ /*Drop-Down*/
+    display: block;
+    top: 91px;
+    width: 218px;
+}
+
+nav ul li ul li a{ /*Drop-Down Elemente von Mein Konto*/
+    color: #6b6b6b;
+    padding: 16px 20px;
+    text-align: center;
+}
+
+.Username{
+    color: cadetblue;
+    text-decoration: none;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: inherit;
+    margin-left: 100px;
+}
+
+.dropdown{
+    z-index: 665;
+}
+
+.toggle-button{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 23px;
+}
+
+.toggle-button .bar{
+    height: 4px;
+    width: 100%;
+    background-color: #6b6b6b;
+    border-radius: 100px;
+}
+
+@media(max-width: 1200px){
+    .list-container{
+        display: none;
+        width: 100%;
+        z-index: 666;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .toggle-button{
+        display: flex;
+        z-index: 50;
+    }
+
+    .nav{
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+
+    .box:hover .material-icons{
+        display: none;
+    }
+    nav ul li:hover ul { /*Drop-Down*/
+        display: flex;
+        width: 100%;
+        margin: 0;
+    }
+
+    .list-container ul{
+        margin-top: 60px;
+        flex-direction: column;
+        width: auto;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    .list{
+            margin-top:20px;
+    }
+    .list-container li{
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    #top .navigation_bar .list{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .list-container.active{
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+}
+
+@media(max-width: 600px)
+{
+    .nav .nav-inner .nav_logo{
+        display:none;
+        z-index: 666;
+
+        /*padding-top:10px; nochmal anschauen!!*/
+    }
+
+    .Username
+    {
+        display: none;
+    }
+
+}

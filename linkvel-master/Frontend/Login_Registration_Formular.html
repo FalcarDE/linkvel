@@ -1,0 +1,60 @@
+<!-- Created by @Doung, Extended by @Hoang-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title> Authentication </title>
+    <link rel="stylesheet" href="../CSS/Login_Registration_Style.css" >
+    <!-- <script src="Login_Registration_Formular.js"> </script> -->
+
+</head>
+<body>
+<div class="backgroundpicture">
+
+    <div class="form-box">
+
+        <div class="button-box">
+            <div id="button"></div>
+            <button class="toggle-button" onclick="logined()">Login</button>
+            <button class="toggle-button" onclick="registered()">Registration</button>
+        </div>
+        <div class="social-icons">
+            <img alt="fb" src="../image/fb.png">
+            <img alt="tw" src="../image/tw.png">
+            <img alt="ig" src="../image/ig.jpg">
+        </div>
+
+        <form action="../Backend/CLogInData.php" class="input-group" id="login" method="post" name="LoginForm">
+            <input autocomplete="on" class="input-field" name="UserName"        placeholder="Eingabe Username" required type="text">
+            <input autocomplete="on" class="input-field" name="UserPassword"    placeholder="Eingabe Passwort" required type="password">
+            <br>
+            <br>
+            <br>
+            <button class="submit-button" type="submit"> Einloggen</button>
+        </form>
+
+        <form action="../Backend/CRegistrationData.php" class="input-group" id="register"
+              method="POST" name="RegiForm">
+            <input class="gender-field" name="Gender" placeholder="Geschlecht"                                                                      required    type="text">
+            <input autocomplete="on" class="input-field"        name="FirstName"        placeholder="Vorname *"                                     required    type="text">
+            <input autocomplete="on" class="input-field"        name="MidName"          placeholder="Mittelname"                                                type="text">
+            <input autocomplete="on" class="input-field"        name="LastName"         placeholder="Nachname *"                                    required    type="text">
+            <input autocomplete="on" class="input-field"        name="StreetAddress"    placeholder="Straße und Hausnummer *"                       required    type="text">
+            <input autocomplete="on" class="input-field"        name="ZipCode"          placeholder="Postleitzahl *"                                required    type="number">
+            <input autocomplete="on" class="input-field"        name="Country"          placeholder="Land*"                                         required    type="text">
+            <input autocomplete="on" class="input-field"        name="UserName"         placeholder="Username *"                                    required    type="text">
+            <input autocomplete="on" class="input-field"        name="Email"            placeholder="Email *"                                       required    type="email">
+            <input autocomplete="on" class="input-field"        name="Birthdate"        placeholder="Gebutsdatum *"  onfocus="(this.type='date')"   required    type="text">
+            <input autocomplete="on" class="input-field"        name="Password"         placeholder="Passwort *"                                    required    type="password">
+            <input autocomplete="on" class="input-field"        name="Phonenumber"      placeholder="Handynummer *"                                 required    type="tel">
+            <p class="extend-informations"> *Pflichtfelder </p>
+
+            <input class="check-box" required type="checkbox"> <span> Ich akzeptiere die AGB und Datenschutz </span>
+
+            <button class="submit-button" name="Submit" onclick="validateEmail(document.RegiForm.Email); validatePhoneNumber(document.RegiForm.Phonenumber)" type="submit"> Registrieren </button>
+        </form>
+    </div>
+</div>
+<script src="../Frontend/Login_Registration_Formular.js"></script>
+</body>
+</html>

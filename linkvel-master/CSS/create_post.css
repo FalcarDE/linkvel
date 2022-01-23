@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.create_post{ /*fertig*/
+    margin-top: auto;
+    background-color: white;
+    width: 1200px;
+    height: 450px;
+    border-radius: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.upload_picture{ /*fertig*/
+    margin-top: 1.5rem;
+}
+
+.content{ /*fertig auf keinen Fall änder!*/
+    padding-top: 8rem;
+}
+
+.post{
+    float: left;
+}
+
+h1{ /*fertig*/
+    padding-top: 20px;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+}
+
+.inputs{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding-top: 2rem;
+}
+
+.inputs input{
+    margin-top: 0.5rem;
+}
+
+.options{ /*fertig*/
+    display: table-cell;
+    padding-top: 70px;
+    font-family: "Century Gothic", sans-serif;
+    line-height: 300%;
+    font-weight: bold;
+    color: #333333;
+    padding-left: 120px;
+}
+
+.inputs{
+    float: right;
+    width: 200px;
+    margin-top: 20px;
+    margin-right: 12rem;
+}
+
+.inputs input{
+    font-family: "Century Gothic", sans-serif;
+}
+
+label{
+    font-family: "Century Gothic", sans-serif;
+}
+
+.inputs textarea{
+    font-family: "Century Gothic", sans-serif;
+    margin-top: 0.5rem;
+}
+
+.file-btn p{
+    margin-left: 40px;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: bold;
+    color: #333333;
+}
+
+.file-btn{
+    float: left;
+    margin-left: 150px;
+    margin-top: 130px;
+}
+
+@media(max-width: 1200px){
+    .create_post{ /*fertig*/
+        margin-top: auto;
+        background-color: white;
+        width: auto;
+        height: 800px;
+        border-radius: 0.5rem;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .options{ /*fertig*/
+        display: table-cell;
+        font-family: "Century Gothic", sans-serif;
+        font-weight: bold;
+        color: #333333;
+        padding-left: 120px;
+    }
+
+    .upload_picture{
+        text-align: center;
+    }
+
+    .inputs{
+        margin-right: 100px;
+    }
+
+    .inputs label{
+        padding-top: 1rem;
+    }
+
+    .file-btn{
+        float: left;
+        margin-top: 4rem;
+        display: table-cell;
+        font-family: "Century Gothic", sans-serif;
+        font-weight: bold;
+        color: #333333;
+        padding-right: 120px;
+    }
+
+    .file-btn p{
+        text-align: center;
+        padding-right: 100px;
+    }
+
+    .upload{
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

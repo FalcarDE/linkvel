@@ -1,0 +1,50 @@
+
+body .SearchResults
+{
+
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 20rem;
+    right: 20rem;
+    margin-top: 15rem;
+}
+
+.SearchResults .ErrorMessage
+{
+    font-family: "Century Gothic", serif;
+    font-size: 1.5rem;
+    color: #333333;
+    line-height: 3rem;
+}
+
+.SearchResults .GoBack
+{
+    font-family: "Century Gothic", serif;
+    color: #333333;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.SearchResults .Message
+{
+    font-family: "Century Gothic", serif;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #333333;
+    line-height: 3rem;
+}
+
+.SearchResults .Results
+{
+    font-family: "Century Gothic", serif;
+    font-size: 1.5rem;
+    color: #333333;
+    line-height: 3rem;
+}
+
