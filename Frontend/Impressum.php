@@ -111,7 +111,7 @@
         </p>
 
         <h3>Unser USE-CASE-Diagramm:</h3>
-        <img class="picture4" src="../image/changeProfilSite/usecase1.png">
+        <img class="picture4" src="../DokumenationFolder/DocumetationImageFolder/usecase1.png">
         <p>
             Der Actor ist entweder ein Standard_User oder ein Super_User. Ein User kann nicht beides sein. Bevor der Standard_User oder der Super_User etwas machen kann, muss er sich in sein Account einloggen. Im Falle, dass der User neu ist und keinen vorhandenen Accountdaten hat, kann er sich registrieren. Nach dem Login haben beide die Funktionalität ihren User_Profil zu managen, d.h. sie können ihre persönlichen Daten ändern, ihr Profil so gestalten und auch ihr User_Account löschen, wenn sie das wollen.
             Der Unterschied zwischen den Standard_User und den Super_User ist es, dass der Super_User ein Post erstellen kann, welches alle besuchen und lesen können, die eingeloggt sind. Das wäre auch der einzige Unterschied. Um ein Post zu erstellen benötig der Post unbedingt mindesten ein Bild oder ein Video und dazu eine passende Text/Beschreibung des Posts.  Außerdem hat der Super_User vollen Zugriff auf die Kommentare seiner Posts. Er kann sowohl seine Kommentare noch dazu packen als auch auf andere Kommentare antworten. Falls es ein Kommentar gibt, dass dem Ersteller nicht gefällt, kann er sie löschen.
@@ -119,7 +119,7 @@
         </p>
 
         <h3>Unser SYSTEM-CASE-Diagramm:</h3>
-        <img class="picture4" src="../image/changeProfilSite/systemusecase.png">
+        <img class="picture4" src="../DokumenationFolder/DocumetationImageFolder/systemusecase.png">
         <p>
             Der Actor ist entweder ein Standard_User oder ein Super_User. Ein User kann nicht beides sein. Bevor der Standard_User oder der Super_User etwas machen kann, muss er sich in sein Account einloggen. <br>
             Im Falle, dass der User neu ist und keinen vorhandenen Accountdaten hat, kann er sich registrieren. Nach dem Login haben beide die Funktionalität ihren User_Profil zu managen, d.h. sie können ihre persönlichen Daten ändern, ihr Profil so gestalten und auch ihr User_Account löschen, wenn sie das wollen. <br>
@@ -138,11 +138,11 @@
         </p>
 
         <h3>Unser ER-Modell:</h3>
-        <img class="picture4" src="../image/changeProfilSite/ER-Modell.png">
+        <img class="picture4" src="../DokumenationFolder/DocumetationImageFolder/ER-Modell.png">
 
         <h3>Unser Tabellen-Modell:</h3>
-        <img class="picture4" src="../image/changeProfilSite/Tabellen-Modell1.png">
-        <img class="picture4" src="../image/changeProfilSite/Tabellen-Modell2.png">
+        <img class="picture4" src="../DokumenationFolder/DocumetationImageFolder/Tabellen-Modell1.png">
+        <img class="picture4" src="../DokumenationFolder/DocumetationImageFolder/Tabellen-Modell2.png">
 
         <h2 id="4">Erstellung von Mockups und Deklaration Design der Weboberfläche</h2>
         <p>
@@ -153,8 +153,8 @@
         </p>
 
         <h3>Unsere Mock-Ups:</h3>
-        <img class="picture4" src="../image/changeProfilSite/Mock-Up.png">
-        <img class="picture2" src="../image/changeProfilSite/Mock-Up Handy.png">
+        <img class="picture4" src="../DokumenationFolder/DocumetationImageFolder/Mock-Up.png">
+        <img class="picture2" src="../DokumenationFolder/DocumetationImageFolder/Mock-Up Handy.png">
 
         <h2 id="5">Navigationsbar</h2>
         <p>
@@ -169,8 +169,8 @@
             je nach dem ob man angemeldet ist mit Hallo du oder Hallo (Nutzername) auf der Seite willkommen geheißen.
             In der minimierten Ansicht enthält das Burgermenu die identischen Funktionen, jedoch entfällt das Logo und die Wilkommensworte ab einer bestimmten Breite.
             Jetzt kann der Nutzer nur noch über "Startseite" auf die Landingpage zurückkehren.
-            <img class="picture" src="../image/changeProfilSite/navbar.png">
-            <img class="picture" src="../image/changeProfilSite/burgermenu.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/navbar.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/burgermenu.png">
         </p>
 
         <h2 id="6">Registrierung-Page</h2>
@@ -193,12 +193,12 @@
         </p>
 
         <h3>Fehlermeldung Registrierung:</h3>
-        <img class="picture" src="../image/changeProfilSite/failregistration.png">
-        <img class="picture" src="../image/changeProfilSite/registrierung1.png">
-        <img class="picture" src="../image/changeProfilSite/registrierung2.png">
-        <img class="picture" src="../image/changeProfilSite/registrierung3.png">
-        <img class="picture" src="../image/changeProfilSite/registrierung4.png">
-        <img class="picture" src="../image/changeProfilSite/registrierung5.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/failregistration.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/registrierung1.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/registrierung2.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/registrierung3.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/registrierung4.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/registrierung5.png">
 
         <h2 id="7">Login-Page</h2>
 
@@ -217,10 +217,10 @@
         Daten stimmen keinen Account überein: Dann dem User auf eine Error-Page weitergeleitet, dass seine Anmeldedaten keinem Account übereinstimmt und er kann dann die Anmeldung erneut versuchen.
         </p>
 
-        <img class="picture" src="../image/changeProfilSite/login1.png">
-        <img class="picture" src="../image/changeProfilSite/login2.png">
-        <img class="picture" src="../image/changeProfilSite/login3.png">
-        <img class="picture" src="../image/changeProfilSite/login4.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/login1.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/login2.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/login3.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/login4.png">
 
         <h2 id=8>FAQ-Page</h2>
 
@@ -236,8 +236,8 @@
         Der User hat eine offene Frage, die er sich nicht beantworten kann. Um seine Frage/Fragen zu beantworten sollte er sich auf die FAQ-Seite begeben. Dazu klickt er auf eins der beiden maskierten Verlinkungen (siehe FAQ Page 2.Phase-2.Bild), danach wird er zu der FAQ Page weitergeleitet. => 3.Phase
         </p>
 
-        <img class="picture" src="../image/changeProfilSite/faq1.png">
-        <img class="picture" src="../image/changeProfilSite/faq2.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/faq1.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/faq2.png">
 
         <h3>3. Phase: Die Frage vom User wird/wurde beantwortet</h3>
         <p>
@@ -254,9 +254,9 @@
         Im unteren Teil der FAQ-Seite befindet sich ein Kontaktbereich, wo der User das Formular ausfüllt und dann auf „Senden“ klickt.
         </p>
 
-        <img class="picture" src="../image/changeProfilSite/faq3.png">
-        <img class="picture" src="../image/changeProfilSite/faq4.png">
-        <img class="picture" src="../image/changeProfilSite/faq5.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/faq3.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/faq4.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/faq5.png">
 
         <h2 id=9>UserProfileEdit-Page</h2>
 
@@ -271,15 +271,15 @@
         Der User hat Daten, die er auf sein Profil ändern möchte. Um seine persönlichen- also auch seine Accountdaten ändern zu können, folgt der User die beiden Steps, die auf dem Bild markiert sind (siehe UserProfileEdit Page 2.Phase-2.Bild) danach wird er zu der UserProfileEdit Page weitergeleitet. => 3.Phase
         </p>
 
-        <img class="picture" src="../image/changeProfilSite/profiledit1.png">
-        <img class="picture" src="../image/changeProfilSite/profiledit2.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/profiledit1.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/profiledit2.png">
 
         <h3>3. Phase: Userdaten werden geändert und gespeichert</h3>
         <p>
         Auf der UserProfileEdit-Seite angekommen, kann der User seine persönlichen- also auch seine Accountdaten ändern.
         </p>
 
-        <img class="picture" src="../image/changeProfilSite/profiledit3.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/profiledit3.png">
 
         <h3>1. Fall – User möchte seine Daten ändern:</h3>
         <p>
@@ -287,15 +287,15 @@
             Der User muss nicht alle Felder ausfüllen damit er die Änderungen abspeichern kann. Die Felder, die der User nicht ändert, bleiben die vorigen Daten bestehen. Für die Abspeicherung klickt der User auf den Speicher-Button, dann wird er auf eine Weitere Seite geleitet, wo der User eine Bestätigung bekommt, dass seine Daten erfolgreich geändert wurden (sieht UserProfileEdit-Page 3.Phase 3.Bild), dann kann der User auf den Zurück-zu-deinem-Profil-Button klicken, dann wird er zu sein Profil Page weitergeleitet.
         </p>
 
-        <img class="picture" src="../image/changeProfilSite/profiledit4.png">
-        <img class="picture" src="../image/changeProfilSite/profiledit5.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/profiledit4.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/profiledit5.png">
 
         <h3>2. Fall – User möchte seine Daten nicht ändern:</h3>
         <p>
         Um seine Daten nicht mehr zu ändern, klickt der User auf den Zurück-Button, dann wird der User zurück auf sein Profil Page geleitet.
         </p>
 
-        <img class="picture" src="../image/changeProfilSite/profiledit6.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/profiledit6.png">
 
         <h2 id=10>Employee-Page</h2>
 
@@ -305,7 +305,7 @@
         Der Employee meldet sich wie ein normaler User an, aber der Unterschied ist, dass der Employee in der Navigationsbar sein extra Feld hat, welches ihn zu den Mitarbeiterbereich führt.
         </p>
 
-        <img class="picture" src="../image/changeProfilSite/employee1.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/employee1.png">
 
         <h3>2. Phase: Als Mitarbeiter im Mitarbeiter-Bereich</h3>
         <p>
@@ -313,24 +313,24 @@
         Im ersten Bereich kann der Mitarbeiter den AccountId von einem User herausfinden, in dem der Mitarbeiter der Vor- und Nachname oder Benutzername und Email des gesuchten Users richtig ein eingibt. Dann erscheint im AccountID-Feld die Id vom gesuchten User oder es wird das Wort „undefined“ ausgegeben, wenn zu den Daten kein User gefunden wurde.
         </p>
 
-        <img class="picture" src="../image/changeProfilSite/employee2.png">
-        <img class="picture" src="../image/changeProfilSite/employee3.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/employee2.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/employee3.png">
 
         <p>
         2.Bereich: User-Daten anzeigen <br>
         Wenn der Mitarbeiter den AccountId vom gesuchten User nicht kennt, muss er im 1.Bereich zurück und dann den AccountId erst suchen. Wenn er den AccountId kennt, trägt er den AccountId in das Feld „Hier die AccountID:“ und drückt dann auf User-Daten-Button suchen. Wenn keine Eingabe vorhanden ist und den der Button gedrückt wird, erscheint ein „undefinded“ (siehe Employee-Page 2.Phase 6.Bild)  oder „Es wurden keine Daten gefunden“ (siehe Employee-Page 2.Phase 7.Bild). Falls in dem Feld ein AccountId drinsteht, wird im Hintergrund geprüft, ob es in der Datenbank ein AccountId gibt der mit den AccountId übereinstimmt, der als Mitarbeiter eingegeben wurde. Bei einer Übereinstimmung der beiden AccountId wird einige Daten des gefunden User in einer Tabelle ausgegeben. Die ausgegebenen Daten als Standard-User sind AccountId, Vorname, Mittelname, Nachname, Geburtstag, Adresse, Postleitzahl, Land, Email und StandardUserToken/SuperUserToken. Dann wird es noch eine Tabelle geben, wenn der User ein SuperUser ist. Die Tabelle enthalt die PostId und die Überschrift und ist dafür geeignet, damit der Mitarbeiter bestimmte Post löschen kann.
         </p>
 
-        <img class="picture" src="../image/changeProfilSite/employee4.png">
-        <img class="picture" src="../image/changeProfilSite/employee5.png">
-        <img class="picture" src="../image/changeProfilSite/employee6.png">
-        <img class="picture" src="../image/changeProfilSite/employee7.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/employee4.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/employee5.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/employee6.png">
+        <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/employee7.png">
 
 
         <h2 id="11">Suchleiste</h2>
         <p>
             Der User gibt seinen Suchbegriff in die Suchleiste der Navigationsbar ein und bestätigt die Eingabe.<br>
-            <img class="picture" src="../image/changeProfilSite/searchingbox.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/searchingbox.png">
             <br>
             Intern speichert die „Search.php“ Seite den Suchbegriff in einer Variablen und ruft mit dem Begriff die Funktion Search(String $Statement) der Klasse „CSearch“ auf.
             Innerhalb dieser Funktion wird geprüft, ob es sich bei dem Suchbegriff um eine Hashtag oder eine Überschrift handelt und abhängig davon die Funktion SearchHashtag(String $Statement) oder SearchHeadline(String $Statement) aufgerufen.
@@ -338,14 +338,14 @@
             Währenddessen werden die Ergebnisse in einer neuen Variable bei „Search.php“ gespeichert.<br>
             Außerdem wird dem Nutzer ein Text angezeigt, der ihm mitteilt, wie viele Beiträge gefunden wurden.
             <br>
-            <img class="picture2" src="../image/changeProfilSite/searchresult.png">
+            <img class="picture2" src="../DokumenationFolder/DocumetationImageFolder/searchresult.png">
             <br>
             Falls keine Ergebnisse gefunden wurden, wird dem Nutzer ein Text ausgegeben, der darauf hinweist, dass keine Beiträge gefunden wurden und die Möglichkeit bietet zur Startseite zurück zugehen.
             Wenn die SQL-Abfrage zu Ergebnissen führt wird die Funktion showPostResult() aufgerufen. Dies führt dazu, dass alle Posts die zu dem Suchbegriff passen ausgegeben. <br>
-            <img class="picture" src="../image/changeProfilSite/nochresults.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/nochresults.png">
             <br>
             Flussdiagramm für di Suchfunktion: <br>
-            <img class="picture" src="../image/changeProfilSite/flowchartsearch.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/flowchartsearch.png">
             <br>
         </p>
 
@@ -361,12 +361,12 @@
 
             Der User wird im Anschluss auf die Seite „SuccessfullUpload.php“ weitergeleitet. Dort wird der Nutzer informiert, dass der Beitrag erstellt wurde und hat die Möglichkeit mittels eines Links entweder noch einen Beitrag zu erstellen oder zur Startseite zurückzukehren.<br>
 
-            <img class="picture" src="../image/changeProfilSite/successfullpost.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/successfullpost.png">
             <br>
             Falls die Angaben nicht richtig sind, wird der Nutzer nur an die „failedUpload.php“ Seite weitergeleitet und informiert, dass etwas schiefgelaufen ist und erhält die Möglichkeit zurückzukehren.<br>
-            <img class="picture" src="../image/changeProfilSite/failedpost.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/failedpost.png">
             <br>
-            <img class="picture" src="../image/changeProfilSite/flowchartPost.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/flowchartPost.png">
         </p>
 
         <h2 id="13">Profil ansehen</h2>
@@ -377,7 +377,7 @@
             Execute führt dann im nächsten Schritt die Anforderung aus und das Abfrageergebnis wird zurückgegeben und gefecht.
         </p>
 
-            <img class="picture" src="../image/changeProfilSite/profilpage1.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/profilpage1.png">
 
 
         <h2 id="14">Landing Page – UserPost</h2>
@@ -386,47 +386,47 @@
             der Post notwendig ist um später mittels Javascript, AJAX anwenden zu können um die UserInterakionen durch zuführen.
         </p>
 
-            <img class="picture" src="../image/changeProfilSite/landingpage1.png">
-            <img class="picture" src="../image/changeProfilSite/landingpage2.png">
-            <img class="picture" src="../image/changeProfilSite/landingpage3.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/landingpage1.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/landingpage2.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/landingpage3.png">
 
         <h2 id="15">User-Like</h2>
 
             User like wird mittels AJAX realisiert, dabei werden die speziellen Identifier dazu genutzt um die Interaktionen mit den Post umzusetzen. Desweiteren bleibt durch AJAX der Frontend Teil gleich und nur im Backend
             werden die Daten überprüft und je nach Ausgang zurück gesendet und im Frontend entweder, im vorgegebenen HTML Teil definiert, verändert oder es gibt eine Fehlermeldung. Im Sequenzsdiagramm nochmal deutlich zu erkennen.
-            <img class="picture" src="../image/changeProfilSite/userlike1.png">
-            <img class="picture" src="../image/changeProfilSite/userlike2.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/userlike1.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/userlike2.png">
             Um liken zu können ist es notwenidig sich ein zuloggen. Ansosten komment diese Fehlermeldung. Die Überprüfung findet beim aufrufen der Javascript funktion, welches die Parameter der Session vom PHP <erhält class=""></erhält>
-            <img class="picture" src="../image/changeProfilSite/userlike3.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/userlike3.png">
             (Sequenzdiagramm: User-Like)
 
         <h2 id="16">User Comment Post</h2>
 
             User comment post funktioniert sehr ähnlich zu Userlike. Um kommentieren zu können muss der User angemeldet sein und einen Text eingeben. Ist das Textfeld leer oder der User nicht angemeldet, so wird ein Fehler
             Meldung ausgegeben. Dieser erfolgt im Javascript vor der Versendung an das Backend.
-            <img class="picture" src="../image/changeProfilSite/usercommentpost1.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/usercommentpost1.png">
             (Sequenzdiagramm: UserCommentPost + Fehlermeldungen)
 
         <h2 id="17>">Map-Location</h2>
 
             Auf Map-Location fand die Ideen Sammlung unseres Projektes statt , dadruch, dass jeder User Koordinaten eingeben muss. Kann mittels eine API, in den Fall Google Map Api und den
             Koordinaten den genauen Standort über Google Map refenziert werden. Dies steigert den UserExperience und gibt unseren Projekt eine weitere Duftnote.
-            <img class="picture" src="../image/changeProfilSite/MapLocation.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/MapLocation.png">
 
         <h2 id="18">Search AccountKey – Ajax</h2>
 
-            <img class="picture" src="../image/changeProfilSite/SearchAccountKey1.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/SearchAccountKey1.png">
             Aus dem Diagramm anschaulich dargestellt. Mittels diesen ID kannd der Employee weitere Aktionen ausführen.
 
         <h2 id="19">Update User Data By Employee</h2>
-            <img class="picture" src="../image/changeProfilSite/UpdateData1.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/UpdateData1.png">
             Über den AccountID erhält der Employee alle Daten, die er benötigt um Account Daten eines Users anzuzeigen. (Ist auch im Optionfeld der Mitarbeiter -> gleiches Prinzips).
             Nun kann er nachdem er die Daten des User gelesen hat auch verändern, dazu muss er eine AccountID im Formular angeben und dazu auch noch die zuändernde Daten in den Formular
             der UserDaten.
             Über AJAX wird es an das Backend gesendet und geschrieben. Beim erfolgreichen schreiben wird eine Meldung ausgegeben.
 
         <h2 id="19">DeletePostByEmployee</h2>
-            <img class="picture" src="../image/changeProfilSite/deletepost1.png">
+            <img class="picture" src="../DokumenationFolder/DocumetationImageFolder/deletepost1.png">
         Mittels des PostID/PostKey, welches beim suchen des User angezegt wird, kann der Employee auch Post und die dazugehörigen Likes und Comment löschen.
         Ist das PostID/PostKey - Feld leer wird eine Fehhlermeldung ausgegeben.
         Wurde der Post erfolgreich gelöscht wird eine.
