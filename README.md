@@ -16,5 +16,9 @@ SuperUser:
 - 123abc
 
 Admin:
-- DDuong
+- ATran
 - 123abc
+
+Alle Bilder zur Dokumentation, die Dokumentation als PDF, Präsentationsfolien und zusätzliche Diagramme sind im Ordner DokumentationFolder zu finden. 
+Wir haben viele der Diagramme mittels DrawIo und Visio bearbeitet, falls der Bedarf nach den Source Dokumenten besteht, können diese noch zu gesendet werden (die sind genauso wie Bilder).
+
