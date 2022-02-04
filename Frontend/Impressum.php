@@ -495,7 +495,7 @@
         </p>
 
 
-        <h2 id="17>">17. Map-Location</h2>
+        <h2 id="17">17. Map-Location</h2>
 
         <p>
             Das beste Feature in unserem Projekt ist sicherlich die „Map-Location Funktion“. Dieses war eines der ersten Ideen, die unser Projekt maßgeblich beeinflusst haben und dazu verleitet hat das Projekt
