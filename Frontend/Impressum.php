@@ -42,7 +42,9 @@
         <h2>Antonia Geschke</h2>
         <ul class="Service">
             <li>Suchleiste Front- und Backend</li>
-            <li>CreatePost Backend und Impressum, Datenbankimplementierung</li>
+            <li>Impressum Frontend - Image Slideshow</li>
+            <li>CreatePost Backend </li>
+            <li>Datenbankimplementierung</li>
         </ul>
         <h2>Helen Laible</h2>
         <ul class="Service" >
@@ -58,7 +60,8 @@
             <li>Login-Seite Frontend </li>
             <li>FAQ</li>
             <li>UserProfileEdit-Page Froontend & Backend </li>
-            <li> Mitarbeiterseite Backend (Account-/Contactdetails, PostID+Headline)</li>
+            <li>Mitarbeiterseite Frontend </li>
+            <li>Mitarbeiterseite Backend (Account-/Contactdetails, PostID+Headline)</li>
         </ul>
 
         <h2>Tran Anh Hoang</h2>
